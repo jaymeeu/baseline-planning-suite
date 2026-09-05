@@ -52,3 +52,10 @@ export type {
   CostSlice,
 } from './cost';
 export { calculateAllocationCost } from './cost';
+
+export type { CapacityAllocation, EmployeeMonthCapacity } from './capacity';
+export {
+  canEditAllocationWhenOverCapacity,
+  summarizeAllCapacities,
+  summarizeEmployeeMonthCapacity,
+} from './capacity';
