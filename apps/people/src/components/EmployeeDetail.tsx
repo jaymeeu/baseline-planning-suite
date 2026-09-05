@@ -109,7 +109,7 @@ export function EmployeeDetail({
               .finally(() => setSaving(false));
           }}
         >
-          {saving ? 'Saving…' : 'Save employee'}
+          {saving ? 'Saving…' : 'Update employee'}
         </button>
       </div>
     </section>
