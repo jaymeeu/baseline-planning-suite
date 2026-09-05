@@ -2,7 +2,8 @@ export type { Allocation, BreakdownItem, DisplayUnit, Employee, Id, IsoDate, Pro
 export { assertId, isId } from './ids';
 export { allowedWeeklyHours, assertWeeklyHours, isWeeklyHours, } from './weeklyHours';
 export { findEffectiveRate, sortRatesByValidFrom } from './rates';
-export { MAX_WBS_DEPTH, assertAllocationTargetIsLeaf, assertCanInsertChild, getBreakdownDepth, hasChildren, isLeaf, } from './wbs';
+export { MAX_WBS_DEPTH, assertAllocationTargetIsLeaf, assertCanInsertChild, assertCanMoveItem, buildWbsForest, childrenOf, collectDescendants, collectSubtreeIds, flattenWbsForest, getBreakdownDepth, hasChildren, isLeaf, planInsertChildWithAllocations, subtreeHeight, } from './wbs';
+export type { InsertChildPlan, InsertChildPlanInput, WbsTreeNode, } from './wbs';
 export type { UnitConversionContext } from './allocationUnit';
 export { UnitConversionError, fromCanonical, hoursPerPersonMonth, toCanonical, } from './allocationUnit';
 export { countWorkingDays, countWorkingDaysInMonth, listWorkingDaysInMonth, } from './workingDays';

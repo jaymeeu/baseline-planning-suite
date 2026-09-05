@@ -22,6 +22,13 @@ export function createAllocationRepository(
         'byEmployeeMonth',
         [employeeId, month],
       ),
+    listByBreakdownItemId: (breakdownItemId: Id) =>
+      storeGetAllFromIndex<CapacityAllocation>(
+        db,
+        storeName,
+        'byBreakdownItemId',
+        breakdownItemId,
+      ),
     get: (id: Id) => storeGet<CapacityAllocation>(db, storeName, id),
     upsert: async (allocation: CapacityAllocation) => {
       const withTimestamp: CapacityAllocation = {

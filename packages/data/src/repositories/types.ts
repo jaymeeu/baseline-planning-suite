@@ -48,6 +48,7 @@ export interface AllocationRepository {
     employeeId: Id,
     month: YearMonth,
   ): Promise<CapacityAllocation[]>;
+  listByBreakdownItemId(breakdownItemId: Id): Promise<CapacityAllocation[]>;
   get(id: Id): Promise<CapacityAllocation | undefined>;
   upsert(allocation: CapacityAllocation): Promise<void>;
   remove(id: Id): Promise<void>;

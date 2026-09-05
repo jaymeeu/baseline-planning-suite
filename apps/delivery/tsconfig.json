@@ -2,7 +2,12 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "types": ["vite/client"]
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@bps/domain": ["../../packages/domain/src/index.ts"],
+      "@bps/data": ["../../packages/data/src/index.ts"],
+      "@bps/contracts": ["../../packages/contracts/src/index.ts"]
+    }
   },
   "include": ["src"]
 }

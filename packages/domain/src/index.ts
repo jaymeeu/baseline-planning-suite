@@ -25,9 +25,23 @@ export {
   MAX_WBS_DEPTH,
   assertAllocationTargetIsLeaf,
   assertCanInsertChild,
+  assertCanMoveItem,
+  buildWbsForest,
+  childrenOf,
+  collectDescendants,
+  collectSubtreeIds,
+  flattenWbsForest,
   getBreakdownDepth,
   hasChildren,
   isLeaf,
+  planInsertChildWithAllocations,
+  subtreeHeight,
+} from './wbs';
+
+export type {
+  InsertChildPlan,
+  InsertChildPlanInput,
+  WbsTreeNode,
 } from './wbs';
 
 export type { UnitConversionContext } from './allocationUnit';

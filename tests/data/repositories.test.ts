@@ -84,5 +84,9 @@ describe('delivery repositories', () => {
     );
     expect(listed).toHaveLength(1);
     expect(listed[0]?.updatedAt).toBe('2026-01-01T00:00:00.000Z');
+
+    const byItem = await repos.allocations.listByBreakdownItemId('wbs-1');
+    expect(byItem).toHaveLength(1);
+    expect(byItem[0]?.id).toBe('alloc-1');
   });
 });
