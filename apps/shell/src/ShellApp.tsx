@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode, Suspense, lazy, useState } from 'react';
+import './index.css';
 
 type RemoteName = 'people' | 'delivery';
 
@@ -73,7 +74,10 @@ function RemoteFailure({
   message: string;
 }) {
   return (
-    <div role="alert" style={{ border: '1px solid #b00020', padding: '1rem' }}>
+    <div
+      role="alert"
+      className="border border-red-800 p-4 text-red-900"
+    >
       <strong>{remoteName} failed to load</strong>
       <p>{message}</p>
       <p>Shell remains available. Other remotes are unaffected.</p>
@@ -87,22 +91,37 @@ export function ShellApp() {
   const [forceFailDelivery, setForceFailDelivery] = useState(false);
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', padding: '1.5rem' }}>
-      <header style={{ marginBottom: '1.5rem' }}>
-        <h1>Baseline Planning Suite</h1>
-        <p>Shell host — currency and active user will be owned here later.</p>
-        <nav style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <button type="button" onClick={() => setView('people')}>
+    <div className="p-6 font-sans text-neutral-900">
+      <header className="mb-6">
+        <h1 className="mb-1 text-2xl font-semibold">Baseline Planning Suite</h1>
+        <p className="mb-3 text-neutral-600">
+          Shell host — currency and active user will be owned here later.
+        </p>
+        <nav className="flex flex-wrap gap-3">
+          <button
+            type="button"
+            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            onClick={() => setView('people')}
+          >
             People
           </button>
-          <button type="button" onClick={() => setView('delivery')}>
+          <button
+            type="button"
+            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            onClick={() => setView('delivery')}
+          >
             Delivery
           </button>
-          <button type="button" onClick={() => setForceFailPeople((value) => !value)}>
+          <button
+            type="button"
+            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            onClick={() => setForceFailPeople((value) => !value)}
+          >
             {forceFailPeople ? 'Restore People' : 'Break People'}
           </button>
           <button
             type="button"
+            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
             onClick={() => setForceFailDelivery((value) => !value)}
           >
             {forceFailDelivery ? 'Restore Delivery' : 'Break Delivery'}

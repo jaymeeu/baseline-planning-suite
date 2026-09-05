@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { federation } from '@module-federation/vite';
+import tailwindcss from '@tailwindcss/vite';
 
 const peopleRemote =
   process.env.PEOPLE_REMOTE_URL ?? 'http://localhost:8081/remoteEntry.js';
@@ -9,6 +10,7 @@ const deliveryRemote =
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     react(),
     federation({
       name: 'shell',
