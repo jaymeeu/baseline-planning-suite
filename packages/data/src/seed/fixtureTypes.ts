@@ -15,6 +15,18 @@ export interface BaselineFixture {
     strategy: 'generated-approved';
     note: string;
     horizon: YearMonth[];
+    /** Seeded demo hooks for Phase 11 capacity / overcapacity verification. */
+    demo?: {
+      overcapacity: {
+        employeeId: string;
+        month: YearMonth;
+        totalPm: number;
+        projects: string[];
+      };
+      betaLeafId: string;
+      alphaLeafId: string;
+      allocationsOnBetaLeaf: number;
+    };
     counts: {
       employees: number;
       rates: number;
