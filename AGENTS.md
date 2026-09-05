@@ -186,6 +186,7 @@ Record architectural choices here as they are made (do not silently change them 
 | Shell → remote shared context | **Host props / `HostContext`** (`currency`, `activeUser`) passed into remote `App` | Shell owns the values; remotes consume a published interface; standalone remotes supply local defaults. |
 | Runtime remote URL injection | **`/config.js` → `window.__BPS_CONFIG__`** written at container start (envsubst); Shell registers remotes at runtime | Satisfies “URLs not baked into the JS bundle”; changing remote URLs does not require rebuilding Shell. |
 | Styling | **Tailwind CSS v4** via `@tailwindcss/vite` in Shell, People, and Delivery | Allowed styling tooling (not a UI kit); utility classes replace hand-written `.css` files. |
+| Design tokens | Shared **`@bps/ui/bps.css`** (`@theme` + primitives) | Single ledger-studio token/primitive source; apps import alongside Tailwind; no component kit. |
 
 No further pending tooling/architecture decisions for bootstrap. Remaining work is implementation per the phased plan.
 

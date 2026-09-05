@@ -17,49 +17,50 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   if (data.loading) {
     return (
-      <main className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900">
-        <p>Loading Delivery…</p>
+      <main className="mx-auto max-w-[1200px] p-5">
+        <div className="bps-panel" aria-busy="true">
+          <div className="bps-skeleton mb-3 h-4 w-40" />
+          <p className="bps-meta m-0">Loading Delivery…</p>
+        </div>
       </main>
     );
   }
 
   if (data.error && data.projects.length === 0) {
     return (
-      <main className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900">
-        <p className="my-2 text-red-800" role="alert">
+      <main className="mx-auto max-w-[1200px] p-5">
+        <div className="bps-alert bps-alert--error" role="alert">
+          <strong>Delivery could not load</strong>
           {data.error}
-        </p>
+        </div>
       </main>
     );
   }
 
   return (
     <main
-      className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900"
+      className="mx-auto max-w-[1200px] p-5"
       data-testid="delivery-app"
     >
-      <header className="mb-4 border-b border-neutral-300 pb-3">
-        <h1 className="mb-1 text-2xl font-semibold">Delivery</h1>
-        <p className="m-0 text-sm text-neutral-600" data-testid="delivery-mode">
+      <header className="mb-4 border-b border-bps-line pb-3">
+        <h1 className="bps-title mb-1">Delivery</h1>
+        <p className="bps-meta m-0" data-testid="delivery-mode">
           Projects, WBS &amp; staffing · currency {host.currency} ·{' '}
           {host.activeUser.name}
         </p>
       </header>
 
       {data.message ? (
-        <p
-          className="mb-3 border border-neutral-400 bg-neutral-100 px-3 py-2 text-sm"
-          role="status"
-        >
+        <div className="bps-alert bps-alert--status mb-3" role="status">
           {data.message}{' '}
           <button
             type="button"
-            className="ml-2 cursor-pointer underline"
+            className="bps-btn bps-btn--ghost ml-2 h-auto px-0"
             onClick={data.clearMessage}
           >
             Dismiss
           </button>
-        </p>
+        </div>
       ) : null}
 
       <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-[minmax(240px,320px)_1fr]">

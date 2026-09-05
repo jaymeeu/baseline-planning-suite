@@ -1,0 +1,296 @@
+/**
+ * Baseline Planning Suite — design tokens + primitives (Phase A).
+ * Ledger studio: cool paper, ink type, one green signal. No UI kit.
+ */
+
+@theme {
+  --color-bps-ink: #1a2332;
+  --color-bps-slate: #5c6b7a;
+  --color-bps-paper: #f3f5f7;
+  --color-bps-surface: #ffffff;
+  --color-bps-line: #d5dce3;
+  --color-bps-signal: #0f6e56;
+  --color-bps-danger: #9b2c2c;
+  --color-bps-danger-bg: #fdf2f2;
+  --color-bps-warn: #92400e;
+  --color-bps-warn-bg: #fffbeb;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius-bps: 6px;
+  --shadow-bps: 0 1px 0 rgba(26, 35, 50, 0.06);
+}
+
+/* ——— A3: global base ——— */
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-bps-paper);
+    color: var(--color-bps-ink);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  [type="button"],
+  [type="submit"],
+  [type="reset"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [type="button"]:disabled,
+  [type="submit"]:disabled {
+    cursor: not-allowed;
+  }
+
+  a {
+    cursor: pointer;
+    color: var(--color-bps-signal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-bps-signal);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ——— A2: primitives ——— */
+
+@layer components {
+  .bps-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-bps-ink);
+    margin: 0;
+  }
+
+  .bps-section-title {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-bps-ink);
+    margin: 0;
+  }
+
+  .bps-meta {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-bps-slate);
+  }
+
+  .bps-data {
+    font-family: var(--font-data);
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bps-panel {
+    background-color: var(--color-bps-surface);
+    border: 1px solid var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    padding: 1rem;
+    box-shadow: var(--shadow-bps);
+  }
+
+  .bps-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: var(--radius-bps);
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    background-color: var(--color-bps-surface);
+    color: var(--color-bps-ink);
+    cursor: pointer;
+  }
+
+  .bps-btn:disabled {
+    opacity: 0.5;
+  }
+
+  .bps-btn--primary {
+    background-color: var(--color-bps-signal);
+    border-color: var(--color-bps-signal);
+    color: #fff;
+  }
+
+  .bps-btn--secondary {
+    border-color: var(--color-bps-line);
+    background-color: var(--color-bps-surface);
+  }
+
+  .bps-btn--ghost {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--color-bps-slate);
+  }
+
+  .bps-btn--danger {
+    border-color: var(--color-bps-danger);
+    color: var(--color-bps-danger);
+    background-color: var(--color-bps-surface);
+  }
+
+  .bps-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .bps-field > label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-bps-ink);
+  }
+
+  .bps-field__control {
+    height: 36px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    padding: 0 10px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    background-color: var(--color-bps-surface);
+    color: var(--color-bps-ink);
+  }
+
+  textarea.bps-field__control {
+    height: auto;
+    min-height: 72px;
+    padding: 8px 10px;
+    resize: vertical;
+  }
+
+  .bps-field__hint {
+    font-size: 0.75rem;
+    color: var(--color-bps-slate);
+  }
+
+  .bps-field__hint--error {
+    color: var(--color-bps-danger);
+  }
+
+  .bps-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border: 1px solid;
+    line-height: 1.4;
+  }
+
+  .bps-badge--over {
+    color: var(--color-bps-danger);
+    border-color: #f0c4c4;
+    background-color: var(--color-bps-danger-bg);
+  }
+
+  .bps-badge--warn {
+    color: var(--color-bps-warn);
+    border-color: #f5dfa0;
+    background-color: var(--color-bps-warn-bg);
+  }
+
+  .bps-badge--leaf {
+    color: var(--color-bps-signal);
+    border-color: #b7d9ce;
+    background-color: #eef7f3;
+  }
+
+  .bps-badge--parent {
+    color: var(--color-bps-slate);
+    border-color: var(--color-bps-line);
+    background-color: var(--color-bps-paper);
+  }
+
+  .bps-alert {
+    border: 1px solid var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    padding: 12px 14px;
+    background-color: var(--color-bps-surface);
+    color: var(--color-bps-ink);
+  }
+
+  .bps-alert strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .bps-alert--error {
+    border-color: #f0c4c4;
+    background-color: var(--color-bps-danger-bg);
+    color: var(--color-bps-danger);
+  }
+
+  .bps-alert--warn {
+    border-color: #f5dfa0;
+    background-color: var(--color-bps-warn-bg);
+    color: var(--color-bps-warn);
+  }
+
+  .bps-alert--status {
+    border-color: var(--color-bps-line);
+    background-color: var(--color-bps-surface);
+    color: var(--color-bps-ink);
+  }
+
+  .bps-skeleton {
+    border-radius: var(--radius-bps);
+    background: linear-gradient(
+      90deg,
+      var(--color-bps-line) 0%,
+      var(--color-bps-paper) 50%,
+      var(--color-bps-line) 100%
+    );
+    background-size: 200% 100%;
+    animation: bps-shimmer 1.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bps-skeleton {
+      animation: none;
+      background: var(--color-bps-line);
+    }
+  }
+}
+
+@keyframes bps-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

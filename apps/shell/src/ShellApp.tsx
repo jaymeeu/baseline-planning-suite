@@ -90,13 +90,13 @@ function RemoteFailure({
 }) {
   const copy = formatRemoteFailureMessage(remoteName, message);
   return (
-    <div role="alert" className="border border-red-800 p-4 text-red-900">
+    <div role="alert" className="bps-alert bps-alert--error">
       <strong>{copy.title}</strong>
-      <p>{copy.detail}</p>
-      <p>{copy.isolationNote}</p>
+      <p className="m-0">{copy.detail}</p>
+      <p className="m-0 mt-1">{copy.isolationNote}</p>
       <button
         type="button"
-        className="mt-3 cursor-pointer border border-red-800 bg-white px-3 py-1.5"
+        className="bps-btn bps-btn--danger mt-3"
         onClick={onRetry}
       >
         Retry {remoteName}
@@ -120,7 +120,14 @@ function RemotePanel({
     [remote, mountKey],
   );
   return (
-    <Suspense fallback={<p>Loading {remote}…</p>}>
+    <Suspense
+      fallback={
+        <div className="bps-panel" aria-busy="true">
+          <div className="bps-skeleton mb-3 h-4 w-40" />
+          <p className="bps-meta m-0">Loading {remote}…</p>
+        </div>
+      }
+    >
       <LazyApp host={host} />
     </Suspense>
   );
@@ -147,25 +154,23 @@ export function ShellApp() {
   };
 
   return (
-    <div className="p-6 font-sans text-neutral-900">
+    <div className="p-6">
       <header className="mb-6">
-        <h1 className="mb-1 text-2xl font-semibold">Baseline Planning Suite</h1>
-        <p className="mb-3 text-neutral-600">
+        <h1 className="bps-title mb-1">Baseline Planning Suite</h1>
+        <p className="bps-meta mb-3">
           Shell host — owns navigation, display currency, and active user; remotes
           receive them via <code>HostContext</code> props.
         </p>
 
         <div
-          className="mb-4 flex flex-wrap items-end gap-4 border border-neutral-300 bg-neutral-50 p-3"
+          className="bps-panel mb-4 flex flex-wrap items-end gap-4"
           data-testid="shell-host-context"
         >
-          <div className="flex flex-col gap-1">
-            <label htmlFor="shell-currency" className="text-sm font-medium">
-              Currency
-            </label>
+          <div className="bps-field">
+            <label htmlFor="shell-currency">Currency</label>
             <select
               id="shell-currency"
-              className="border border-neutral-300 bg-white px-2 py-1.5"
+              className="bps-field__control"
               value={host.currency}
               onChange={(event) =>
                 setHost((prev) => ({ ...prev, currency: event.target.value }))
@@ -178,13 +183,11 @@ export function ShellApp() {
               ))}
             </select>
           </div>
-          <div className="flex flex-col gap-1">
-            <label htmlFor="shell-user-name" className="text-sm font-medium">
-              Active user
-            </label>
+          <div className="bps-field">
+            <label htmlFor="shell-user-name">Active user</label>
             <input
               id="shell-user-name"
-              className="border border-neutral-300 bg-white px-2 py-1.5"
+              className="bps-field__control"
               value={host.activeUser.name}
               onChange={(event) =>
                 setHost((prev) => ({
@@ -197,19 +200,17 @@ export function ShellApp() {
               }
             />
           </div>
-          <p className="text-sm text-neutral-600" data-testid="shell-context-summary">
-            Showing as <strong>{host.activeUser.name}</strong> ·{' '}
-            <strong>{host.currency}</strong>
+          <p className="bps-meta" data-testid="shell-context-summary">
+            Showing as <strong className="text-bps-ink">{host.activeUser.name}</strong>{' '}
+            · <strong className="text-bps-ink">{host.currency}</strong>
           </p>
         </div>
 
-        <nav className="flex flex-wrap gap-3" aria-label="Primary">
+        <nav className="flex flex-wrap gap-2" aria-label="Primary">
           <button
             type="button"
-            className={`cursor-pointer border px-3 py-1.5 ${
-              view === 'people'
-                ? 'border-neutral-900 bg-neutral-200 font-semibold'
-                : 'border-neutral-400 bg-white'
+            className={`bps-btn ${
+              view === 'people' ? 'bps-btn--primary' : 'bps-btn--secondary'
             }`}
             aria-current={view === 'people' ? 'page' : undefined}
             onClick={() => setView('people')}
@@ -218,10 +219,8 @@ export function ShellApp() {
           </button>
           <button
             type="button"
-            className={`cursor-pointer border px-3 py-1.5 ${
-              view === 'delivery'
-                ? 'border-neutral-900 bg-neutral-200 font-semibold'
-                : 'border-neutral-400 bg-white'
+            className={`bps-btn ${
+              view === 'delivery' ? 'bps-btn--primary' : 'bps-btn--secondary'
             }`}
             aria-current={view === 'delivery' ? 'page' : undefined}
             onClick={() => setView('delivery')}
@@ -230,14 +229,14 @@ export function ShellApp() {
           </button>
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            className="bps-btn bps-btn--ghost"
             onClick={() => setForceFailPeople((value) => !value)}
           >
             {forceFailPeople ? 'Restore People' : 'Break People'}
           </button>
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            className="bps-btn bps-btn--ghost"
             onClick={() => setForceFailDelivery((value) => !value)}
           >
             {forceFailDelivery ? 'Restore Delivery' : 'Break Delivery'}

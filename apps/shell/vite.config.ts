@@ -25,6 +25,7 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
     alias: {
       '@bps/contracts': path.join(rootDir, 'packages/contracts/src/index.ts'),
+      '@bps/ui': path.join(rootDir, 'packages/ui'),
     },
   },
   server: {

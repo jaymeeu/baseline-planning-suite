@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BPS Design System — Ledger Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bps-ink: #1a2332;
+        --bps-slate: #5c6b7a;
+        --bps-paper: #f3f5f7;
+        --bps-surface: #ffffff;
+        --bps-line: #d5dce3;
+        --bps-signal: #0f6e56;
+        --bps-danger: #9b2c2c;
+        --bps-danger-bg: #fdf2f2;
+        --bps-warn: #92400e;
+        --bps-warn-bg: #fffbeb;
+        --bps-radius: 6px;
+        --bps-elev: 0 1px 0 rgba(26, 35, 50, 0.06);
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Source Sans 3", system-ui, sans-serif;
+        --font-data: "IBM Plex Mono", ui-monospace, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bps-paper);
+        color: var(--bps-ink);
+        font-family: var(--font-body);
+        font-size: 0.9375rem;
+        line-height: 1.5;
+      }
+
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.75rem;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .lede {
+        color: var(--bps-slate);
+        margin: 0 0 40px;
+        max-width: 42rem;
+      }
+
+      h2 {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 40px 0 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--bps-line);
+      }
+
+      h3 {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--bps-slate);
+        margin: 24px 0 12px;
+      }
+
+      .meta {
+        font-size: 0.8125rem;
+        color: var(--bps-slate);
+      }
+
+      /* Swatches */
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+      }
+
+      .swatch {
+        background: var(--bps-surface);
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        overflow: hidden;
+        box-shadow: var(--bps-elev);
+      }
+
+      .swatch-chip {
+        height: 72px;
+      }
+
+      .swatch-meta {
+        padding: 10px 12px 12px;
+      }
+
+      .swatch-name {
+        font-weight: 600;
+        font-size: 0.875rem;
+      }
+
+      .swatch-hex {
+        font-family: var(--font-data);
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--bps-slate);
+      }
+
+      .swatch-role {
+        font-size: 0.75rem;
+        color: var(--bps-slate);
+        margin-top: 4px;
+      }
+
+      /* Type specimens */
+      .type-card {
+        background: var(--bps-surface);
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        padding: 20px;
+        margin-bottom: 12px;
+        box-shadow: var(--bps-elev);
+      }
+
+      .type-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--bps-slate);
+        margin-bottom: 8px;
+      }
+
+      .specimen-display {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .specimen-section {
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
+
+      .specimen-body {
+        font-size: 0.9375rem;
+      }
+
+      .specimen-meta {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--bps-slate);
+      }
+
+      .specimen-data {
+        font-family: var(--font-data);
+        font-size: 0.8125rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Spacing */
+      .space-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-end;
+      }
+
+      .space-item {
+        text-align: center;
+      }
+
+      .space-box {
+        background: var(--bps-signal);
+        opacity: 0.85;
+        border-radius: 2px;
+        margin: 0 auto 6px;
+      }
+
+      /* Controls */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        padding: 0 14px;
+        border-radius: var(--bps-radius);
+        border: 1px solid transparent;
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--bps-surface);
+        color: var(--bps-ink);
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--bps-signal);
+        outline-offset: 2px;
+      }
+
+      .btn-primary {
+        background: var(--bps-signal);
+        color: #fff;
+        border-color: var(--bps-signal);
+      }
+
+      .btn-secondary {
+        border-color: var(--bps-line);
+        background: var(--bps-surface);
+      }
+
+      .btn-ghost {
+        border-color: transparent;
+        background: transparent;
+        color: var(--bps-slate);
+      }
+
+      .btn-danger {
+        border-color: var(--bps-danger);
+        color: var(--bps-danger);
+        background: var(--bps-surface);
+      }
+
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 220px;
+      }
+
+      .field label {
+        font-size: 0.8125rem;
+        font-weight: 600;
+      }
+
+      .field input,
+      .field select {
+        height: 36px;
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        padding: 0 10px;
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        background: var(--bps-surface);
+        color: var(--bps-ink);
+      }
+
+      .field input:focus-visible,
+      .field select:focus-visible {
+        outline: 2px solid var(--bps-signal);
+        outline-offset: 2px;
+        border-color: var(--bps-signal);
+      }
+
+      .hint {
+        font-size: 0.75rem;
+        color: var(--bps-slate);
+      }
+
+      .hint-error {
+        color: var(--bps-danger);
+      }
+
+      /* Panel / list / badge / alert */
+      .panel {
+        background: var(--bps-surface);
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        padding: 16px;
+        box-shadow: var(--bps-elev);
+      }
+
+      .panel-title {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 0 0 12px;
+      }
+
+      .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .list-row {
+        width: 100%;
+        text-align: left;
+        border: 1px solid transparent;
+        border-radius: var(--bps-radius);
+        background: transparent;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        color: var(--bps-ink);
+      }
+
+      .list-row:hover {
+        background: var(--bps-paper);
+      }
+
+      .list-row[aria-current="true"] {
+        background: #e8f3ef;
+        border-color: var(--bps-signal);
+      }
+
+      .list-name {
+        font-weight: 600;
+        display: block;
+      }
+
+      .list-meta {
+        font-size: 0.8125rem;
+        color: var(--bps-slate);
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 4px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        border: 1px solid;
+      }
+
+      .badge-over {
+        color: var(--bps-danger);
+        border-color: #f0c4c4;
+        background: var(--bps-danger-bg);
+      }
+
+      .badge-warn {
+        color: var(--bps-warn);
+        border-color: #f5dfa0;
+        background: var(--bps-warn-bg);
+      }
+
+      .badge-leaf {
+        color: var(--bps-signal);
+        border-color: #b7d9ce;
+        background: #eef7f3;
+      }
+
+      .badge-parent {
+        color: var(--bps-slate);
+        border-color: var(--bps-line);
+        background: var(--bps-paper);
+      }
+
+      .alert {
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: var(--bps-surface);
+      }
+
+      .alert strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .alert-error {
+        border-color: #f0c4c4;
+        background: var(--bps-danger-bg);
+        color: var(--bps-danger);
+      }
+
+      .alert-warn {
+        border-color: #f5dfa0;
+        background: var(--bps-warn-bg);
+        color: var(--bps-warn);
+      }
+
+      .alert-status {
+        border-color: var(--bps-line);
+        color: var(--bps-ink);
+      }
+
+      /* Capacity + horizon signature */
+      .capacity {
+        display: grid;
+        gap: 10px;
+      }
+
+      .cap-row {
+        display: grid;
+        grid-template-columns: 72px 1fr 56px;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .cap-month {
+        font-family: var(--font-data);
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .cap-track {
+        height: 8px;
+        background: var(--bps-paper);
+        border: 1px solid var(--bps-line);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .cap-fill {
+        height: 100%;
+        background: var(--bps-signal);
+        border-radius: inherit;
+      }
+
+      .cap-fill.over {
+        background: var(--bps-danger);
+      }
+
+      .cap-pct {
+        font-family: var(--font-data);
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+
+      /* Mini grid */
+      .horizon {
+        display: grid;
+        grid-template-columns: 140px repeat(6, minmax(64px, 1fr));
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        overflow: hidden;
+        background: var(--bps-surface);
+        font-size: 0.8125rem;
+      }
+
+      .horizon > * {
+        padding: 8px 10px;
+        border-right: 1px solid var(--bps-line);
+        border-bottom: 1px solid var(--bps-line);
+      }
+
+      .horizon .head {
+        background: var(--bps-paper);
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+      }
+
+      .horizon .emp {
+        font-weight: 600;
+      }
+
+      .horizon .num {
+        font-family: var(--font-data);
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+
+      .horizon .over-cell {
+        background: var(--bps-danger-bg);
+        color: var(--bps-danger);
+      }
+
+      .horizon .parent-cell {
+        color: var(--bps-slate);
+        background: #fafbfc;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      @media (max-width: 720px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .chrome-preview {
+        background: var(--bps-paper);
+        border: 1px solid var(--bps-line);
+        border-radius: var(--bps-radius);
+        padding: 20px;
+      }
+
+      .chrome-preview header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: end;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--bps-line);
+      }
+
+      .nav-tabs {
+        display: flex;
+        gap: 4px;
+      }
+
+      .nav-tab {
+        height: 36px;
+        padding: 0 12px;
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid transparent;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: var(--bps-slate);
+        cursor: pointer;
+      }
+
+      .nav-tab[aria-current="page"] {
+        color: var(--bps-ink);
+        border-bottom-color: var(--bps-signal);
+      }
+
+      .demo-link {
+        font-size: 0.75rem;
+        color: var(--bps-slate);
+        text-decoration: underline;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-body);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>Baseline Planning Suite</h1>
+      <p class="lede">
+        Design system preview — <em>ledger studio</em>. Cool paper, ink type, one
+        green signal. Open this file in a browser to review color, type, and
+        primitives before implementation.
+      </p>
+
+      <h2>1. Core palette</h2>
+      <div class="swatch-grid">
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #1a2332"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Ink</div>
+            <div class="swatch-hex">#1A2332</div>
+            <div class="swatch-role">Primary text, strong borders</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #5c6b7a"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Slate</div>
+            <div class="swatch-hex">#5C6B7A</div>
+            <div class="swatch-role">Secondary text, labels</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div
+            class="swatch-chip"
+            style="background: #f3f5f7; border-bottom: 1px solid #d5dce3"
+          ></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Paper</div>
+            <div class="swatch-hex">#F3F5F7</div>
+            <div class="swatch-role">App background</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div
+            class="swatch-chip"
+            style="background: #fff; border-bottom: 1px solid #d5dce3"
+          ></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Surface</div>
+            <div class="swatch-hex">#FFFFFF</div>
+            <div class="swatch-role">Panels, inputs, cells</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #d5dce3"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Line</div>
+            <div class="swatch-hex">#D5DCE3</div>
+            <div class="swatch-role">Dividers, quiet borders</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #0f6e56"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Signal</div>
+            <div class="swatch-hex">#0F6E56</div>
+            <div class="swatch-role">Primary actions, focus, selected</div>
+          </div>
+        </article>
+      </div>
+
+      <h3>Semantic</h3>
+      <div class="swatch-grid">
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #9b2c2c"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Danger ink</div>
+            <div class="swatch-hex">#9B2C2C</div>
+            <div class="swatch-role">Over-capacity / errors</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #fdf2f2"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Danger tint</div>
+            <div class="swatch-hex">#FDF2F2</div>
+            <div class="swatch-role">Flag backgrounds</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #92400e"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Warn ink</div>
+            <div class="swatch-hex">#92400E</div>
+            <div class="swatch-role">No applicable rate</div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-chip" style="background: #fffbeb"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Warn tint</div>
+            <div class="swatch-hex">#FFFBEB</div>
+            <div class="swatch-role">Warning backgrounds</div>
+          </div>
+        </article>
+      </div>
+
+      <h2>2. Typography</h2>
+      <div class="type-card">
+        <div class="type-label">Display — Fraunces 600 · 1.5rem</div>
+        <div class="specimen-display">People · Delivery · Baseline Planning</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Section — Source Sans 3 600 · 1.05rem</div>
+        <div class="specimen-section">Employee register · Staffing horizon</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Body — Source Sans 3 400 · 0.9375rem</div>
+        <div class="specimen-body">
+          Planners think in months, rates, and capacity. The UI should stay quiet
+          so the numbers can speak.
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Meta — Source Sans 3 500 · 0.8125rem · slate</div>
+        <div class="specimen-meta">
+          Currency EUR · Showing as A. Planner · Leaf allocation
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Data — IBM Plex Mono · tabular-nums</div>
+        <div class="specimen-data">
+          0.50 PM · 88.00 h · 50.0% · €7,880.00 · €89.5455/h
+        </div>
+      </div>
+
+      <h2>3. Spacing &amp; radius</h2>
+      <p class="meta">Base 4px · common 8 / 12 / 16 / 24 · control height 36px · radius 6px</p>
+      <div class="space-row" style="margin-top: 12px">
+        <div class="space-item">
+          <div class="space-box" style="width: 8px; height: 8px"></div>
+          <div class="meta">8</div>
+        </div>
+        <div class="space-item">
+          <div class="space-box" style="width: 12px; height: 12px"></div>
+          <div class="meta">12</div>
+        </div>
+        <div class="space-item">
+          <div class="space-box" style="width: 16px; height: 16px"></div>
+          <div class="meta">16</div>
+        </div>
+        <div class="space-item">
+          <div class="space-box" style="width: 24px; height: 24px"></div>
+          <div class="meta">24</div>
+        </div>
+        <div class="space-item">
+          <div
+            class="space-box"
+            style="
+              width: 72px;
+              height: 36px;
+              background: var(--bps-surface);
+              border: 1px solid var(--bps-line);
+              opacity: 1;
+              border-radius: 6px;
+            "
+          ></div>
+          <div class="meta">36× radius 6</div>
+        </div>
+      </div>
+
+      <h2>4. Buttons &amp; fields</h2>
+      <div class="row">
+        <button type="button" class="btn btn-primary">Save rate</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-ghost">Dismiss</button>
+        <button type="button" class="btn btn-danger">Retry people</button>
+        <button type="button" class="btn btn-primary" disabled>Saving…</button>
+      </div>
+      <div class="row" style="margin-top: 16px">
+        <div class="field">
+          <label for="name">Employee name</label>
+          <input id="name" type="text" value="A. Okafor" />
+          <span class="hint">Shown in capacity and staffing</span>
+        </div>
+        <div class="field">
+          <label for="hours">Weekly hours</label>
+          <select id="hours">
+            <option>40</option>
+            <option>32</option>
+            <option>20</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bad">Hourly cost</label>
+          <input id="bad" type="text" value="abc" aria-invalid="true" />
+          <span class="hint hint-error">Enter a number greater than zero</span>
+        </div>
+      </div>
+      <p class="meta">Tab to a control to see the signal focus ring.</p>
+
+      <h2>5. Panel, list, badges</h2>
+      <div class="two-col">
+        <section class="panel" aria-label="Employee register">
+          <h3 class="panel-title" style="text-transform: none; letter-spacing: 0">
+            Employees
+          </h3>
+          <ul class="list">
+            <li>
+              <button type="button" class="list-row" aria-current="true">
+                <span class="list-name">A. Okafor</span>
+                <span class="list-meta">Engineer · 40 h/week</span>
+                <span class="badge badge-over">Oversubscribed</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="list-row">
+                <span class="list-name">Employee 014</span>
+                <span class="list-meta">Designer · 32 h/week</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="list-row">
+                <span class="list-name">Employee 022</span>
+                <span class="list-meta">QA · 20 h/week</span>
+                <span class="badge badge-warn">No rate</span>
+              </button>
+            </li>
+          </ul>
+        </section>
+        <div>
+          <div class="row" style="margin-bottom: 16px">
+            <span class="badge badge-over">Oversubscribed</span>
+            <span class="badge badge-warn">No rate</span>
+            <span class="badge badge-leaf">Leaf</span>
+            <span class="badge badge-parent">Parent · derived</span>
+          </div>
+          <div class="alert alert-error" role="alert">
+            <strong>people failed to load</strong>
+            Remote failure deliberately triggered for demonstration. Shell remains
+            available.
+            <div style="margin-top: 10px">
+              <button type="button" class="btn btn-danger">Retry people</button>
+            </div>
+          </div>
+          <div class="alert alert-warn" role="status">
+            <strong>No applicable rate</strong>
+            Cost is €0.00 until a rate with a validFrom on or before this month exists.
+          </div>
+          <div class="alert alert-status" role="status">
+            Allocation saved. <button type="button" class="demo-link">Dismiss</button>
+          </div>
+        </div>
+      </div>
+
+      <h2>6. Signature — horizon &amp; capacity</h2>
+      <div class="two-col">
+        <section class="panel">
+          <h3 class="panel-title" style="text-transform: none; letter-spacing: 0">
+            Capacity · A. Okafor
+          </h3>
+          <div class="capacity">
+            <div class="cap-row">
+              <span class="cap-month">2026-01</span>
+              <div class="cap-track"><div class="cap-fill" style="width: 40%"></div></div>
+              <span class="cap-pct">40.0%</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-month">2026-02</span>
+              <div class="cap-track"><div class="cap-fill" style="width: 85%"></div></div>
+              <span class="cap-pct">85.0%</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-month">2026-03</span>
+              <div class="cap-track">
+                <div class="cap-fill over" style="width: 100%"></div>
+              </div>
+              <span class="cap-pct" style="color: var(--bps-danger)">110.0%</span>
+            </div>
+          </div>
+        </section>
+        <div>
+          <p class="meta" style="margin: 0 0 8px">Staffing grid chrome (sample)</p>
+          <div class="horizon" aria-label="Sample staffing grid">
+            <div class="head emp">Employee</div>
+            <div class="head num">Jan</div>
+            <div class="head num">Feb</div>
+            <div class="head num">Mar</div>
+            <div class="head num">Apr</div>
+            <div class="head num">May</div>
+            <div class="head num">Jun</div>
+
+            <div class="emp">A. Okafor</div>
+            <div class="num">0.40</div>
+            <div class="num">0.50</div>
+            <div class="num over-cell">0.60</div>
+            <div class="num">0.30</div>
+            <div class="num">0.20</div>
+            <div class="num">0.10</div>
+
+            <div class="emp">Employee 014</div>
+            <div class="num parent-cell">0.80</div>
+            <div class="num parent-cell">0.80</div>
+            <div class="num parent-cell">0.80</div>
+            <div class="num parent-cell">—</div>
+            <div class="num parent-cell">—</div>
+            <div class="num parent-cell">—</div>
+          </div>
+          <p class="meta" style="margin-top: 8px">
+            Green cells = editable leaf · muted = derived parent · tint = over-capacity
+          </p>
+        </div>
+      </div>
+
+      <h2>7. Shell chrome sketch</h2>
+      <div class="chrome-preview">
+        <header>
+          <div>
+            <div class="specimen-display" style="font-size: 1.35rem">
+              Baseline Planning Suite
+            </div>
+            <div class="specimen-meta">Showing as A. Planner · EUR</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px">
+            <nav class="nav-tabs" aria-label="Primary">
+              <button type="button" class="nav-tab" aria-current="page">People</button>
+              <button type="button" class="nav-tab">Delivery</button>
+            </nav>
+            <button type="button" class="demo-link">Resilience demo…</button>
+          </div>
+        </header>
+        <div class="panel">
+          <p class="meta" style="margin: 0">
+            Remotes mount here. Demo break controls stay out of the primary tab
+            row.
+          </p>
+        </div>
+      </div>
+
+      <p class="meta" style="margin-top: 48px">
+        Source: <code>ui-ux-improvement-plan.md</code> · Preview only — not wired
+        into the apps yet.
+      </p>
+    </div>
+  </body>
+</html>

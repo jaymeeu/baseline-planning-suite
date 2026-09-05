@@ -29,6 +29,7 @@ export default defineConfig({
       '@bps/domain': path.join(rootDir, 'packages/domain/src/index.ts'),
       '@bps/data': path.join(rootDir, 'packages/data/src/index.ts'),
       '@bps/contracts': path.join(rootDir, 'packages/contracts/src/index.ts'),
+      '@bps/ui': path.join(rootDir, 'packages/ui'),
     },
   },
   server: {

@@ -10,6 +10,7 @@ COPY apps/delivery/package.json apps/delivery/
 COPY packages/domain/package.json packages/domain/
 COPY packages/contracts/package.json packages/contracts/
 COPY packages/data/package.json packages/data/
+COPY packages/ui/package.json packages/ui/
 COPY tsconfig.base.json ./
 
 RUN npm install
