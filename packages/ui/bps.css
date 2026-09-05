@@ -418,6 +418,66 @@
     color: var(--color-bps-slate);
   }
 
+  /* Selectable list row with trailing action (e.g. project Edit) */
+  .bps-list-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-bps);
+    margin-bottom: 4px;
+    transition: background-color 120ms ease, border-color 120ms ease;
+  }
+
+  .bps-list-item:hover,
+  .bps-list-item:focus-within {
+    background: var(--color-bps-paper);
+  }
+
+  .bps-list-item[aria-current="true"] {
+    background: #e8f3ef;
+    border-color: var(--color-bps-signal);
+  }
+
+  .bps-list-item__main {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    border: none;
+    border-radius: var(--radius-bps);
+    background: transparent;
+    padding: 10px 8px 10px 12px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--color-bps-ink);
+  }
+
+  .bps-list-item__action {
+    flex-shrink: 0;
+    margin-right: 6px;
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+
+  .bps-list-item:hover .bps-list-item__action,
+  .bps-list-item:focus-within .bps-list-item__action,
+  .bps-list-item[aria-current="true"] .bps-list-item__action {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .bps-list-item__action {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bps-list-item,
+    .bps-list-item__action {
+      transition: none;
+    }
+  }
+
   .bps-table {
     width: 100%;
     border-collapse: collapse;
@@ -492,34 +552,209 @@
     font-size: 0.75rem;
   }
 
-  .bps-wbs-list {
-    list-style: none;
-    margin: 0 0 1rem;
-    padding: 0;
+  .bps-wbs-table-wrap {
+    border: 1px solid var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    overflow: auto;
+    background: var(--color-bps-surface);
   }
 
-  .bps-wbs-row {
+  .bps-wbs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .bps-wbs-table thead th {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-bps-slate);
+    background: var(--color-bps-paper);
     border-bottom: 1px solid var(--color-bps-line);
-    padding: 10px 0;
+    padding: 10px 12px;
+    white-space: nowrap;
   }
 
-  .bps-wbs-row__head {
+  .bps-wbs-table__row {
+    border-bottom: 1px solid var(--color-bps-line);
+  }
+
+  .bps-wbs-table__row:last-child {
+    border-bottom: none;
+  }
+
+  .bps-wbs-table__row:hover {
+    background: color-mix(in srgb, var(--color-bps-paper) 70%, transparent);
+  }
+
+  .bps-wbs-table td {
+    padding: 8px 12px;
+    vertical-align: middle;
+  }
+
+  .bps-wbs-table__name-inner {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    min-height: 32px;
   }
 
-  .bps-wbs-row__name {
+  .bps-wbs-table__chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--color-bps-ink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .bps-wbs-table__chevron:hover {
+    background: var(--color-bps-paper);
+    color: var(--color-bps-signal);
+  }
+
+  .bps-wbs-table__chevron-spacer {
+    display: inline-block;
+    width: 32px;
+    flex-shrink: 0;
+  }
+
+  .bps-wbs-table__name {
     font-weight: 600;
     color: var(--color-bps-ink);
   }
 
-  .bps-wbs-row__actions {
+  .bps-wbs-table__count {
+    margin-left: 2px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--color-bps-paper);
+    border: 1px solid var(--color-bps-line);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bps-wbs-table__kind {
+    width: 7.5rem;
+    white-space: nowrap;
+  }
+
+  .bps-wbs-table__actions-cell {
+    min-width: 13.5rem;
+    width: 13.5rem;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  .bps-wbs-table__actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+
+  .bps-wbs-table__actions .bps-btn {
+    flex-shrink: 0;
+  }
+
+  .bps-wbs-table__row:hover .bps-wbs-table__actions,
+  .bps-wbs-table__row:focus-within .bps-wbs-table__actions {
+    opacity: 1;
+  }
+
+  @media (max-width: 767px) {
+    .bps-wbs-table__actions-cell {
+      min-width: 0;
+      width: auto;
+    }
+
+    .bps-wbs-table__actions {
+      flex-wrap: wrap;
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    .bps-wbs-table__actions {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bps-wbs-table__actions {
+      transition: none;
+    }
+  }
+
+  .bps-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: min(28rem, calc(100vw - 2rem));
+    width: 100%;
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+  }
+
+  .bps-modal[open] {
+    display: block;
+  }
+
+  .bps-modal::backdrop {
+    background: rgba(26, 35, 50, 0.45);
+  }
+
+  .bps-modal__panel {
+    background: var(--color-bps-surface);
+    border: 1px solid var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    box-shadow: var(--shadow-bps);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .bps-modal--danger .bps-modal__panel {
+    border-color: #f0c4c4;
+  }
+
+  .bps-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-bps-line);
+  }
+
+  .bps-modal__body {
+    padding: 16px;
+  }
+
+  .bps-modal__footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 16px 16px;
+    border-top: 1px solid var(--color-bps-line);
+    background: var(--color-bps-paper);
   }
 
   .bps-segment {
@@ -818,7 +1053,7 @@
   }
 
   .bps-app-main--delivery {
-    max-width: 1200px;
+    /* max-width: 1200px; */
   }
 
   .bps-layout-split {

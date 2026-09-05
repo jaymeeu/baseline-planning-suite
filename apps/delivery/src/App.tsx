@@ -107,6 +107,7 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
             <>
               <WbsTree
                 projectName={data.selectedProject.name}
+                forest={data.wbsForest}
                 flat={data.wbsFlat}
                 items={data.projectItems}
                 onAddRoot={data.addRootItem}

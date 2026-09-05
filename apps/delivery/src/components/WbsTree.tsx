@@ -1,8 +1,23 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MAX_WBS_DEPTH, type BreakdownItem, type WbsTreeNode } from '@bps/domain';
+import { WbsTable } from './WbsTable';
+import {
+  AddChildModal,
+  AddRootModal,
+  DeleteModal,
+  MoveModal,
+  RenameModal,
+} from './WbsModals';
+import {
+  collectExpandableIds,
+  collectRootExpandableIds,
+  computeMoveTargets,
+  itemName,
+} from './wbsHelpers';
 
 interface WbsTreeProps {
   projectName: string;
+  forest: readonly WbsTreeNode[];
   flat: readonly WbsTreeNode[];
   items: readonly BreakdownItem[];
   onAddRoot: (name: string) => Promise<void>;
@@ -12,8 +27,17 @@ interface WbsTreeProps {
   onDelete: (itemId: string) => Promise<void>;
 }
 
+type ModalKind =
+  | { type: 'none' }
+  | { type: 'addRoot' }
+  | { type: 'addChild' }
+  | { type: 'rename'; id: string; name: string }
+  | { type: 'move'; id: string; parentId: string }
+  | { type: 'delete'; id: string };
+
 export function WbsTree({
   projectName,
+  forest,
   flat,
   items,
   onAddRoot,
@@ -22,318 +46,209 @@ export function WbsTree({
   onMove,
   onDelete,
 }: WbsTreeProps) {
-  const [rootName, setRootName] = useState('');
-  const [childName, setChildName] = useState('');
-  const [childParentId, setChildParentId] = useState<string>('');
-  const [renameId, setRenameId] = useState<string | null>(null);
-  const [renameValue, setRenameValue] = useState('');
-  const [moveId, setMoveId] = useState<string | null>(null);
-  const [moveParentId, setMoveParentId] = useState<string>('');
-  const [error, setError] = useState<string | null>(null);
+  const [modal, setModal] = useState<ModalKind>({ type: 'none' });
+  const [modalError, setModalError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [expandedIds, setExpandedIds] = useState<ReadonlySet<string>>(
+    () => new Set(collectRootExpandableIds(forest)),
+  );
 
-  const eligibleParentsForChild = useMemo(
+  const projectId = forest[0]?.item.projectId ?? `empty:${projectName}`;
+
+  useEffect(() => {
+    setExpandedIds(new Set(collectRootExpandableIds(forest)));
+    setModal({ type: 'none' });
+    setModalError(null);
+    // Reset expansion only when switching projects, not on every WBS edit.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: forest read on project change
+  }, [projectId]);
+
+  const expandableIds = useMemo(
+    () => collectExpandableIds(forest),
+    [forest],
+  );
+
+  const eligibleParents = useMemo(
     () => flat.filter((node) => node.depth < MAX_WBS_DEPTH),
     [flat],
   );
 
   const moveTargets = useMemo(() => {
-    if (!moveId) return [];
-    const forbidden = new Set<string>([moveId]);
-    const byParent = new Map<string | null, string[]>();
-    for (const item of items) {
-      const list = byParent.get(item.parentId) ?? [];
-      list.push(item.id);
-      byParent.set(item.parentId, list);
-    }
-    function addDescendants(id: string): void {
-      for (const childId of byParent.get(id) ?? []) {
-        forbidden.add(childId);
-        addDescendants(childId);
-      }
-    }
-    addDescendants(moveId);
+    if (modal.type !== 'move') return [];
+    return computeMoveTargets(flat, items, modal.id);
+  }, [flat, items, modal]);
 
-    return flat.filter((node) => !forbidden.has(node.item.id));
-  }, [flat, items, moveId]);
+  function closeModal(): void {
+    setModal({ type: 'none' });
+    setModalError(null);
+  }
+
+  function openModal(next: ModalKind): void {
+    setModalError(null);
+    setModal(next);
+  }
+
+  function toggleExpanded(id: string): void {
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  function ensureExpanded(id: string): void {
+    setExpandedIds((prev) => {
+      if (prev.has(id)) return prev;
+      const next = new Set(prev);
+      next.add(id);
+      return next;
+    });
+  }
+
+  async function runBusy(action: () => Promise<void>): Promise<void> {
+    setBusy(true);
+    setModalError(null);
+    try {
+      await action();
+      closeModal();
+    } catch (err: unknown) {
+      setModalError(err instanceof Error ? err.message : 'Action failed');
+    } finally {
+      setBusy(false);
+    }
+  }
 
   return (
     <section className="bps-panel" aria-label="Work breakdown structure">
-      <h2 className="bps-section-title mb-1">WBS — {projectName}</h2>
-      <p className="bps-meta mb-3">
-        Max depth {MAX_WBS_DEPTH}. Parents are derived (read-only for
-        allocations). Adding a child to an allocated leaf moves allocations onto
-        the new child.
-      </p>
-
-      <ul className="bps-wbs-list" aria-label="Breakdown items">
-        {flat.map((node) => (
-          <li
-            key={node.item.id}
-            className="bps-wbs-row"
-            style={{ paddingLeft: `${(node.depth - 1) * 1.25}rem` }}
-          >
-            <div className="bps-wbs-row__head">
-              <span className="bps-wbs-row__name">{node.item.name}</span>
-              <span className="bps-meta">depth {node.depth}</span>
-              {node.isLeaf ? (
-                <span className="bps-badge bps-badge--leaf">Leaf</span>
-              ) : (
-                <span className="bps-badge bps-badge--parent">
-                  Derived parent
-                </span>
-              )}
-            </div>
-            <div className="bps-wbs-row__actions">
-              <button
-                type="button"
-                className="bps-btn bps-btn--ghost bps-btn--sm"
-                aria-label={`Rename ${node.item.name}`}
-                onClick={() => {
-                  setRenameId(node.item.id);
-                  setRenameValue(node.item.name);
-                  setError(null);
-                }}
-              >
-                Rename
-              </button>
-              <button
-                type="button"
-                className="bps-btn bps-btn--ghost bps-btn--sm"
-                aria-label={`Move ${node.item.name}`}
-                onClick={() => {
-                  setMoveId(node.item.id);
-                  setMoveParentId(node.item.parentId ?? '');
-                  setError(null);
-                }}
-              >
-                Move
-              </button>
-              <button
-                type="button"
-                className="bps-btn bps-btn--danger bps-btn--sm"
-                disabled={busy}
-                aria-label={`Delete ${node.item.name}`}
-                onClick={() => {
-                  setBusy(true);
-                  setError(null);
-                  void onDelete(node.item.id)
-                    .catch((err: unknown) =>
-                      setError(
-                        err instanceof Error ? err.message : 'Delete failed',
-                      ),
-                    )
-                    .finally(() => setBusy(false));
-                }}
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      {flat.length === 0 ? (
-        <p className="bps-meta mb-3">
-          No breakdown items yet. Add a root item to start the tree.
-        </p>
-      ) : null}
-
-      {error ? (
-        <div className="bps-alert bps-alert--error mb-3" role="alert">
-          {error}
+      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 className="bps-section-title mb-1">{projectName}</h2>
+          <p className="bps-meta m-0">
+            Max depth {MAX_WBS_DEPTH}. Parents are derived (read-only for
+            allocations). Expand a parent to see its children.
+          </p>
         </div>
-      ) : null}
-
-      <div className="mb-4 border-t border-bps-line pt-3">
-        <h3 className="bps-section-title mb-2 text-base">Add root item</h3>
-        <div className="flex flex-wrap items-end gap-2">
-          <div className="bps-field min-w-[180px] flex-1">
-            <label htmlFor="wbs-root-name">Root name</label>
-            <input
-              id="wbs-root-name"
-              className="bps-field__control"
-              placeholder="Root name"
-              value={rootName}
-              onChange={(event) => setRootName(event.target.value)}
-              aria-label="New root item name"
-            />
-          </div>
+        <div className="flex flex-wrap gap-2">
           <button
             type="button"
-            className="bps-btn bps-btn--secondary"
-            disabled={busy}
-            onClick={() => {
-              setBusy(true);
-              setError(null);
-              void onAddRoot(rootName)
-                .then(() => setRootName(''))
-                .catch((err: unknown) =>
-                  setError(err instanceof Error ? err.message : 'Add failed'),
-                )
-                .finally(() => setBusy(false));
-            }}
+            className="bps-btn bps-btn--primary bps-btn--sm"
+            onClick={() => openModal({ type: 'addRoot' })}
           >
-            Add root
+            Add root item
           </button>
-        </div>
-      </div>
-
-      <div className="mb-4 border-t border-bps-line pt-3">
-        <h3 className="bps-section-title mb-2 text-base">Add child</h3>
-        <div className="bps-field mb-2">
-          <label htmlFor="wbs-parent">Parent</label>
-          <select
-            id="wbs-parent"
-            className="bps-field__control"
-            value={childParentId}
-            onChange={(event) => setChildParentId(event.target.value)}
-          >
-            <option value="">Select parent…</option>
-            {eligibleParentsForChild.map((node) => (
-              <option key={node.item.id} value={node.item.id}>
-                {'—'.repeat(node.depth - 1)} {node.item.name} (depth{' '}
-                {node.depth})
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-wrap items-end gap-2">
-          <div className="bps-field min-w-[180px] flex-1">
-            <label htmlFor="wbs-child-name">Child name</label>
-            <input
-              id="wbs-child-name"
-              className="bps-field__control"
-              placeholder="Child name"
-              value={childName}
-              onChange={(event) => setChildName(event.target.value)}
-              aria-label="New child item name"
-            />
-          </div>
           <button
             type="button"
-            className="bps-btn bps-btn--secondary"
-            disabled={busy || !childParentId}
-            onClick={() => {
-              setBusy(true);
-              setError(null);
-              void onAddChild(childParentId, childName)
-                .then(() => {
-                  setChildName('');
-                })
-                .catch((err: unknown) =>
-                  setError(err instanceof Error ? err.message : 'Add failed'),
-                )
-                .finally(() => setBusy(false));
-            }}
+            className="bps-btn bps-btn--primary bps-btn--sm"
+            disabled={eligibleParents.length === 0}
+            onClick={() => openModal({ type: 'addChild' })}
           >
             Add child
           </button>
+          <button
+            type="button"
+            className="bps-btn bps-btn--ghost bps-btn--sm"
+            disabled={expandableIds.length === 0}
+            onClick={() => setExpandedIds(new Set(expandableIds))}
+          >
+            Expand all
+          </button>
+          <button
+            type="button"
+            className="bps-btn bps-btn--ghost bps-btn--sm"
+            disabled={expandedIds.size === 0}
+            onClick={() => setExpandedIds(new Set())}
+          >
+            Collapse all
+          </button>
         </div>
       </div>
 
-      {renameId ? (
-        <div className="mb-4 border-t border-bps-line pt-3">
-          <h3 className="bps-section-title mb-2 text-base">Rename item</h3>
-          <div className="flex flex-wrap items-end gap-2">
-            <div className="bps-field min-w-[180px] flex-1">
-              <label htmlFor="wbs-rename">Name</label>
-              <input
-                id="wbs-rename"
-                className="bps-field__control"
-                value={renameValue}
-                onChange={(event) => setRenameValue(event.target.value)}
-                aria-label="Rename value"
-              />
-            </div>
-            <button
-              type="button"
-              className="bps-btn bps-btn--primary"
-              disabled={busy}
-              onClick={() => {
-                setBusy(true);
-                setError(null);
-                void onRename(renameId, renameValue)
-                  .then(() => {
-                    setRenameId(null);
-                    setRenameValue('');
-                  })
-                  .catch((err: unknown) =>
-                    setError(
-                      err instanceof Error ? err.message : 'Rename failed',
-                    ),
-                  )
-                  .finally(() => setBusy(false));
-              }}
-            >
-              Save name
-            </button>
-            <button
-              type="button"
-              className="bps-btn bps-btn--ghost"
-              onClick={() => {
-                setRenameId(null);
-                setRenameValue('');
-              }}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      ) : null}
+      {flat.length === 0 ? (
+        <p className="bps-meta mb-3">
+          No breakdown items yet. Use <strong>Add root item</strong> to start
+          the tree.
+        </p>
+      ) : (
+        <WbsTable
+          forest={forest}
+          expandedIds={expandedIds}
+          busy={busy}
+          onToggleExpanded={toggleExpanded}
+          onRename={(id, name) => openModal({ type: 'rename', id, name })}
+          onMove={(id, parentId) => openModal({ type: 'move', id, parentId })}
+          onDelete={(id) => openModal({ type: 'delete', id })}
+        />
+      )}
 
-      {moveId ? (
-        <div className="mb-2 border-t border-bps-line pt-3">
-          <h3 className="bps-section-title mb-2 text-base">Move item</h3>
-          <div className="bps-field mb-2">
-            <label htmlFor="wbs-move-parent">New parent (empty = root)</label>
-            <select
-              id="wbs-move-parent"
-              className="bps-field__control"
-              value={moveParentId}
-              onChange={(event) => setMoveParentId(event.target.value)}
-            >
-              <option value="">(project root)</option>
-              {moveTargets.map((node) => (
-                <option key={node.item.id} value={node.item.id}>
-                  {'—'.repeat(node.depth - 1)} {node.item.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              className="bps-btn bps-btn--primary"
-              disabled={busy}
-              onClick={() => {
-                setBusy(true);
-                setError(null);
-                void onMove(moveId, moveParentId === '' ? null : moveParentId)
-                  .then(() => {
-                    setMoveId(null);
-                    setMoveParentId('');
-                  })
-                  .catch((err: unknown) =>
-                    setError(err instanceof Error ? err.message : 'Move failed'),
-                  )
-                  .finally(() => setBusy(false));
-              }}
-            >
-              Apply move
-            </button>
-            <button
-              type="button"
-              className="bps-btn bps-btn--ghost"
-              onClick={() => {
-                setMoveId(null);
-                setMoveParentId('');
-              }}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      ) : null}
+      <AddRootModal
+        open={modal.type === 'addRoot'}
+        busy={busy}
+        error={modalError}
+        onClose={closeModal}
+        onSubmit={(name) => runBusy(() => onAddRoot(name))}
+      />
+
+      <AddChildModal
+        open={modal.type === 'addChild'}
+        busy={busy}
+        error={modalError}
+        onClose={closeModal}
+        parents={eligibleParents}
+        onSubmit={(parentId, name) =>
+          runBusy(async () => {
+            await onAddChild(parentId, name);
+            ensureExpanded(parentId);
+          })
+        }
+      />
+
+      <RenameModal
+        open={modal.type === 'rename'}
+        busy={busy}
+        error={modalError}
+        onClose={closeModal}
+        itemLabel={
+          modal.type === 'rename' ? itemName(items, modal.id) : ''
+        }
+        initialName={modal.type === 'rename' ? modal.name : ''}
+        onSubmit={(name) => {
+          if (modal.type !== 'rename') return Promise.resolve();
+          return runBusy(() => onRename(modal.id, name));
+        }}
+      />
+
+      <MoveModal
+        open={modal.type === 'move'}
+        busy={busy}
+        error={modalError}
+        onClose={closeModal}
+        itemLabel={modal.type === 'move' ? itemName(items, modal.id) : ''}
+        initialParentId={modal.type === 'move' ? modal.parentId : ''}
+        targets={moveTargets}
+        onSubmit={(newParentId) => {
+          if (modal.type !== 'move') return Promise.resolve();
+          const id = modal.id;
+          return runBusy(async () => {
+            await onMove(id, newParentId);
+            if (newParentId) ensureExpanded(newParentId);
+          });
+        }}
+      />
+
+      <DeleteModal
+        open={modal.type === 'delete'}
+        busy={busy}
+        error={modalError}
+        onClose={closeModal}
+        itemLabel={
+          modal.type === 'delete' ? itemName(items, modal.id) : ''
+        }
+        onConfirm={() => {
+          if (modal.type !== 'delete') return Promise.resolve();
+          return runBusy(() => onDelete(modal.id));
+        }}
+      />
     </section>
   );
 }

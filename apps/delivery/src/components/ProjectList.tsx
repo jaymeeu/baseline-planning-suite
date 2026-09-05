@@ -1,5 +1,6 @@
-import { startTransition, useState } from 'react';
+import { startTransition, useEffect, useState } from 'react';
 import type { Project } from '@bps/domain';
+import { BpsModal, ModalError, submitModalOnEnter } from './BpsModal';
 
 interface ProjectListProps {
   projects: readonly Project[];
@@ -13,52 +14,95 @@ interface ProjectListProps {
   }) => Promise<void>;
 }
 
+const DEFAULT_START = '2026-01-01';
+const DEFAULT_END = '2026-12-31';
+
+type ProjectModal =
+  | { type: 'closed' }
+  | { type: 'create' }
+  | { type: 'edit'; project: Project };
+
 export function ProjectList({
   projects,
   selectedId,
   onSelect,
   onSave,
 }: ProjectListProps) {
+  const [modal, setModal] = useState<ProjectModal>({ type: 'closed' });
   const [name, setName] = useState('');
-  const [startDate, setStartDate] = useState('2026-01-01');
-  const [endDate, setEndDate] = useState('2026-12-31');
-  const [editingId, setEditingId] = useState<string | null>(null);
+  const [startDate, setStartDate] = useState(DEFAULT_START);
+  const [endDate, setEndDate] = useState(DEFAULT_END);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  function startEdit(project: Project) {
-    setEditingId(project.id);
-    setName(project.name);
-    setStartDate(project.startDate);
-    setEndDate(project.endDate);
+  const open = modal.type !== 'closed';
+  const editing = modal.type === 'edit';
+
+  useEffect(() => {
+    if (modal.type === 'closed') return;
+    if (modal.type === 'create') {
+      setName('');
+      setStartDate(DEFAULT_START);
+      setEndDate(DEFAULT_END);
+    } else {
+      setName(modal.project.name);
+      setStartDate(modal.project.startDate);
+      setEndDate(modal.project.endDate);
+    }
+    setError(null);
+  }, [modal]);
+
+  function closeModal(): void {
+    setModal({ type: 'closed' });
     setError(null);
   }
 
-  function resetForm() {
-    setEditingId(null);
-    setName('');
-    setStartDate('2026-01-01');
-    setEndDate('2026-12-31');
+  function submit(): void {
+    setBusy(true);
     setError(null);
+    void onSave({
+      id: editing ? modal.project.id : undefined,
+      name,
+      startDate,
+      endDate,
+    })
+      .then(() => closeModal())
+      .catch((err: unknown) =>
+        setError(err instanceof Error ? err.message : 'Save failed'),
+      )
+      .finally(() => setBusy(false));
   }
 
   return (
     <section className="bps-panel" aria-label="Projects">
-      <h2 className="bps-section-title mb-3" id="delivery-projects-heading">
-        Projects
-      </h2>
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="bps-section-title" id="delivery-projects-heading">
+          Projects
+        </h2>
+        <button
+          type="button"
+          className="bps-btn bps-btn--primary bps-btn--sm"
+          onClick={() => setModal({ type: 'create' })}
+        >
+          Create project
+        </button>
+      </div>
+
       <ul
-        className="bps-list m-0 mb-3 max-h-[40vh] overflow-auto"
+        className="bps-list m-0 max-h-[70vh] overflow-auto"
         aria-labelledby="delivery-projects-heading"
       >
         {projects.map((project) => {
           const selected = selectedId === project.id;
           return (
-            <li key={project.id} className="mb-1">
+            <li
+              key={project.id}
+              className="bps-list-item"
+              aria-current={selected ? 'true' : undefined}
+            >
               <button
                 type="button"
-                className="bps-list-row"
-                aria-current={selected ? 'true' : undefined}
+                className="bps-list-item__main"
                 aria-label={`${project.name}, ${project.startDate} to ${project.endDate}`}
                 onClick={() => {
                   startTransition(() => {
@@ -73,96 +117,85 @@ export function ProjectList({
                   {project.startDate} → {project.endDate}
                 </span>
               </button>
-              <div className="px-2 pb-1">
-                <button
-                  type="button"
-                  className="bps-btn bps-btn--ghost bps-btn--sm px-0"
-                  aria-label={`Rename or edit dates for ${project.name}`}
-                  onClick={() => startEdit(project)}
-                >
-                  Rename / edit dates
-                </button>
-              </div>
+              <button
+                type="button"
+                className="bps-btn bps-btn--ghost bps-btn--sm bps-list-item__action"
+                aria-label={`Edit ${project.name}`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setModal({ type: 'edit', project });
+                }}
+              >
+                Edit
+              </button>
             </li>
           );
         })}
       </ul>
+
       {projects.length === 0 ? (
-        <p className="bps-meta mb-3">
-          No projects yet. Create one below to open WBS and staffing.
+        <p className="bps-meta mb-0 mt-3">
+          No projects yet. Use <strong>Create project</strong> to add one.
         </p>
       ) : null}
 
-      <h3 className="bps-section-title mb-3 text-base">
-        {editingId ? 'Edit project' : 'Create project'}
-      </h3>
-      <div className="bps-field mb-3">
-        <label htmlFor="proj-name">Name</label>
-        <input
-          id="proj-name"
-          className="bps-field__control"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </div>
-      <div className="bps-field mb-3">
-        <label htmlFor="proj-start">Start date</label>
-        <input
-          id="proj-start"
-          className="bps-field__control"
-          type="date"
-          value={startDate}
-          onChange={(event) => setStartDate(event.target.value)}
-        />
-      </div>
-      <div className="bps-field mb-3">
-        <label htmlFor="proj-end">End date</label>
-        <input
-          id="proj-end"
-          className="bps-field__control"
-          type="date"
-          value={endDate}
-          onChange={(event) => setEndDate(event.target.value)}
-        />
-      </div>
-      {error ? (
-        <p className="bps-field__hint bps-field__hint--error mb-3" role="alert">
-          {error}
-        </p>
-      ) : null}
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          className="bps-btn bps-btn--primary"
-          disabled={busy}
-          onClick={() => {
-            setBusy(true);
-            setError(null);
-            void onSave({
-              id: editingId ?? undefined,
-              name,
-              startDate,
-              endDate,
-            })
-              .then(() => resetForm())
-              .catch((err: unknown) =>
-                setError(err instanceof Error ? err.message : 'Save failed'),
-              )
-              .finally(() => setBusy(false));
-          }}
-        >
-          {editingId ? 'Update project' : 'Create project'}
-        </button>
-        {editingId ? (
-          <button
-            type="button"
-            className="bps-btn bps-btn--secondary"
-            onClick={resetForm}
-          >
-            Cancel
-          </button>
-        ) : null}
-      </div>
+      <BpsModal
+        open={open}
+        title={editing ? `Edit — ${modal.project.name}` : 'Create project'}
+        onClose={closeModal}
+        footer={
+          <>
+            <button
+              type="button"
+              className="bps-btn bps-btn--ghost"
+              onClick={closeModal}
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              className="bps-btn bps-btn--primary"
+              disabled={busy || name.trim() === ''}
+              onClick={submit}
+            >
+              {editing ? 'Update project' : 'Create project'}
+            </button>
+          </>
+        }
+      >
+        <div className="bps-field mb-3">
+          <label htmlFor="proj-name">Name</label>
+          <input
+            id="proj-name"
+            className="bps-field__control"
+            value={name}
+            autoFocus
+            onChange={(event) => setName(event.target.value)}
+            onKeyDown={submitModalOnEnter}
+          />
+        </div>
+        <div className="bps-field mb-3">
+          <label htmlFor="proj-start">Start date</label>
+          <input
+            id="proj-start"
+            className="bps-field__control"
+            type="date"
+            value={startDate}
+            onChange={(event) => setStartDate(event.target.value)}
+          />
+        </div>
+        <div className="bps-field">
+          <label htmlFor="proj-end">End date</label>
+          <input
+            id="proj-end"
+            className="bps-field__control"
+            type="date"
+            value={endDate}
+            onChange={(event) => setEndDate(event.target.value)}
+          />
+        </div>
+        <ModalError message={error} />
+      </BpsModal>
     </section>
   );
 }

@@ -120,6 +120,14 @@ export function useDeliveryData() {
     });
   }, [boot, reloadRates]);
 
+  /** Default to the first project on load (and if selection is cleared). */
+  useEffect(() => {
+    if (selectedProjectId !== null) return;
+    const first = projects[0];
+    if (!first) return;
+    setSelectedProjectId(first.id);
+  }, [projects, selectedProjectId]);
+
   const selectedProject =
     projects.find((p) => p.id === selectedProjectId) ?? null;
 
