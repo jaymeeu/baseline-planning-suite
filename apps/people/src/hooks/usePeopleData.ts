@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { publishBpsMessage } from '@bps/contracts';
 import {
   assertWeeklyHours,
   sortRatesByValidFrom,
@@ -120,9 +121,16 @@ export function usePeopleData() {
         validFrom: input.validFrom,
         hourlyCost: input.hourlyCost,
       };
-      // People is the sole owner of rates (bps-people). Delivery reads via contract later.
+      // People is the sole owner of rates (bps-people). Notify Delivery via @bps/contracts.
       await boot.people.rates.upsert(rate);
       await reload(boot);
+      publishBpsMessage({
+        type: 'rates/changed',
+        employeeId: rate.employeeId,
+        rateId: rate.id,
+        op: 'upsert',
+        at: new Date().toISOString(),
+      });
     },
     [boot, reload, selectedId],
   );
@@ -130,10 +138,20 @@ export function usePeopleData() {
   const deleteRate = useCallback(
     async (rateId: string) => {
       if (!boot) return;
+      const existing = rates.find((rate) => rate.id === rateId);
       await boot.people.rates.remove(rateId);
       await reload(boot);
+      if (existing) {
+        publishBpsMessage({
+          type: 'rates/changed',
+          employeeId: existing.employeeId,
+          rateId: existing.id,
+          op: 'delete',
+          at: new Date().toISOString(),
+        });
+      }
     },
-    [boot, reload],
+    [boot, rates, reload],
   );
 
   return {

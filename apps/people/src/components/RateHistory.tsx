@@ -13,7 +13,7 @@ interface RateHistoryProps {
 
 /**
  * Rate history for the selected employee.
- * People owns rates exclusively in bps-people; Delivery will consume via published contract (Phase 8).
+ * People owns rates in bps-people; rate changes publish on BroadcastChannel via @bps/contracts.
  */
 export function RateHistory({ rates, onSave, onDelete }: RateHistoryProps) {
   const [validFrom, setValidFrom] = useState('2025-01-01');

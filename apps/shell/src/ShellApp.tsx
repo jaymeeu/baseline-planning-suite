@@ -100,14 +100,24 @@ export function ShellApp() {
         <nav className="flex flex-wrap gap-3">
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            className={`cursor-pointer border px-3 py-1.5 ${
+              view === 'people'
+                ? 'border-neutral-900 bg-neutral-200 font-semibold'
+                : 'border-neutral-400 bg-white'
+            }`}
+            aria-current={view === 'people' ? 'page' : undefined}
             onClick={() => setView('people')}
           >
             People
           </button>
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            className={`cursor-pointer border px-3 py-1.5 ${
+              view === 'delivery'
+                ? 'border-neutral-900 bg-neutral-200 font-semibold'
+                : 'border-neutral-400 bg-white'
+            }`}
+            aria-current={view === 'delivery' ? 'page' : undefined}
             onClick={() => setView('delivery')}
           >
             Delivery
@@ -129,19 +139,30 @@ export function ShellApp() {
         </nav>
       </header>
 
-      {view === 'people' ? (
+      {/* Keep both remotes mounted so BroadcastChannel rate updates reach Delivery while People is visible. */}
+      <div
+        className={view === 'people' ? undefined : 'hidden'}
+        aria-hidden={view !== 'people'}
+        data-testid="shell-people-panel"
+      >
         <RemoteErrorBoundary remoteName="people" forceFail={forceFailPeople}>
           <Suspense fallback={<p>Loading People…</p>}>
             <PeopleApp />
           </Suspense>
         </RemoteErrorBoundary>
-      ) : (
+      </div>
+
+      <div
+        className={view === 'delivery' ? undefined : 'hidden'}
+        aria-hidden={view !== 'delivery'}
+        data-testid="shell-delivery-panel"
+      >
         <RemoteErrorBoundary remoteName="delivery" forceFail={forceFailDelivery}>
           <Suspense fallback={<p>Loading Delivery…</p>}>
             <DeliveryApp />
           </Suspense>
         </RemoteErrorBoundary>
-      )}
+      </div>
     </div>
   );
 }

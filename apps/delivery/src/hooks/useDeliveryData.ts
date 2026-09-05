@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { subscribeBpsMessages } from '@bps/contracts';
 import {
   assertAllocationTargetIsLeaf,
   assertCanMoveItem,
@@ -78,6 +79,12 @@ export function useDeliveryData() {
     setRates(nextRates);
   }, []);
 
+  /** Narrow refresh after People rate events — avoids full project/WBS reload. */
+  const reloadRates = useCallback(async (repos: DeliveryBootstrap) => {
+    const nextRates = await repos.people.rates.list();
+    setRates(nextRates);
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -102,6 +109,16 @@ export function useDeliveryData() {
       cancelled = true;
     };
   }, [reload]);
+
+  useEffect(() => {
+    if (!boot) return;
+    return subscribeBpsMessages((message) => {
+      if (message.type !== 'rates/changed') return;
+      void reloadRates(boot).catch((err: unknown) => {
+        console.error('[delivery] failed to refresh rates after People event', err);
+      });
+    });
+  }, [boot, reloadRates]);
 
   const selectedProject =
     projects.find((p) => p.id === selectedProjectId) ?? null;
