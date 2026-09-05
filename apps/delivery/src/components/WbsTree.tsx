@@ -58,43 +58,36 @@ export function WbsTree({
   }, [flat, items, moveId]);
 
   return (
-    <section
-      className="border border-neutral-300 bg-neutral-50 p-3"
-      aria-label="Work breakdown structure"
-    >
-      <h2 className="mb-1 text-lg font-semibold">WBS — {projectName}</h2>
-      <p className="mb-3 text-sm text-neutral-600">
+    <section className="bps-panel" aria-label="Work breakdown structure">
+      <h2 className="bps-section-title mb-1">WBS — {projectName}</h2>
+      <p className="bps-meta mb-3">
         Max depth {MAX_WBS_DEPTH}. Parents are derived (read-only for
         allocations). Adding a child to an allocated leaf moves allocations onto
         the new child.
       </p>
 
-      <ul className="m-0 mb-4 list-none p-0">
+      <ul className="bps-wbs-list">
         {flat.map((node) => (
           <li
             key={node.item.id}
-            className="border-b border-neutral-200 py-2"
+            className="bps-wbs-row"
             style={{ paddingLeft: `${(node.depth - 1) * 1.25}rem` }}
           >
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="font-medium">{node.item.name}</span>
-              <span className="text-xs text-neutral-500">
-                depth {node.depth}
-              </span>
+            <div className="bps-wbs-row__head">
+              <span className="bps-wbs-row__name">{node.item.name}</span>
+              <span className="bps-meta">depth {node.depth}</span>
               {node.isLeaf ? (
-                <span className="border border-neutral-400 px-1.5 py-0.5 text-xs">
-                  leaf
-                </span>
+                <span className="bps-badge bps-badge--leaf">Leaf</span>
               ) : (
-                <span className="border border-neutral-500 bg-neutral-200 px-1.5 py-0.5 text-xs">
-                  derived parent
+                <span className="bps-badge bps-badge--parent">
+                  Derived parent
                 </span>
               )}
             </div>
-            <div className="mt-1 flex flex-wrap gap-2">
+            <div className="bps-wbs-row__actions">
               <button
                 type="button"
-                className="cursor-pointer border border-neutral-400 bg-white px-2 py-1 text-xs"
+                className="bps-btn bps-btn--ghost bps-btn--sm"
                 onClick={() => {
                   setRenameId(node.item.id);
                   setRenameValue(node.item.name);
@@ -105,7 +98,7 @@ export function WbsTree({
               </button>
               <button
                 type="button"
-                className="cursor-pointer border border-neutral-400 bg-white px-2 py-1 text-xs"
+                className="bps-btn bps-btn--ghost bps-btn--sm"
                 onClick={() => {
                   setMoveId(node.item.id);
                   setMoveParentId(node.item.parentId ?? '');
@@ -116,7 +109,7 @@ export function WbsTree({
               </button>
               <button
                 type="button"
-                className="cursor-pointer border border-red-800 bg-white px-2 py-1 text-xs text-red-800"
+                className="bps-btn bps-btn--danger bps-btn--sm"
                 disabled={busy}
                 onClick={() => {
                   setBusy(true);
@@ -137,24 +130,34 @@ export function WbsTree({
         ))}
       </ul>
       {flat.length === 0 ? (
-        <p className="mb-3 text-neutral-600">No breakdown items yet.</p>
+        <p className="bps-meta mb-3">
+          No breakdown items yet. Add a root item to start the tree.
+        </p>
       ) : null}
 
-      {error ? <p className="my-2 text-red-800">{error}</p> : null}
+      {error ? (
+        <div className="bps-alert bps-alert--error mb-3" role="alert">
+          {error}
+        </div>
+      ) : null}
 
-      <div className="mb-4 border-t border-neutral-300 pt-3">
-        <h3 className="mb-2 text-base font-semibold">Add root item</h3>
-        <div className="flex flex-wrap gap-2">
-          <input
-            className="border border-neutral-300 px-2 py-1.5"
-            placeholder="Root name"
-            value={rootName}
-            onChange={(event) => setRootName(event.target.value)}
-            aria-label="New root item name"
-          />
+      <div className="mb-4 border-t border-bps-line pt-3">
+        <h3 className="bps-section-title mb-2 text-base">Add root item</h3>
+        <div className="flex flex-wrap items-end gap-2">
+          <div className="bps-field min-w-[180px] flex-1">
+            <label htmlFor="wbs-root-name">Root name</label>
+            <input
+              id="wbs-root-name"
+              className="bps-field__control"
+              placeholder="Root name"
+              value={rootName}
+              onChange={(event) => setRootName(event.target.value)}
+              aria-label="New root item name"
+            />
+          </div>
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5 disabled:opacity-50"
+            className="bps-btn bps-btn--secondary"
             disabled={busy}
             onClick={() => {
               setBusy(true);
@@ -172,13 +175,13 @@ export function WbsTree({
         </div>
       </div>
 
-      <div className="mb-4 border-t border-neutral-300 pt-3">
-        <h3 className="mb-2 text-base font-semibold">Add child</h3>
-        <div className="mb-2 flex flex-col gap-1">
+      <div className="mb-4 border-t border-bps-line pt-3">
+        <h3 className="bps-section-title mb-2 text-base">Add child</h3>
+        <div className="bps-field mb-2">
           <label htmlFor="wbs-parent">Parent</label>
           <select
             id="wbs-parent"
-            className="border border-neutral-300 px-2 py-1.5"
+            className="bps-field__control"
             value={childParentId}
             onChange={(event) => setChildParentId(event.target.value)}
           >
@@ -191,17 +194,21 @@ export function WbsTree({
             ))}
           </select>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <input
-            className="border border-neutral-300 px-2 py-1.5"
-            placeholder="Child name"
-            value={childName}
-            onChange={(event) => setChildName(event.target.value)}
-            aria-label="New child item name"
-          />
+        <div className="flex flex-wrap items-end gap-2">
+          <div className="bps-field min-w-[180px] flex-1">
+            <label htmlFor="wbs-child-name">Child name</label>
+            <input
+              id="wbs-child-name"
+              className="bps-field__control"
+              placeholder="Child name"
+              value={childName}
+              onChange={(event) => setChildName(event.target.value)}
+              aria-label="New child item name"
+            />
+          </div>
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5 disabled:opacity-50"
+            className="bps-btn bps-btn--secondary"
             disabled={busy || !childParentId}
             onClick={() => {
               setBusy(true);
@@ -222,18 +229,22 @@ export function WbsTree({
       </div>
 
       {renameId ? (
-        <div className="mb-4 border-t border-neutral-300 pt-3">
-          <h3 className="mb-2 text-base font-semibold">Rename item</h3>
-          <div className="flex flex-wrap gap-2">
-            <input
-              className="border border-neutral-300 px-2 py-1.5"
-              value={renameValue}
-              onChange={(event) => setRenameValue(event.target.value)}
-              aria-label="Rename value"
-            />
+        <div className="mb-4 border-t border-bps-line pt-3">
+          <h3 className="bps-section-title mb-2 text-base">Rename item</h3>
+          <div className="flex flex-wrap items-end gap-2">
+            <div className="bps-field min-w-[180px] flex-1">
+              <label htmlFor="wbs-rename">Name</label>
+              <input
+                id="wbs-rename"
+                className="bps-field__control"
+                value={renameValue}
+                onChange={(event) => setRenameValue(event.target.value)}
+                aria-label="Rename value"
+              />
+            </div>
             <button
               type="button"
-              className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5 disabled:opacity-50"
+              className="bps-btn bps-btn--primary"
               disabled={busy}
               onClick={() => {
                 setBusy(true);
@@ -255,7 +266,7 @@ export function WbsTree({
             </button>
             <button
               type="button"
-              className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+              className="bps-btn bps-btn--ghost"
               onClick={() => {
                 setRenameId(null);
                 setRenameValue('');
@@ -268,13 +279,13 @@ export function WbsTree({
       ) : null}
 
       {moveId ? (
-        <div className="mb-2 border-t border-neutral-300 pt-3">
-          <h3 className="mb-2 text-base font-semibold">Move item</h3>
-          <div className="mb-2 flex flex-col gap-1">
+        <div className="mb-2 border-t border-bps-line pt-3">
+          <h3 className="bps-section-title mb-2 text-base">Move item</h3>
+          <div className="bps-field mb-2">
             <label htmlFor="wbs-move-parent">New parent (empty = root)</label>
             <select
               id="wbs-move-parent"
-              className="border border-neutral-300 px-2 py-1.5"
+              className="bps-field__control"
               value={moveParentId}
               onChange={(event) => setMoveParentId(event.target.value)}
             >
@@ -289,7 +300,7 @@ export function WbsTree({
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
-              className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5 disabled:opacity-50"
+              className="bps-btn bps-btn--primary"
               disabled={busy}
               onClick={() => {
                 setBusy(true);
@@ -309,7 +320,7 @@ export function WbsTree({
             </button>
             <button
               type="button"
-              className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+              className="bps-btn bps-btn--ghost"
               onClick={() => {
                 setMoveId(null);
                 setMoveParentId('');

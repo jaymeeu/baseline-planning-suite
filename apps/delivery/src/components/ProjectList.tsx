@@ -43,32 +43,28 @@ export function ProjectList({
   }
 
   return (
-    <section
-      className="border border-neutral-300 bg-neutral-50 p-3"
-      aria-label="Projects"
-    >
-      <h2 className="mb-3 text-lg font-semibold">Projects</h2>
-      <ul className="m-0 mb-3 max-h-[40vh] list-none overflow-auto p-0">
+    <section className="bps-panel" aria-label="Projects">
+      <h2 className="bps-section-title mb-3">Projects</h2>
+      <ul className="bps-list m-0 mb-3 max-h-[40vh] overflow-auto">
         {projects.map((project) => {
           const selected = selectedId === project.id;
           return (
-            <li key={project.id}>
+            <li key={project.id} className="mb-1">
               <button
                 type="button"
-                className={`w-full cursor-pointer border border-transparent bg-transparent p-2 text-left hover:bg-neutral-200 ${
-                  selected ? 'border-neutral-800 bg-neutral-200' : ''
-                }`}
+                className="bps-list-row"
+                aria-current={selected ? 'true' : undefined}
                 onClick={() => onSelect(project.id)}
               >
-                <span className="block font-semibold">{project.name}</span>
-                <span className="text-sm text-neutral-600">
+                <span className="bps-list-row__name">{project.name}</span>
+                <span className="bps-list-row__meta">
                   {project.startDate} → {project.endDate}
                 </span>
               </button>
-              <div className="px-2 pb-2">
+              <div className="px-2 pb-1">
                 <button
                   type="button"
-                  className="cursor-pointer border border-neutral-400 bg-white px-2 py-1 text-xs"
+                  className="bps-btn bps-btn--ghost bps-btn--sm px-0"
                   onClick={() => startEdit(project)}
                 >
                   Rename / edit dates
@@ -79,46 +75,52 @@ export function ProjectList({
         })}
       </ul>
       {projects.length === 0 ? (
-        <p className="text-neutral-600">No projects yet.</p>
+        <p className="bps-meta mb-3">
+          No projects yet. Create one below to open WBS and staffing.
+        </p>
       ) : null}
 
-      <h3 className="mb-2 text-base font-semibold">
+      <h3 className="bps-section-title mb-3 text-base">
         {editingId ? 'Edit project' : 'Create project'}
       </h3>
-      <div className="mb-3 flex flex-col gap-1">
+      <div className="bps-field mb-3">
         <label htmlFor="proj-name">Name</label>
         <input
           id="proj-name"
-          className="border border-neutral-300 px-2 py-1.5"
+          className="bps-field__control"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
       </div>
-      <div className="mb-3 flex flex-col gap-1">
+      <div className="bps-field mb-3">
         <label htmlFor="proj-start">Start date</label>
         <input
           id="proj-start"
-          className="border border-neutral-300 px-2 py-1.5"
+          className="bps-field__control"
           type="date"
           value={startDate}
           onChange={(event) => setStartDate(event.target.value)}
         />
       </div>
-      <div className="mb-3 flex flex-col gap-1">
+      <div className="bps-field mb-3">
         <label htmlFor="proj-end">End date</label>
         <input
           id="proj-end"
-          className="border border-neutral-300 px-2 py-1.5"
+          className="bps-field__control"
           type="date"
           value={endDate}
           onChange={(event) => setEndDate(event.target.value)}
         />
       </div>
-      {error ? <p className="my-2 text-red-800">{error}</p> : null}
+      {error ? (
+        <p className="bps-field__hint bps-field__hint--error mb-3" role="alert">
+          {error}
+        </p>
+      ) : null}
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
-          className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5 disabled:opacity-50"
+          className="bps-btn bps-btn--primary"
           disabled={busy}
           onClick={() => {
             setBusy(true);
@@ -141,7 +143,7 @@ export function ProjectList({
         {editingId ? (
           <button
             type="button"
-            className="cursor-pointer border border-neutral-400 bg-white px-3 py-1.5"
+            className="bps-btn bps-btn--secondary"
             onClick={resetForm}
           >
             Cancel
