@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { registerRemotesFromConfig } from './loadRemotes';
 import { ShellApp } from './ShellApp';
+import './index.css';
 
 const rootElement = document.getElementById('root');
 
@@ -15,8 +16,13 @@ try {
   configOk = true;
 } catch (err) {
   const message = err instanceof Error ? err.message : String(err);
-  // Paint a stable alert and stop — do not rethrow (avoids blank Vite error overlay).
-  rootElement.innerHTML = `<div role="alert" style="font-family:system-ui;padding:1.5rem;color:#8a1f1f"><strong>Shell config error</strong><p>${message}</p></div>`;
+  const safe = message
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+  // CSS already loaded via this module graph; paint Alert primitive and stop.
+  rootElement.innerHTML = `<div class="p-6"><div role="alert" class="bps-alert bps-alert--error"><strong>Shell config error</strong><p class="m-0">${safe}</p><p class="bps-meta m-0 mt-2" style="color:inherit;opacity:0.9">Fix <code>/config.js</code> or remote URL environment variables, then reload.</p></div></div>`;
 }
 
 if (configOk) {

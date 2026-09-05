@@ -114,9 +114,9 @@ Confirm: `curl http://localhost:8080/config.js`
 
 Shell isolates remotes with per-remote error boundaries:
 
-- **Break People** / **Break Delivery** in the Shell nav deliberately fail one panel; the other remote and Shell chrome stay usable. **Restore** (or **Retry**) brings that panel back.
+- Open **Resilience demo** in the Shell header (secondary disclosure — not primary nav). **Break People** / **Break Delivery** fail one panel; the other remote and Shell chrome stay usable. **Restore** (or **Retry**) brings that panel back.
 - A bad or unreachable remote entry URL fails only that panel; fix the URL and reload (or Retry after a transient failure).
-- Missing or empty `window.__BPS_CONFIG__` URLs show a **Shell config error** instead of mounting a broken app.
+- Missing or empty `window.__BPS_CONFIG__` URLs show a **Shell config error** alert instead of mounting a broken app.
 
 ## Persistence
 

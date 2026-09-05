@@ -93,7 +93,9 @@ function RemoteFailure({
     <div role="alert" className="bps-alert bps-alert--error">
       <strong>{copy.title}</strong>
       <p className="m-0">{copy.detail}</p>
-      <p className="m-0 mt-1">{copy.isolationNote}</p>
+      <p className="bps-meta m-0 mt-2" style={{ color: 'inherit', opacity: 0.9 }}>
+        {copy.isolationNote}
+      </p>
       <button
         type="button"
         className="bps-btn bps-btn--danger mt-3"
@@ -101,6 +103,24 @@ function RemoteFailure({
       >
         Retry {remoteName}
       </button>
+    </div>
+  );
+}
+
+function RemoteLoadingFallback({ remote }: { remote: RemoteName }) {
+  const label = remote === 'people' ? 'People' : 'Delivery';
+  return (
+    <div className="bps-panel" aria-busy="true" aria-live="polite">
+      <div className="bps-skeleton-block">
+        <div className="bps-skeleton h-5 w-48" />
+        <div className="bps-skeleton h-3 w-full max-w-md" />
+        <div className="bps-skeleton h-3 w-3/4 max-w-sm" />
+        <div className="mt-2 grid gap-2 sm:grid-cols-2">
+          <div className="bps-skeleton h-24 w-full" />
+          <div className="bps-skeleton h-24 w-full" />
+        </div>
+      </div>
+      <p className="bps-meta m-0 mt-3">Loading {label}…</p>
     </div>
   );
 }
@@ -120,14 +140,7 @@ function RemotePanel({
     [remote, mountKey],
   );
   return (
-    <Suspense
-      fallback={
-        <div className="bps-panel" aria-busy="true">
-          <div className="bps-skeleton mb-3 h-4 w-40" />
-          <p className="bps-meta m-0">Loading {remote}…</p>
-        </div>
-      }
-    >
+    <Suspense fallback={<RemoteLoadingFallback remote={remote} />}>
       <LazyApp host={host} />
     </Suspense>
   );
@@ -154,18 +167,17 @@ export function ShellApp() {
   };
 
   return (
-    <div className="p-6">
-      <header className="mb-6">
-        <h1 className="bps-title mb-1">Baseline Planning Suite</h1>
-        <p className="bps-meta mb-3">
-          Shell host — owns navigation, display currency, and active user; remotes
-          receive them via <code>HostContext</code> props.
-        </p>
+    <div className="mx-auto max-w-[1400px] p-6">
+      <header className="bps-shell-header">
+        <div className="bps-shell-brand">
+          <h1 className="bps-title">Baseline Planning Suite</h1>
+          <p className="bps-meta m-0">
+            Shell host · remotes receive currency and active user via{' '}
+            <code>HostContext</code>
+          </p>
+        </div>
 
-        <div
-          className="bps-panel mb-4 flex flex-wrap items-end gap-4"
-          data-testid="shell-host-context"
-        >
+        <div className="bps-host-inline" data-testid="shell-host-context">
           <div className="bps-field">
             <label htmlFor="shell-currency">Currency</label>
             <select
@@ -183,7 +195,7 @@ export function ShellApp() {
               ))}
             </select>
           </div>
-          <div className="bps-field">
+          <div className="bps-field" style={{ minWidth: 180 }}>
             <label htmlFor="shell-user-name">Active user</label>
             <input
               id="shell-user-name"
@@ -200,18 +212,20 @@ export function ShellApp() {
               }
             />
           </div>
-          <p className="bps-meta" data-testid="shell-context-summary">
-            Showing as <strong className="text-bps-ink">{host.activeUser.name}</strong>{' '}
-            · <strong className="text-bps-ink">{host.currency}</strong>
+          <p className="bps-meta mb-2" data-testid="shell-context-summary">
+            Showing as{' '}
+            <strong className="text-bps-ink">{host.activeUser.name}</strong>
+            {' · '}
+            <strong className="text-bps-ink">{host.currency}</strong>
           </p>
         </div>
+      </header>
 
-        <nav className="flex flex-wrap gap-2" aria-label="Primary">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+        <nav className="bps-nav-tabs" aria-label="Primary">
           <button
             type="button"
-            className={`bps-btn ${
-              view === 'people' ? 'bps-btn--primary' : 'bps-btn--secondary'
-            }`}
+            className="bps-nav-tab"
             aria-current={view === 'people' ? 'page' : undefined}
             onClick={() => setView('people')}
           >
@@ -219,30 +233,40 @@ export function ShellApp() {
           </button>
           <button
             type="button"
-            className={`bps-btn ${
-              view === 'delivery' ? 'bps-btn--primary' : 'bps-btn--secondary'
-            }`}
+            className="bps-nav-tab"
             aria-current={view === 'delivery' ? 'page' : undefined}
             onClick={() => setView('delivery')}
           >
             Delivery
           </button>
-          <button
-            type="button"
-            className="bps-btn bps-btn--ghost"
-            onClick={() => setForceFailPeople((value) => !value)}
-          >
-            {forceFailPeople ? 'Restore People' : 'Break People'}
-          </button>
-          <button
-            type="button"
-            className="bps-btn bps-btn--ghost"
-            onClick={() => setForceFailDelivery((value) => !value)}
-          >
-            {forceFailDelivery ? 'Restore Delivery' : 'Break Delivery'}
-          </button>
         </nav>
-      </header>
+
+        <details className="bps-resilience">
+          <summary>Resilience demo</summary>
+          <div className="bps-resilience__body">
+            <p className="bps-meta m-0 mb-3">
+              Deliberately fail a remote panel. Shell chrome and the other remote
+              stay available.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                className="bps-btn bps-btn--secondary"
+                onClick={() => setForceFailPeople((value) => !value)}
+              >
+                {forceFailPeople ? 'Restore People' : 'Break People'}
+              </button>
+              <button
+                type="button"
+                className="bps-btn bps-btn--secondary"
+                onClick={() => setForceFailDelivery((value) => !value)}
+              >
+                {forceFailDelivery ? 'Restore Delivery' : 'Break Delivery'}
+              </button>
+            </div>
+          </div>
+        </details>
+      </div>
 
       {/* Keep both remotes mounted so BroadcastChannel rate updates reach Delivery while People is visible. */}
       <div

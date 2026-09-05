@@ -278,6 +278,106 @@
     animation: bps-shimmer 1.2s ease-in-out infinite;
   }
 
+  .bps-skeleton-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bps-shell-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 24px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-bps-line);
+  }
+
+  .bps-shell-brand {
+    min-width: min(100%, 280px);
+  }
+
+  .bps-shell-brand .bps-title {
+    margin-bottom: 4px;
+  }
+
+  .bps-host-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 16px;
+  }
+
+  .bps-host-inline .bps-field {
+    min-width: 140px;
+  }
+
+  .bps-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .bps-nav-tab {
+    height: 36px;
+    padding: 0 12px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-bps-slate);
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .bps-nav-tab[aria-current="page"] {
+    color: var(--color-bps-ink);
+    border-bottom-color: var(--color-bps-signal);
+  }
+
+  .bps-nav-tab:hover {
+    color: var(--color-bps-ink);
+  }
+
+  .bps-resilience {
+    margin-top: 12px;
+  }
+
+  .bps-resilience > summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-bps-slate);
+    user-select: none;
+  }
+
+  .bps-resilience > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .bps-resilience > summary::before {
+    content: "▸ ";
+    color: var(--color-bps-signal);
+  }
+
+  .bps-resilience[open] > summary::before {
+    content: "▾ ";
+  }
+
+  .bps-resilience__body {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px dashed var(--color-bps-line);
+    border-radius: var(--radius-bps);
+    background: var(--color-bps-surface);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .bps-skeleton {
       animation: none;
