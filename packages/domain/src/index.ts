@@ -37,3 +37,18 @@ export {
   hoursPerPersonMonth,
   toCanonical,
 } from './allocationUnit';
+
+export {
+  countWorkingDays,
+  countWorkingDaysInMonth,
+  listWorkingDaysInMonth,
+} from './workingDays';
+
+export { allocationHours, personMonthHours } from './personMonth';
+
+export type {
+  AllocationCostInput,
+  AllocationCostResult,
+  CostSlice,
+} from './cost';
+export { calculateAllocationCost } from './cost';
