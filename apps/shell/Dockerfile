@@ -7,10 +7,13 @@ COPY package.json package-lock.json* ./
 COPY apps/shell/package.json apps/shell/
 COPY apps/people/package.json apps/people/
 COPY apps/delivery/package.json apps/delivery/
+COPY packages/domain/package.json packages/domain/
+COPY packages/contracts/package.json packages/contracts/
 COPY tsconfig.base.json ./
 
 RUN npm install
 
+COPY packages packages
 COPY apps/shell apps/shell
 COPY apps/people apps/people
 COPY apps/delivery apps/delivery

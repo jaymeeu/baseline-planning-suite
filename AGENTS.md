@@ -91,9 +91,9 @@ Expected fixture scale (not toys):
 
 Preserve fixed IDs. Do not regenerate IDs on startup.
 
-If the supplied fixture exists, use it as the source of truth and preserve its IDs.
+**Approved strategy:** generate a stable fixture matching these counts (no supplied fixture file was present in the repo). IDs must be fixed in source and never regenerated on seed/startup.
 
-If the fixture is genuinely unavailable, stop and ask before inventing replacement business data. Do not silently generate a substitute fixture.
+If a real supplied fixture is later provided, prefer it over the generated one and preserve its IDs.
 
 ---
 
@@ -168,8 +168,8 @@ Record architectural choices here as they are made (do not silently change them 
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| Package manager | **npm workspaces** | Already available on the host; no extra toolchain. Sufficient for three apps. |
-| Monorepo layout | `apps/shell`, `apps/people`, `apps/delivery` | Matches required boundaries; keeps remotes independently buildable. |
+| Monorepo layout | `apps/shell`, `apps/people`, `apps/delivery` + `packages/domain`, `packages/contracts` | Apps stay independently buildable; pure domain and typed contracts are shared without remote-to-remote imports. |
+| Package manager | **npm workspaces** (`apps/*`, `packages/*`) | Already available on the host; no extra toolchain. Sufficient for three apps + shared packages. |
 | Bundler | **Vite 6** | Fast local DX; production builds are simple static assets for nginx. |
 | Module Federation | **`@module-federation/vite`** | Official MF runtime for Vite; shared singleton support matches the requirement. |
 | Shared React | React 18.3 + ReactDOM as **shared singletons** (`requiredVersion: ^18.3.1`) | Prevents duplicate React / invalid hook calls across host and remotes. |
@@ -178,15 +178,14 @@ Record architectural choices here as they are made (do not silently change them 
 | Docker | Per-app multi-stage **Node build → nginx** + `docker-compose.yml` | Host needs no Node; Shell on `:8080`, remotes on `:8081`/`:8082`. |
 | Dev remote URLs (Phase 1 only) | Build-time defaults via `PEOPLE_REMOTE_URL` / `DELIVERY_REMOTE_URL` in Vite config | Enough to prove federation. **Not** final: runtime injection without Shell rebuild is deferred. |
 | Ports | Shell `8080`, People `8081`, Delivery `8082` | Shell matches case-study `localhost:8080`; remotes have stable local URLs. |
+| Persistence | **IndexedDB** (behind repositories) | Survives reload; better fit than localStorage for the full fixture size; no backend required. |
+| Fixture | **Generate** stable data matching stated counts (fixed IDs) | No supplied fixture in repo; counts from requirements are authoritative. |
+| Canonical allocation unit | **Person-months (PM)** | One stored value; Hours / % / € convert only at display/edit edges. Unit round-trips must preserve PM. |
+| Leaf with existing allocation → add child | **Move allocation onto a new child** | Never silently drop data; parent becomes derived/read-only after children exist. |
+| Cross-remote transport | **Typed contract + `BroadcastChannel('bps')`** (payload schemas in `@bps/contracts`) | Explicit pub/sub; works for hosted remotes in the Shell window and across multiple Shell tabs; no People→Delivery imports. |
+| Shell → remote shared context | **Host props / `HostContext`** (`currency`, `activeUser`) passed into remote `App` | Shell owns the values; remotes consume a published interface; standalone remotes supply local defaults. |
+| Runtime remote URL injection | **`/config.js` → `window.__BPS_CONFIG__`** written at container start (envsubst); Shell registers remotes at runtime | Satisfies “URLs not baked into the JS bundle”; changing remote URLs does not require rebuilding Shell. |
 
-Pending decisions (later phases):
-
-1. Canonical allocation unit (prefer person-months unless justified otherwise)
-2. Persistence mechanism
-3. Cross-remote transport
-4. Leaf-with-allocation → child insertion behaviour (move allocation vs refuse)
-5. How Shell shares currency / active user with remotes
-6. Runtime remote URL injection mechanism for Docker (replace Phase 1 build-time URLs)
-7. Fixture source (use supplied fixture; ask if unavailable — do not invent)
+No further pending tooling/architecture decisions for bootstrap. Remaining work is implementation per the phased plan.
 
 

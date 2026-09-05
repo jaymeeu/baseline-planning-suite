@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "Baseline Planning Suite — Shell + People + Delivery micro-frontends",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
