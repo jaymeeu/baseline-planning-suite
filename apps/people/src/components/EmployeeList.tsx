@@ -1,3 +1,4 @@
+import { startTransition } from 'react';
 import type { Employee } from '@bps/domain';
 
 interface EmployeeListProps {
@@ -18,20 +19,26 @@ export function EmployeeList({
   onSelect,
 }: EmployeeListProps) {
   return (
-    <section
-      className="border border-neutral-300 bg-neutral-50 p-3"
-      aria-label="Employee register"
-    >
-      <h2 className="mb-3 text-lg font-semibold">Employees</h2>
-      <input
-        className="mb-3 box-border w-full border border-neutral-300 px-2 py-1.5"
-        type="search"
-        placeholder="Search name or role"
-        value={query}
-        onChange={(event) => onQueryChange(event.target.value)}
-        aria-label="Search employees"
-      />
-      <ul className="m-0 max-h-[70vh] list-none overflow-auto p-0">
+    <section className="bps-panel" aria-label="Employee register">
+      <h2 className="bps-section-title mb-3">Employees</h2>
+      <div className="bps-field mb-3">
+        <label htmlFor="people-employee-search">Search</label>
+        <input
+          id="people-employee-search"
+          className="bps-field__control"
+          type="search"
+          placeholder="Name or role"
+          value={query}
+          onChange={(event) => {
+            const next = event.target.value;
+            startTransition(() => {
+              onQueryChange(next);
+            });
+          }}
+        />
+        <span className="bps-field__hint">Filters the register as you type</span>
+      </div>
+      <ul className="bps-list m-0 max-h-[70vh] overflow-auto">
         {employees.map((employee) => {
           const oversubscribed = oversubscribedIds.has(employee.id);
           const selected = selectedId === employee.id;
@@ -39,17 +46,16 @@ export function EmployeeList({
             <li key={employee.id}>
               <button
                 type="button"
-                className={`w-full cursor-pointer border border-transparent bg-transparent p-2 text-left hover:bg-neutral-200 ${
-                  selected ? 'border-neutral-800 bg-neutral-200' : ''
-                }`}
+                className="bps-list-row"
+                aria-current={selected ? 'true' : undefined}
                 onClick={() => onSelect(employee.id)}
               >
-                <span className="block font-semibold">{employee.name}</span>
-                <span className="text-sm text-neutral-600">
+                <span className="bps-list-row__name">{employee.name}</span>
+                <span className="bps-list-row__meta">
                   {employee.role} · {employee.weeklyHours} h/week
                 </span>
                 {oversubscribed ? (
-                  <span className="mt-0.5 inline-block border border-red-800 px-1.5 py-0.5 text-xs text-red-800">
+                  <span className="bps-badge bps-badge--over mt-1">
                     Oversubscribed
                   </span>
                 ) : null}
@@ -59,7 +65,9 @@ export function EmployeeList({
         })}
       </ul>
       {employees.length === 0 ? (
-        <p className="text-neutral-600">No employees match this search.</p>
+        <p className="bps-meta mb-0 mt-3">
+          No employees match this search. Clear the filter to see everyone.
+        </p>
       ) : null}
     </section>
   );

@@ -378,6 +378,111 @@
     background: var(--color-bps-surface);
   }
 
+  .bps-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bps-list-row {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 1px solid transparent;
+    border-radius: var(--radius-bps);
+    background: transparent;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--color-bps-ink);
+  }
+
+  .bps-list-row:hover {
+    background: var(--color-bps-paper);
+  }
+
+  .bps-list-row[aria-current="true"] {
+    background: #e8f3ef;
+    border-color: var(--color-bps-signal);
+  }
+
+  .bps-list-row__name {
+    display: block;
+    font-weight: 600;
+  }
+
+  .bps-list-row__meta {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-bps-slate);
+  }
+
+  .bps-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+  }
+
+  .bps-table th,
+  .bps-table td {
+    border: 1px solid var(--color-bps-line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .bps-table th {
+    background: var(--color-bps-paper);
+    font-weight: 600;
+  }
+
+  .bps-table .bps-data {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bps-cap-rows {
+    display: grid;
+    gap: 10px;
+  }
+
+  .bps-cap-row {
+    display: grid;
+    grid-template-columns: 72px 1fr 52px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .bps-cap-track {
+    height: 8px;
+    background: var(--color-bps-paper);
+    border: 1px solid var(--color-bps-line);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .bps-cap-fill {
+    height: 100%;
+    background: var(--color-bps-signal);
+    border-radius: inherit;
+    max-width: 100%;
+  }
+
+  .bps-cap-fill--over {
+    background: var(--color-bps-danger);
+  }
+
+  .bps-cap-pct {
+    font-family: var(--font-data);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .bps-cap-pct--over {
+    color: var(--color-bps-danger);
+    font-weight: 600;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .bps-skeleton {
       animation: none;
