@@ -168,7 +168,7 @@ Record architectural choices here as they are made (do not silently change them 
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| Monorepo layout | `apps/shell`, `apps/people`, `apps/delivery` + `packages/domain`, `packages/contracts` | Apps stay independently buildable; pure domain and typed contracts are shared without remote-to-remote imports. |
+| Monorepo layout | `apps/shell`, `apps/people`, `apps/delivery` + `packages/domain`, `packages/contracts`, `packages/data` | Apps stay independently buildable; pure domain, typed contracts, and IndexedDB repos are shared without remote-to-remote imports. |
 | Package manager | **npm workspaces** (`apps/*`, `packages/*`) | Already available on the host; no extra toolchain. Sufficient for three apps + shared packages. |
 | Bundler | **Vite 6** | Fast local DX; production builds are simple static assets for nginx. |
 | Module Federation | **`@module-federation/vite`** | Official MF runtime for Vite; shared singleton support matches the requirement. |
@@ -178,8 +178,8 @@ Record architectural choices here as they are made (do not silently change them 
 | Docker | Per-app multi-stage **Node build → nginx** + `docker-compose.yml` | Host needs no Node; Shell on `:8080`, remotes on `:8081`/`:8082`. |
 | Dev remote URLs (Phase 1 only) | Build-time defaults via `PEOPLE_REMOTE_URL` / `DELIVERY_REMOTE_URL` in Vite config | Enough to prove federation. **Not** final: runtime injection without Shell rebuild is deferred. |
 | Ports | Shell `8080`, People `8081`, Delivery `8082` | Shell matches case-study `localhost:8080`; remotes have stable local URLs. |
-| Persistence | **IndexedDB** (behind repositories) | Survives reload; better fit than localStorage for the full fixture size; no backend required. |
-| Fixture | **Generate** stable data matching stated counts (fixed IDs) | No supplied fixture in repo; counts from requirements are authoritative. |
+| Persistence | **IndexedDB** via thin adapter in `@bps/data` (no Dexie) | Survives reload; better fit than localStorage for the full fixture size; no backend required. |
+| Fixture | **Generate** stable data matching stated counts (fixed IDs) in `fixtures/baseline.json` | No supplied fixture in repo; counts from requirements are authoritative. |
 | Canonical allocation unit | **Person-months (PM)** | One stored value; Hours / % / € convert only at display/edit edges. Unit round-trips must preserve PM. |
 | Leaf with existing allocation → add child | **Move allocation onto a new child** | Never silently drop data; parent becomes derived/read-only after children exist. |
 | Cross-remote transport | **Typed contract + `BroadcastChannel('bps')`** (payload schemas in `@bps/contracts`) | Explicit pub/sub; works for hosted remotes in the Shell window and across multiple Shell tabs; no People→Delivery imports. |
