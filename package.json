@@ -1,0 +1,32 @@
+{
+  "name": "baseline-planning-suite",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Baseline Planning Suite — Shell + People + Delivery micro-frontends",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:shell": "npm run dev -w @bps/shell",
+    "dev:people": "npm run dev -w @bps/people",
+    "dev:delivery": "npm run dev -w @bps/delivery",
+    "build": "npm run build -w @bps/people -w @bps/delivery -w @bps/shell",
+    "build:shell": "npm run build -w @bps/shell",
+    "build:people": "npm run build -w @bps/people",
+    "build:delivery": "npm run build -w @bps/delivery",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview:shell": "npm run preview -w @bps/shell",
+    "preview:people": "npm run preview -w @bps/people",
+    "preview:delivery": "npm run preview -w @bps/delivery"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

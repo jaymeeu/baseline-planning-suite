@@ -1,0 +1,29 @@
+services:
+  people:
+    build:
+      context: .
+      dockerfile: apps/people/Dockerfile
+    ports:
+      - "8081:80"
+
+  delivery:
+    build:
+      context: .
+      dockerfile: apps/delivery/Dockerfile
+    ports:
+      - "8082:80"
+
+  shell:
+    build:
+      context: .
+      dockerfile: apps/shell/Dockerfile
+      args:
+        # Browser loads remotes from the host-mapped ports (Phase 1).
+        # True runtime injection (no rebuild) comes in a later phase.
+        PEOPLE_REMOTE_URL: http://localhost:8081/remoteEntry.js
+        DELIVERY_REMOTE_URL: http://localhost:8082/remoteEntry.js
+    ports:
+      - "8080:80"
+    depends_on:
+      - people
+      - delivery
