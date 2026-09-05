@@ -1,10 +1,10 @@
 {
   "latestErrorEvent": {
     "code": "TYPE-001",
-    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"/Users/abdulrasaq/.nvm/versions/node/v24.14.1/bin/node /Users/abdulrasaq/Documents/innoscripta/node_modules/typescript/bin/tsc --project /Users/abdulrasaq/Documents/innoscripta/apps/delivery/node_modules/.federation/tsconfig.ecb803091d5a3aee22fee9b10a5ba2c3.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"/Users/abdulrasaq/.nvm/versions/node/v24.14.1/bin/node /Users/abdulrasaq/Documents/innoscripta/node_modules/typescript/bin/tsc --project /Users/abdulrasaq/Documents/innoscripta/apps/delivery/node_modules/.federation/tsconfig.a594b0eea3457eaa922af771f9e90311.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
     "args": {
-      "cmd": "/Users/abdulrasaq/.nvm/versions/node/v24.14.1/bin/node /Users/abdulrasaq/Documents/innoscripta/node_modules/typescript/bin/tsc --project /Users/abdulrasaq/Documents/innoscripta/apps/delivery/node_modules/.federation/tsconfig.ecb803091d5a3aee22fee9b10a5ba2c3.json"
+      "cmd": "/Users/abdulrasaq/.nvm/versions/node/v24.14.1/bin/node /Users/abdulrasaq/Documents/innoscripta/node_modules/typescript/bin/tsc --project /Users/abdulrasaq/Documents/innoscripta/apps/delivery/node_modules/.federation/tsconfig.a594b0eea3457eaa922af771f9e90311.json"
     },
-    "timestamp": 1788582175701
+    "timestamp": 1788582901946
   }
 }

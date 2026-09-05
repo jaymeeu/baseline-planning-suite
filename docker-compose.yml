@@ -17,11 +17,11 @@ services:
     build:
       context: .
       dockerfile: apps/shell/Dockerfile
-      args:
-        # Browser loads remotes from the host-mapped ports (Phase 1).
-        # True runtime injection (no rebuild) comes in a later phase.
-        PEOPLE_REMOTE_URL: http://localhost:8081/remoteEntry.js
-        DELIVERY_REMOTE_URL: http://localhost:8082/remoteEntry.js
+    environment:
+      # Browser loads remotes from host-mapped ports. Change these and recreate
+      # the shell container only — no Shell image rebuild required.
+      PEOPLE_REMOTE_URL: http://localhost:8081/remoteEntry.js
+      DELIVERY_REMOTE_URL: http://localhost:8082/remoteEntry.js
     ports:
       - "8080:80"
     depends_on:
