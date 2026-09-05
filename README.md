@@ -1,17 +1,75 @@
 # Baseline Planning Suite
 
-Three Module Federation apps: **Shell** (`:8080`), **People** (`:8081`), **Delivery** (`:8082`).
+Three Module Federation React apps for baseline planning: **who** works on **what**, for **how long**, and at **what cost**.
 
-## Local development
+| App | Port | Role |
+|---|---|---|
+| **Shell** | `8080` | Host: navigation, display currency, active user, remote loading, failure isolation |
+| **People** | `8081` | Employees, rates, rate history, capacity view |
+| **Delivery** | `8082` | Projects, WBS, staffing grid, cost presentation using People rates |
+
+Each remote is one codebase and one build: it runs **standalone** and **hosted** in Shell.
+
+## Repository structure
+
+```
+apps/shell/          Shell host (Module Federation runtime)
+apps/people/         People remote
+apps/delivery/       Delivery remote
+packages/domain/     Pure domain types + calculation engine (no React)
+packages/contracts/  Shared HostContext + BroadcastChannel message types
+packages/data/       IndexedDB repositories + baseline seed
+fixtures/            Stable baseline.json (fixed IDs)
+scripts/             Fixture generator, Docker verify script
+```
+
+## Architecture and ownership
+
+| Owner | Owns |
+|---|---|
+| **Shell** | Navigation, display currency, active user, runtime remote loading, remote failure isolation |
+| **People** | Employees, rates, rate history, effective-dated rate logic, People persistence |
+| **Delivery** | Projects, WBS, allocations, staffing grid, capacity/cost presentation using People rates |
+
+- Shell must not own People/Delivery domain logic.
+- People owns rates; Delivery must not duplicate rate source of truth.
+- **No direct People → Delivery imports** — published contracts only (`@bps/contracts`).
+- Domain and calculation logic live in `@bps/domain` and are testable without mounting React.
+
+### Microfrontend boundaries
+
+- **Bundler:** Vite 6 + `@module-federation/vite`
+- **Shared singletons:** React 18.3 and ReactDOM (`requiredVersion: ^18.3.1`)
+- **Shell → remotes:** `HostContext` props (`currency`, `activeUser`); standalone remotes supply local defaults
+- **People → Delivery rates:** typed `rates/changed` messages on `BroadcastChannel('bps')`
+- **Remote URLs:** runtime `/config.js` → `window.__BPS_CONFIG__` (not baked into the Shell JS bundle)
+
+## Installation
+
+Requires Node.js 20+ for local development. Docker Compose needs no Node on the host to *run* the suite.
 
 ```bash
 npm install
-npm run dev:people
-npm run dev:delivery
-npm run dev:shell
+```
+
+## Local development
+
+Start remotes first, then Shell:
+
+```bash
+npm run dev:people    # http://localhost:8081
+npm run dev:delivery  # http://localhost:8082
+npm run dev:shell     # http://localhost:8080
 ```
 
 Shell loads remotes using `/config.js` → `window.__BPS_CONFIG__` (see `apps/shell/public/config.js` for Vite defaults).
+
+### Standalone remotes (local)
+
+- People: http://localhost:8081
+- Delivery: http://localhost:8082
+
+Same apps and builds as when hosted under Shell.
 
 ## Docker
 
@@ -20,6 +78,8 @@ docker compose up --build
 ```
 
 App: http://localhost:8080
+
+No Node.js is required on the host to run the containers (multi-stage Node build → nginx).
 
 ### Standalone remotes (Docker)
 
@@ -57,3 +117,53 @@ Shell isolates remotes with per-remote error boundaries:
 - **Break People** / **Break Delivery** in the Shell nav deliberately fail one panel; the other remote and Shell chrome stay usable. **Restore** (or **Retry**) brings that panel back.
 - A bad or unreachable remote entry URL fails only that panel; fix the URL and reload (or Retry after a transient failure).
 - Missing or empty `window.__BPS_CONFIG__` URLs show a **Shell config error** instead of mounting a broken app.
+
+## Persistence
+
+- Browser **IndexedDB** behind repositories in `@bps/data` (no backend).
+- On first load, empty databases are seeded from `fixtures/baseline.json` (fixed IDs; not regenerated on startup).
+- Data survives page refresh. Clear site data for `localhost` if you need to re-seed after fixture changes.
+
+## Cost and capacity (brief)
+
+- **Canonical unit:** person-months (PM). Hours / % / € convert only at display/edit edges; round-trips preserve stored PM.
+- **Working days:** Mon–Fri only. Mid-month rate changes split by working-day slices.
+- **Rates:** `validFrom` inclusive; applies until the next rate. Pre-first-rate allocations cost `0` and are visibly marked.
+- **Capacity:** 100% of one person-month across **all** projects; over-capacity is **flagged, never blocked**. Causing assignment = most recently edited allocation for that employee/month.
+- **Reference:** A. Okafor, 40h, €80 from 2025-01-01 / €95 from 2026-03-12, 0.50 PM in March 2026 → 22 WD, 88.00 h, 50.0%, €7,880.00, blended ≈ €89.5455/h.
+
+## Tests and quality gates
+
+```bash
+npm test                 # Vitest (domain + data + contracts + apps helpers)
+npm run typecheck        # TypeScript strict across workspaces
+npm run build            # Production builds for people, delivery, shell
+npm run verify:docker    # HTTP smoke against compose stack (:8080/:8081/:8082)
+```
+
+Domain tests do not mount React. Fixture scale: 60 employees, 150 rates, 4 projects, 90 WBS items, 720 allocations.
+
+## Architecture decisions
+
+| Decision | Choice | Rationale |
+|---|---|---|
+| Monorepo | `apps/*` + `packages/domain`, `contracts`, `data` | Independently buildable apps; shared pure domain without remote-to-remote imports |
+| Package manager | npm workspaces | No extra toolchain |
+| Bundler | Vite 6 | Fast DX; static nginx assets |
+| Module Federation | `@module-federation/vite` | Shared React singletons across host/remotes |
+| Canonical allocation unit | Person-months (PM) | One stored value; convert at edges only |
+| Persistence | IndexedDB via `@bps/data` | Survives reload; no backend |
+| Fixture | Generated `fixtures/baseline.json` with fixed IDs | Matches case-study counts; IDs never regenerated on seed |
+| Leaf + allocation → add child | Move allocations onto the new child | Never silently drop data; parent becomes derived |
+| Cross-remote rates | `BroadcastChannel('bps')` + `@bps/contracts` | Explicit typed pub/sub; no People→Delivery imports |
+| Shell shared context | `HostContext` props | Shell owns currency / active user |
+| Runtime remote URLs | `/config.js` → `window.__BPS_CONFIG__` (envsubst) | Change URLs without rebuilding Shell |
+| Styling | Tailwind CSS v4 | Allowed styling tooling (not a UI kit) |
+
+## Trade-offs and known limitations
+
+- **BroadcastChannel** delivers rate updates within the same browser origin (Shell tabs / mounted remotes). It is not a multi-device sync bus.
+- **IndexedDB** is browser-local; there is no server API or multi-user conflict resolution.
+- **Fixture** is generated to match required counts (no externally supplied dump was present); prefer a real supplied fixture later if one appears, preserving its IDs.
+- **Module Federation DTS** may log type-declaration warnings during Docker builds; production assets still build and serve.
+- Auth, notifications, offline, mobile-specific UI, and third-party UI kits are **out of scope** for the case study.
