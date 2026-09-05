@@ -197,121 +197,153 @@ export function StaffingGrid({
           Select a WBS node above to open the staffing grid.
         </p>
       ) : (
-        <div className="bps-grid-scroll">
-          <table className="bps-grid">
-            <thead>
-              <tr>
-                <th className="bps-grid__corner" scope="col">
-                  Employee
-                </th>
-                {months.map((month) => (
-                  <th key={month} scope="col">
-                    <span className="bps-grid__month">{month}</span>
+        <div className="bps-grid-scroll-wrap">
+          <div
+            className="bps-grid-scroll"
+            role="region"
+            aria-label={`Staffing grid for ${selectedBreakdownName ?? 'selected WBS'}, ${displayUnit}`}
+            tabIndex={0}
+          >
+            <table className="bps-grid">
+              <caption className="sr-only">
+                {selectedIsLeaf
+                  ? 'Editable leaf allocations by employee and month'
+                  : 'Derived parent totals by employee and month, read-only'}
+              </caption>
+              <thead>
+                <tr>
+                  <th className="bps-grid__corner" scope="col">
+                    Employee
                   </th>
+                  {months.map((month) => (
+                    <th key={month} scope="col">
+                      <span className="bps-grid__month">{month}</span>
+                    </th>
+                  ))}
+                  <th scope="col">Row total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {matrix.rows.map((row, rowIndex) => (
+                  <tr key={row.employee.id}>
+                    <th scope="row" className="bps-grid__sticky">
+                      <span className="block">{row.employee.name}</span>
+                      <span className="bps-grid__emp-meta">
+                        {row.employee.weeklyHours} h/wk
+                      </span>
+                    </th>
+                    {row.cells.map((cell) => {
+                      const key = `${row.employee.id}|${cell.month}`;
+                      const showMark =
+                        displayUnit === 'Cost' &&
+                        cell.hasNoApplicableRate &&
+                        cell.amountPm > 0;
+                      const display = formatDisplayValue(displayUnit, cell.value);
+                      const empty = cell.amountPm === 0;
+                      const busy = busyKey === key;
+
+                      const cellClass = [
+                        'bps-grid__cell',
+                        cell.isOverCapacity ? 'bps-grid__cell--over' : '',
+                        !selectedIsLeaf ? 'bps-grid__cell--derived' : '',
+                        busy ? 'bps-grid__cell--busy' : '',
+                      ]
+                        .filter(Boolean)
+                        .join(' ');
+
+                      const stateBits = [
+                        cell.isOverCapacity ? 'over capacity' : null,
+                        showMark ? 'no applicable rate' : null,
+                        busy ? 'saving' : null,
+                      ]
+                        .filter(Boolean)
+                        .join(', ');
+
+                      const ariaLabel = `${row.employee.name} ${cell.month}${
+                        stateBits ? `, ${stateBits}` : ''
+                      }`;
+
+                      return (
+                        <td
+                          key={key}
+                          className={cellClass}
+                          aria-busy={busy || undefined}
+                        >
+                          {selectedIsLeaf ? (
+                            <>
+                              <input
+                                className="bps-grid__input"
+                                aria-label={ariaLabel}
+                                defaultValue={empty ? '' : display}
+                                key={`${key}|${displayUnit}|${display}`}
+                                disabled={busy}
+                                onBlur={(event) => {
+                                  const next = event.target.value;
+                                  const previous = empty ? '' : display;
+                                  if (next.trim() === previous.trim()) return;
+                                  setBusyKey(key);
+                                  setCellError(null);
+                                  void onSaveAllocation({
+                                    breakdownItemId: selectedBreakdownId,
+                                    employeeId: row.employee.id,
+                                    month: cell.month,
+                                    displayValue: next,
+                                  })
+                                    .catch((err: unknown) =>
+                                      setCellError(
+                                        err instanceof Error
+                                          ? err.message
+                                          : 'Save failed',
+                                      ),
+                                    )
+                                    .finally(() => setBusyKey(null));
+                                }}
+                              />
+                              {showMark ? (
+                                <span
+                                  className="bps-grid__mark"
+                                  title="No applicable rate"
+                                  aria-hidden="true"
+                                >
+                                  *
+                                </span>
+                              ) : null}
+                            </>
+                          ) : (
+                            <span className="bps-grid__value" aria-label={ariaLabel}>
+                              {empty ? '—' : display}
+                              {showMark ? ' *' : ''}
+                            </span>
+                          )}
+                        </td>
+                      );
+                    })}
+                    <td className="bps-grid__total">
+                      {formatDisplayValue(
+                        displayUnit,
+                        matrix.rowTotalsDisplay[rowIndex] ?? 0,
+                      )}
+                    </td>
+                  </tr>
                 ))}
-                <th scope="col">Row total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {matrix.rows.map((row, rowIndex) => (
-                <tr key={row.employee.id}>
+              </tbody>
+              <tfoot>
+                <tr>
                   <th scope="row" className="bps-grid__sticky">
-                    <span className="block">{row.employee.name}</span>
-                    <span className="bps-grid__emp-meta">
-                      {row.employee.weeklyHours} h/wk
-                    </span>
+                    Column total
                   </th>
-                  {row.cells.map((cell) => {
-                    const key = `${row.employee.id}|${cell.month}`;
-                    const showMark =
-                      displayUnit === 'Cost' &&
-                      cell.hasNoApplicableRate &&
-                      cell.amountPm > 0;
-                    const display = formatDisplayValue(displayUnit, cell.value);
-                    const empty = cell.amountPm === 0;
-                    const busy = busyKey === key;
-
-                    const cellClass = [
-                      'bps-grid__cell',
-                      cell.isOverCapacity ? 'bps-grid__cell--over' : '',
-                      !selectedIsLeaf ? 'bps-grid__cell--derived' : '',
-                      busy ? 'bps-grid__cell--busy' : '',
-                    ]
-                      .filter(Boolean)
-                      .join(' ');
-
-                    return (
-                      <td key={key} className={cellClass}>
-                        {selectedIsLeaf ? (
-                          <>
-                            <input
-                              className="bps-grid__input"
-                              aria-label={`${row.employee.name} ${cell.month}`}
-                              defaultValue={empty ? '' : display}
-                              key={`${key}|${displayUnit}|${display}`}
-                              disabled={busy}
-                              onBlur={(event) => {
-                                const next = event.target.value;
-                                const previous = empty ? '' : display;
-                                if (next.trim() === previous.trim()) return;
-                                setBusyKey(key);
-                                setCellError(null);
-                                void onSaveAllocation({
-                                  breakdownItemId: selectedBreakdownId,
-                                  employeeId: row.employee.id,
-                                  month: cell.month,
-                                  displayValue: next,
-                                })
-                                  .catch((err: unknown) =>
-                                    setCellError(
-                                      err instanceof Error
-                                        ? err.message
-                                        : 'Save failed',
-                                    ),
-                                  )
-                                  .finally(() => setBusyKey(null));
-                              }}
-                            />
-                            {showMark ? (
-                              <span className="bps-grid__mark" title="No applicable rate">
-                                *
-                              </span>
-                            ) : null}
-                          </>
-                        ) : (
-                          <span className="bps-grid__value">
-                            {empty ? '—' : display}
-                            {showMark ? ' *' : ''}
-                          </span>
-                        )}
-                      </td>
-                    );
-                  })}
-                  <td className="bps-grid__total">
-                    {formatDisplayValue(
-                      displayUnit,
-                      matrix.rowTotalsDisplay[rowIndex] ?? 0,
-                    )}
+                  {matrix.columnDisplay.map((total, index) => (
+                    <td key={months[index]} className="bps-grid__total">
+                      {total.toFixed(displayDecimals(displayUnit))}
+                    </td>
+                  ))}
+                  <td className="bps-grid__total bps-grid__grand">
+                    {matrix.grandDisplay}
                   </td>
                 </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <th scope="row" className="bps-grid__sticky">
-                  Column total
-                </th>
-                {matrix.columnDisplay.map((total, index) => (
-                  <td key={months[index]} className="bps-grid__total">
-                    {total.toFixed(displayDecimals(displayUnit))}
-                  </td>
-                ))}
-                <td className="bps-grid__total bps-grid__grand">
-                  {matrix.grandDisplay}
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+              </tfoot>
+            </table>
+          </div>
         </div>
       )}
     </section>

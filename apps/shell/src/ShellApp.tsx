@@ -4,6 +4,7 @@ import {
   type ReactNode,
   Suspense,
   lazy,
+  startTransition,
   useMemo,
   useState,
 } from 'react';
@@ -166,8 +167,18 @@ export function ShellApp() {
     setDeliveryMountKey((key) => key + 1);
   };
 
+  const switchView = (next: RemoteName): void => {
+    startTransition(() => {
+      setView(next);
+    });
+  };
+
   return (
-    <div className="mx-auto max-w-[1400px] p-6">
+    <div className="bps-app-shell">
+      <a href="#shell-remote-main" className="bps-skip-link">
+        Skip to remote content
+      </a>
+
       <header className="bps-shell-header">
         <div className="bps-shell-brand">
           <h1 className="bps-title">Baseline Planning Suite</h1>
@@ -227,7 +238,7 @@ export function ShellApp() {
             type="button"
             className="bps-nav-tab"
             aria-current={view === 'people' ? 'page' : undefined}
-            onClick={() => setView('people')}
+            onClick={() => switchView('people')}
           >
             People
           </button>
@@ -235,7 +246,7 @@ export function ShellApp() {
             type="button"
             className="bps-nav-tab"
             aria-current={view === 'delivery' ? 'page' : undefined}
-            onClick={() => setView('delivery')}
+            onClick={() => switchView('delivery')}
           >
             Delivery
           </button>
@@ -269,36 +280,38 @@ export function ShellApp() {
       </div>
 
       {/* Keep both remotes mounted so BroadcastChannel rate updates reach Delivery while People is visible. */}
-      <div
-        className={view === 'people' ? undefined : 'hidden'}
-        aria-hidden={view !== 'people'}
-        data-testid="shell-people-panel"
-      >
-        <RemoteErrorBoundary
-          remoteName="people"
-          forceFail={forceFailPeople}
-          onRetry={retryPeople}
+      <div id="shell-remote-main" tabIndex={-1}>
+        <div
+          className={view === 'people' ? undefined : 'hidden'}
+          aria-hidden={view !== 'people'}
+          data-testid="shell-people-panel"
         >
-          <RemotePanel remote="people" host={host} mountKey={peopleMountKey} />
-        </RemoteErrorBoundary>
-      </div>
+          <RemoteErrorBoundary
+            remoteName="people"
+            forceFail={forceFailPeople}
+            onRetry={retryPeople}
+          >
+            <RemotePanel remote="people" host={host} mountKey={peopleMountKey} />
+          </RemoteErrorBoundary>
+        </div>
 
-      <div
-        className={view === 'delivery' ? undefined : 'hidden'}
-        aria-hidden={view !== 'delivery'}
-        data-testid="shell-delivery-panel"
-      >
-        <RemoteErrorBoundary
-          remoteName="delivery"
-          forceFail={forceFailDelivery}
-          onRetry={retryDelivery}
+        <div
+          className={view === 'delivery' ? undefined : 'hidden'}
+          aria-hidden={view !== 'delivery'}
+          data-testid="shell-delivery-panel"
         >
-          <RemotePanel
-            remote="delivery"
-            host={host}
-            mountKey={deliveryMountKey}
-          />
-        </RemoteErrorBoundary>
+          <RemoteErrorBoundary
+            remoteName="delivery"
+            forceFail={forceFailDelivery}
+            onRetry={retryDelivery}
+          >
+            <RemotePanel
+              remote="delivery"
+              host={host}
+              mountKey={deliveryMountKey}
+            />
+          </RemoteErrorBoundary>
+        </div>
       </div>
     </div>
   );

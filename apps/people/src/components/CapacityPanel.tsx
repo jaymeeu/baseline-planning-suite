@@ -39,6 +39,10 @@ export function CapacityPanel({ rows }: CapacityPanelProps) {
               <div
                 key={`${row.employeeId}-${row.month}`}
                 className="bps-cap-row"
+                role="group"
+                aria-label={`${row.month}: ${row.capacityPercent.toFixed(1)} percent${
+                  row.isOverCapacity ? ', over capacity' : ''
+                }`}
                 title={
                   row.isOverCapacity
                     ? `Over capacity · cause ${row.causingAllocationId ?? '—'}`

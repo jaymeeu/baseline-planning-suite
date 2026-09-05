@@ -1,7 +1,9 @@
+import { startTransition } from 'react';
 import {
   DEFAULT_HOST_CONTEXT,
   type HostContext,
 } from '@bps/contracts';
+import type { DisplayUnit } from '@bps/domain';
 import { ProjectList } from './components/ProjectList';
 import { StaffingGrid } from './components/StaffingGrid';
 import { WbsTree } from './components/WbsTree';
@@ -15,10 +17,28 @@ export interface DeliveryAppProps {
 export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
   const data = useDeliveryData();
 
+  const selectProject = (id: string): void => {
+    startTransition(() => {
+      data.setSelectedProjectId(id);
+    });
+  };
+
+  const selectBreakdown = (id: string): void => {
+    startTransition(() => {
+      data.setSelectedBreakdownId(id);
+    });
+  };
+
+  const changeUnit = (unit: DisplayUnit): void => {
+    startTransition(() => {
+      data.setDisplayUnit(unit);
+    });
+  };
+
   if (data.loading) {
     return (
-      <main className="mx-auto max-w-[1200px] p-5">
-        <div className="bps-panel" aria-busy="true">
+      <main className="bps-app-main bps-app-main--delivery bps-page-enter">
+        <div className="bps-panel" aria-busy="true" aria-live="polite">
           <div className="bps-skeleton-block">
             <div className="bps-skeleton h-5 w-36" />
             <div className="bps-skeleton h-3 w-64" />
@@ -32,7 +52,7 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   if (data.error && data.projects.length === 0) {
     return (
-      <main className="mx-auto max-w-[1200px] p-5">
+      <main className="bps-app-main bps-app-main--delivery bps-page-enter">
         <div className="bps-alert bps-alert--error" role="alert">
           <strong>Delivery could not load</strong>
           {data.error}
@@ -47,7 +67,8 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   return (
     <main
-      className="mx-auto max-w-[1200px] p-5"
+      className="bps-app-main bps-app-main--delivery bps-page-enter"
+      id="delivery-main"
       data-testid="delivery-app"
     >
       <header className="mb-4 border-b border-bps-line pb-3">
@@ -73,15 +94,15 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
         </div>
       ) : null}
 
-      <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-[minmax(240px,320px)_1fr]">
+      <div className="bps-layout-split">
         <ProjectList
           projects={data.projects}
           selectedId={data.selectedProjectId}
-          onSelect={data.setSelectedProjectId}
+          onSelect={selectProject}
           onSave={data.saveProject}
         />
 
-        <div>
+        <div aria-live="polite">
           {data.selectedProject ? (
             <>
               <WbsTree
@@ -104,9 +125,9 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
                 selectedBreakdownId={data.selectedBreakdownId}
                 selectedIsLeaf={data.selectedIsLeaf}
                 selectedBreakdownName={data.selectedBreakdown?.name ?? null}
-                onSelectBreakdown={data.setSelectedBreakdownId}
+                onSelectBreakdown={selectBreakdown}
                 displayUnit={data.displayUnit}
-                onDisplayUnitChange={data.setDisplayUnit}
+                onDisplayUnitChange={changeUnit}
                 capacityByEmployeeMonth={data.capacityByEmployeeMonth}
                 onSaveAllocation={data.saveAllocation}
               />

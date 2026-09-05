@@ -66,7 +66,7 @@ export function WbsTree({
         the new child.
       </p>
 
-      <ul className="bps-wbs-list">
+      <ul className="bps-wbs-list" aria-label="Breakdown items">
         {flat.map((node) => (
           <li
             key={node.item.id}
@@ -88,6 +88,7 @@ export function WbsTree({
               <button
                 type="button"
                 className="bps-btn bps-btn--ghost bps-btn--sm"
+                aria-label={`Rename ${node.item.name}`}
                 onClick={() => {
                   setRenameId(node.item.id);
                   setRenameValue(node.item.name);
@@ -99,6 +100,7 @@ export function WbsTree({
               <button
                 type="button"
                 className="bps-btn bps-btn--ghost bps-btn--sm"
+                aria-label={`Move ${node.item.name}`}
                 onClick={() => {
                   setMoveId(node.item.id);
                   setMoveParentId(node.item.parentId ?? '');
@@ -111,6 +113,7 @@ export function WbsTree({
                 type="button"
                 className="bps-btn bps-btn--danger bps-btn--sm"
                 disabled={busy}
+                aria-label={`Delete ${node.item.name}`}
                 onClick={() => {
                   setBusy(true);
                   setError(null);

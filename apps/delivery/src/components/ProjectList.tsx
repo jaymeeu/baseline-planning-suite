@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { startTransition, useState } from 'react';
 import type { Project } from '@bps/domain';
 
 interface ProjectListProps {
@@ -44,8 +44,13 @@ export function ProjectList({
 
   return (
     <section className="bps-panel" aria-label="Projects">
-      <h2 className="bps-section-title mb-3">Projects</h2>
-      <ul className="bps-list m-0 mb-3 max-h-[40vh] overflow-auto">
+      <h2 className="bps-section-title mb-3" id="delivery-projects-heading">
+        Projects
+      </h2>
+      <ul
+        className="bps-list m-0 mb-3 max-h-[40vh] overflow-auto"
+        aria-labelledby="delivery-projects-heading"
+      >
         {projects.map((project) => {
           const selected = selectedId === project.id;
           return (
@@ -54,10 +59,17 @@ export function ProjectList({
                 type="button"
                 className="bps-list-row"
                 aria-current={selected ? 'true' : undefined}
-                onClick={() => onSelect(project.id)}
+                aria-label={`${project.name}, ${project.startDate} to ${project.endDate}`}
+                onClick={() => {
+                  startTransition(() => {
+                    onSelect(project.id);
+                  });
+                }}
               >
-                <span className="bps-list-row__name">{project.name}</span>
-                <span className="bps-list-row__meta">
+                <span className="bps-list-row__name" aria-hidden="true">
+                  {project.name}
+                </span>
+                <span className="bps-list-row__meta" aria-hidden="true">
                   {project.startDate} → {project.endDate}
                 </span>
               </button>
@@ -65,6 +77,7 @@ export function ProjectList({
                 <button
                   type="button"
                   className="bps-btn bps-btn--ghost bps-btn--sm px-0"
+                  aria-label={`Rename or edit dates for ${project.name}`}
                   onClick={() => startEdit(project)}
                 >
                   Rename / edit dates
