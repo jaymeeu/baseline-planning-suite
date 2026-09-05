@@ -62,6 +62,14 @@ export function usePeopleData() {
     };
   }, [reload]);
 
+  /** Default to the first employee (name-sorted) on load. */
+  useEffect(() => {
+    if (selectedId !== null) return;
+    const first = employees[0];
+    if (!first) return;
+    setSelectedId(first.id);
+  }, [employees, selectedId]);
+
   const oversubscribedIds = useMemo(
     () => oversubscribedEmployeeIds(capacity),
     [capacity],
