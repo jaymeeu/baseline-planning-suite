@@ -158,7 +158,52 @@ Domain tests do not mount React. Fixture scale: 60 employees, 150 rates, 4 proje
 | Cross-remote rates | `BroadcastChannel('bps')` + `@bps/contracts` | Explicit typed pub/sub; no People→Delivery imports |
 | Shell shared context | `HostContext` props | Shell owns currency / active user |
 | Runtime remote URLs | `/config.js` → `window.__BPS_CONFIG__` (envsubst) | Change URLs without rebuilding Shell |
-| Styling | Tailwind CSS v4 | Allowed styling tooling (not a UI kit) |
+| Styling | Tailwind CSS v4 + shared `@bps/ui` tokens | Allowed styling tooling (not a UI kit) |
+
+## UI notes
+
+Presentation polish uses a shared “ledger studio” layer — cool paper, ink type, one green signal — so Shell, People, and Delivery read as one product. **No UI kits**, headless UI, or table/grid packages (case-study rule). Business rules stay in `@bps/domain` / hooks; components only present and edit.
+
+| Concern | Choice |
+|---|---|
+| Tokens | `@bps/ui` → `packages/ui/bps.css` (`@theme` + primitives: panel, button, field, badge, alert, grid) |
+| Color | Ink `#1A2332`, slate, paper `#F3F5F7`, surface, line, signal `#0F6E56`; danger/warn derived for over-capacity and no-rate |
+| Fonts | **Fraunces** (titles), **Source Sans 3** (UI), **IBM Plex Mono** (grid/rates) — loaded in each app `index.html` |
+| Apps | Import `@import "@bps/ui/bps.css"` alongside Tailwind |
+
+Optional static token preview: open `design-system-preview.html` in a browser (not part of the runtime apps).
+
+### Visual QA checklist (before demos)
+
+**Shell (`:8080`)**
+
+- [ ] Product name uses display type; currency / active user sit quietly in the header
+- [ ] People / Delivery nav tabs; selected tab shows signal underline
+- [ ] Resilience demo is under a disclosure, not equal to primary nav
+- [ ] Break People / Break Delivery isolates failure; Retry remounts; other remote still works
+- [ ] Loading remote shows skeleton (respects reduced motion)
+
+**People (`:8081` or Shell → People)**
+
+- [ ] Employee search filters the register; selected row uses signal tint
+- [ ] Oversubscribed badge when capacity > 100% in any month
+- [ ] Detail / rates Save is primary; capacity meters show over in danger styling
+- [ ] Empty selection and load-error copy say what to do next
+
+**Delivery (`:8082` or Shell → Delivery)**
+
+- [ ] Project list + WBS: depth indent, leaf / derived-parent badges, quiet actions
+- [ ] Staffing grid: sticky employee column + month headers; unit switcher is segmented (PM / Hours / % / €)
+- [ ] Leaf cells editable; parent cells read-only; over-capacity tint; `*` for no applicable rate (Cost)
+- [ ] Over-capacity never blocks save; row/column totals readable
+- [ ] Status / cell-error banners use Alert + Dismiss
+- [ ] Narrow viewport: side panels stack; grid shows horizontal-scroll cue
+
+**Cross-cutting**
+
+- [ ] Same paper / ink / signal language in all three surfaces
+- [ ] Keyboard: Tab through lists and grid inputs; focus ring visible (signal)
+- [ ] Change a rate in People → open Delivery staffing (Cost) updates without full page reload
 
 ## Trade-offs and known limitations
 
