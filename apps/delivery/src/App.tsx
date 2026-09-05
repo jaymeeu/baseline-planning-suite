@@ -3,6 +3,7 @@ import {
   type HostContext,
 } from '@bps/contracts';
 import { ProjectList } from './components/ProjectList';
+import { StaffingGrid } from './components/StaffingGrid';
 import { WbsTree } from './components/WbsTree';
 import { useDeliveryData } from './hooks/useDeliveryData';
 import './index.css';
@@ -16,7 +17,7 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   if (data.loading) {
     return (
-      <main className="mx-auto max-w-[1100px] p-5 font-sans text-neutral-900">
+      <main className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900">
         <p>Loading Delivery…</p>
       </main>
     );
@@ -24,7 +25,7 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   if (data.error && data.projects.length === 0) {
     return (
-      <main className="mx-auto max-w-[1100px] p-5 font-sans text-neutral-900">
+      <main className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900">
         <p className="my-2 text-red-800" role="alert">
           {data.error}
         </p>
@@ -34,13 +35,14 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
   return (
     <main
-      className="mx-auto max-w-[1100px] p-5 font-sans text-neutral-900"
+      className="mx-auto max-w-[1200px] p-5 font-sans text-neutral-900"
       data-testid="delivery-app"
     >
       <header className="mb-4 border-b border-neutral-300 pb-3">
         <h1 className="mb-1 text-2xl font-semibold">Delivery</h1>
         <p className="m-0 text-sm text-neutral-600" data-testid="delivery-mode">
-          Projects &amp; WBS · currency {host.currency} · {host.activeUser.name}
+          Projects, WBS &amp; staffing · currency {host.currency} ·{' '}
+          {host.activeUser.name}
         </p>
       </header>
 
@@ -70,20 +72,38 @@ export function App({ host = DEFAULT_HOST_CONTEXT }: DeliveryAppProps) {
 
         <div>
           {data.selectedProject ? (
-            <WbsTree
-              projectName={data.selectedProject.name}
-              flat={data.wbsFlat}
-              items={data.projectItems}
-              onAddRoot={data.addRootItem}
-              onAddChild={data.addChildItem}
-              onRename={data.renameItem}
-              onMove={data.moveItem}
-              onDelete={data.deleteItem}
-            />
+            <>
+              <WbsTree
+                projectName={data.selectedProject.name}
+                flat={data.wbsFlat}
+                items={data.projectItems}
+                onAddRoot={data.addRootItem}
+                onAddChild={data.addChildItem}
+                onRename={data.renameItem}
+                onMove={data.moveItem}
+                onDelete={data.deleteItem}
+              />
+              <StaffingGrid
+                projectName={data.selectedProject.name}
+                items={data.projectItems}
+                wbsFlat={data.wbsFlat}
+                allocations={data.allocations}
+                employees={data.employees}
+                rates={data.rates}
+                selectedBreakdownId={data.selectedBreakdownId}
+                selectedIsLeaf={data.selectedIsLeaf}
+                selectedBreakdownName={data.selectedBreakdown?.name ?? null}
+                onSelectBreakdown={data.setSelectedBreakdownId}
+                displayUnit={data.displayUnit}
+                onDisplayUnitChange={data.setDisplayUnit}
+                capacityByEmployeeMonth={data.capacityByEmployeeMonth}
+                onSaveAllocation={data.saveAllocation}
+              />
+            </>
           ) : (
             <section className="border border-neutral-300 bg-neutral-50 p-3">
               <p className="text-neutral-600">
-                Select a project to view and edit its work breakdown structure.
+                Select a project to view WBS and staffing.
               </p>
             </section>
           )}

@@ -24,6 +24,7 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    dedupe: ['react', 'react-dom'],
     alias: {
       '@bps/domain': path.join(rootDir, 'packages/domain/src/index.ts'),
       '@bps/data': path.join(rootDir, 'packages/data/src/index.ts'),

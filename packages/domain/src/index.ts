@@ -73,3 +73,11 @@ export {
   summarizeAllCapacities,
   summarizeEmployeeMonthCapacity,
 } from './capacity';
+
+export {
+  displayDecimals,
+  distributeLargestRemainder,
+  roundForDisplay,
+} from './display';
+
+export { leafIdsUnder, sumLeafAllocationsPm } from './staffing';
