@@ -89,4 +89,60 @@ describe('delivery repositories', () => {
     expect(byItem).toHaveLength(1);
     expect(byItem[0]?.id).toBe('alloc-1');
   });
+
+  it('persists project CRUD (create, update, remove)', async () => {
+    const { projects } = await createDeliveryRepositories();
+    await projects.upsert({
+      id: 'proj-crud',
+      name: 'Gamma',
+      startDate: '2026-01-01',
+      endDate: '2026-06-30',
+    });
+    expect(await projects.get('proj-crud')).toMatchObject({ name: 'Gamma' });
+
+    await projects.upsert({
+      id: 'proj-crud',
+      name: 'Gamma Renamed',
+      startDate: '2026-02-01',
+      endDate: '2026-12-31',
+    });
+    expect(await projects.get('proj-crud')).toMatchObject({
+      name: 'Gamma Renamed',
+      startDate: '2026-02-01',
+      endDate: '2026-12-31',
+    });
+
+    await projects.remove('proj-crud');
+    expect(await projects.get('proj-crud')).toBeUndefined();
+    expect(await projects.count()).toBe(0);
+  });
+
+  it('persists WBS CRUD (create, rename, remove)', async () => {
+    const { projects, breakdownItems } = await createDeliveryRepositories();
+    await projects.upsert({
+      id: 'proj-wbs',
+      name: 'WBS Host',
+      startDate: '2026-01-01',
+      endDate: '2026-12-31',
+    });
+    await breakdownItems.upsert({
+      id: 'wbs-crud',
+      projectId: 'proj-wbs',
+      parentId: null,
+      name: 'Root',
+    });
+    expect(await breakdownItems.get('wbs-crud')).toMatchObject({ name: 'Root' });
+
+    await breakdownItems.upsert({
+      id: 'wbs-crud',
+      projectId: 'proj-wbs',
+      parentId: null,
+      name: 'Root Renamed',
+    });
+    expect((await breakdownItems.get('wbs-crud'))?.name).toBe('Root Renamed');
+
+    await breakdownItems.remove('wbs-crud');
+    expect(await breakdownItems.get('wbs-crud')).toBeUndefined();
+    expect(await breakdownItems.listByProject('proj-wbs')).toHaveLength(0);
+  });
 });
