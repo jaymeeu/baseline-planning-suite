@@ -4,6 +4,7 @@ import {
   type ReactNode,
   Suspense,
   lazy,
+  useMemo,
   useState,
 } from 'react';
 import {
@@ -11,17 +12,17 @@ import {
   type HostContext,
 } from '@bps/contracts';
 import { loadRemoteApp } from './loadRemotes';
+import {
+  formatRemoteFailureMessage,
+  type RemoteName,
+} from './remoteFailure';
 import './index.css';
-
-type RemoteName = 'people' | 'delivery';
-
-const PeopleApp = lazy(() => loadRemoteApp('people'));
-const DeliveryApp = lazy(() => loadRemoteApp('delivery'));
 
 interface RemoteErrorBoundaryProps {
   remoteName: RemoteName;
   children: ReactNode;
   forceFail: boolean;
+  onRetry: () => void;
 }
 
 interface RemoteErrorBoundaryState {
@@ -48,12 +49,18 @@ class RemoteErrorBoundary extends Component<
     }
   }
 
+  private handleRetry = (): void => {
+    this.setState({ error: null });
+    this.props.onRetry();
+  };
+
   public render(): ReactNode {
     if (this.props.forceFail) {
       return (
         <RemoteFailure
           remoteName={this.props.remoteName}
           message="Remote failure deliberately triggered for demonstration."
+          onRetry={this.handleRetry}
         />
       );
     }
@@ -63,6 +70,7 @@ class RemoteErrorBoundary extends Component<
         <RemoteFailure
           remoteName={this.props.remoteName}
           message={this.state.error.message}
+          onRetry={this.handleRetry}
         />
       );
     }
@@ -74,16 +82,47 @@ class RemoteErrorBoundary extends Component<
 function RemoteFailure({
   remoteName,
   message,
+  onRetry,
 }: {
   remoteName: RemoteName;
   message: string;
+  onRetry: () => void;
 }) {
+  const copy = formatRemoteFailureMessage(remoteName, message);
   return (
     <div role="alert" className="border border-red-800 p-4 text-red-900">
-      <strong>{remoteName} failed to load</strong>
-      <p>{message}</p>
-      <p>Shell remains available. Other remotes are unaffected.</p>
+      <strong>{copy.title}</strong>
+      <p>{copy.detail}</p>
+      <p>{copy.isolationNote}</p>
+      <button
+        type="button"
+        className="mt-3 cursor-pointer border border-red-800 bg-white px-3 py-1.5"
+        onClick={onRetry}
+      >
+        Retry {remoteName}
+      </button>
     </div>
+  );
+}
+
+/** Fresh `lazy()` when `mountKey` changes so a failed load can be retried. */
+function RemotePanel({
+  remote,
+  host,
+  mountKey,
+}: {
+  remote: RemoteName;
+  host: HostContext;
+  mountKey: number;
+}) {
+  const LazyApp = useMemo(
+    () => lazy(() => loadRemoteApp(remote)),
+    [remote, mountKey],
+  );
+  return (
+    <Suspense fallback={<p>Loading {remote}…</p>}>
+      <LazyApp host={host} />
+    </Suspense>
   );
 }
 
@@ -93,7 +132,19 @@ export function ShellApp() {
   const [view, setView] = useState<RemoteName>('people');
   const [forceFailPeople, setForceFailPeople] = useState(false);
   const [forceFailDelivery, setForceFailDelivery] = useState(false);
+  const [peopleMountKey, setPeopleMountKey] = useState(0);
+  const [deliveryMountKey, setDeliveryMountKey] = useState(0);
   const [host, setHost] = useState<HostContext>(DEFAULT_HOST_CONTEXT);
+
+  const retryPeople = (): void => {
+    setForceFailPeople(false);
+    setPeopleMountKey((key) => key + 1);
+  };
+
+  const retryDelivery = (): void => {
+    setForceFailDelivery(false);
+    setDeliveryMountKey((key) => key + 1);
+  };
 
   return (
     <div className="p-6 font-sans text-neutral-900">
@@ -200,10 +251,12 @@ export function ShellApp() {
         aria-hidden={view !== 'people'}
         data-testid="shell-people-panel"
       >
-        <RemoteErrorBoundary remoteName="people" forceFail={forceFailPeople}>
-          <Suspense fallback={<p>Loading People…</p>}>
-            <PeopleApp host={host} />
-          </Suspense>
+        <RemoteErrorBoundary
+          remoteName="people"
+          forceFail={forceFailPeople}
+          onRetry={retryPeople}
+        >
+          <RemotePanel remote="people" host={host} mountKey={peopleMountKey} />
         </RemoteErrorBoundary>
       </div>
 
@@ -212,10 +265,16 @@ export function ShellApp() {
         aria-hidden={view !== 'delivery'}
         data-testid="shell-delivery-panel"
       >
-        <RemoteErrorBoundary remoteName="delivery" forceFail={forceFailDelivery}>
-          <Suspense fallback={<p>Loading Delivery…</p>}>
-            <DeliveryApp host={host} />
-          </Suspense>
+        <RemoteErrorBoundary
+          remoteName="delivery"
+          forceFail={forceFailDelivery}
+          onRetry={retryDelivery}
+        >
+          <RemotePanel
+            remote="delivery"
+            host={host}
+            mountKey={deliveryMountKey}
+          />
         </RemoteErrorBoundary>
       </div>
     </div>

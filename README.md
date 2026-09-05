@@ -40,3 +40,11 @@ docker compose up -d --force-recreate --no-build shell
 ```
 
 3. Confirm: `curl http://localhost:8080/config.js`
+
+### Remote failure demo
+
+Shell isolates remotes with per-remote error boundaries:
+
+- **Break People** / **Break Delivery** in the Shell nav deliberately fail one panel; the other remote and Shell chrome stay usable. **Restore** (or **Retry**) brings that panel back.
+- A bad or unreachable remote entry URL fails only that panel; fix the URL and reload (or Retry after a transient failure).
+- Missing or empty `window.__BPS_CONFIG__` URLs show a **Shell config error** instead of mounting a broken app.
