@@ -20,6 +20,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "generate:fixture": "node scripts/generate-fixture.mjs",
+    "verify:docker": "bash scripts/verify-docker.sh",
     "preview:shell": "npm run preview -w @bps/shell",
     "preview:people": "npm run preview -w @bps/people",
     "preview:delivery": "npm run preview -w @bps/delivery"

@@ -21,6 +21,15 @@ docker compose up --build
 
 App: http://localhost:8080
 
+### Standalone remotes (Docker)
+
+The same People/Delivery images serve standalone SPAs and Module Federation entries:
+
+- People: http://localhost:8081 (`remoteEntry.js` at `/remoteEntry.js`)
+- Delivery: http://localhost:8082 (`remoteEntry.js` at `/remoteEntry.js`)
+
+Smoke-check: `npm run verify:docker`
+
 ### Runtime remote URL configuration
 
 Shell remote URLs are **not** baked into the Shell JS bundle. At container start, `envsubst` writes `/config.js` from environment variables:
@@ -32,14 +41,14 @@ Shell remote URLs are **not** baked into the Shell JS bundle. At container start
 
 Change a URL without rebuilding Shell:
 
-1. Edit the `environment` block for `shell` in `docker-compose.yml` (or pass `-e`).
-2. Recreate only the Shell container:
-
 ```bash
-docker compose up -d --force-recreate --no-build shell
+DELIVERY_REMOTE_URL=http://127.0.0.1:8082/remoteEntry.js \
+  docker compose up -d --force-recreate --no-build shell
 ```
 
-3. Confirm: `curl http://localhost:8080/config.js`
+Or edit the `environment` defaults in `docker-compose.yml`, then recreate Shell the same way.
+
+Confirm: `curl http://localhost:8080/config.js`
 
 ### Remote failure demo
 
