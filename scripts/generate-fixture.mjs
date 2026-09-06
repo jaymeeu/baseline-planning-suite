@@ -392,16 +392,33 @@ const leaves = breakdownItems.filter((item) => !parentIds.has(item.id));
 const leavesByProject = (projectId) =>
   leaves.filter((item) => item.projectId === projectId);
 
+const alphaLeaf = leavesByProject('proj-001')[0];
+const betaLeaf = leavesByProject('proj-002')[0];
+const gammaLeaf = leavesByProject('proj-003')[0];
+const deltaLeaf = leavesByProject('proj-004')[0];
+if (!alphaLeaf || !betaLeaf || !gammaLeaf || !deltaLeaf) {
+  throw new Error('expected a primary leaf on each project');
+}
+
+/**
+ * Spread 720 cells across all four projects so every staffing grid has
+ * visible numbers (not only Ledger Migration).
+ *
+ * - Ledger + Portal: emp-001…015 × 12 months (180 each) — dense top of list
+ * - Risk: emp-016…030 × 12 (180)
+ * - Payments: emp-031…045 × 12 (180)
+ * Total 720. Then tune emp-001 / 2026-03 for cross-project overcapacity.
+ */
 const allocations = [];
 let allocSeq = 1;
-outer: for (const leaf of leaves) {
-  for (const emp of employees) {
+
+function pushStaffingBlock(leafId, employeeSlice) {
+  for (const emp of employeeSlice) {
     for (const month of MONTHS) {
-      if (allocations.length >= 720) break outer;
       const amount = ((allocSeq % 5) + 1) * 0.1;
       allocations.push({
         id: `alloc-${pad(allocSeq, 4)}`,
-        breakdownItemId: leaf.id,
+        breakdownItemId: leafId,
         employeeId: emp.id,
         month,
         amount,
@@ -412,26 +429,15 @@ outer: for (const leaf of leaves) {
   }
 }
 
-/**
- * Redistribute so overlapping projects contribute to capacity (still 720 total).
- * - Keep most cells on Alpha’s first leaf (densest).
- * - Move a block of employees onto Beta’s first leaf.
- * - Seed emp-001 / 2026-03 on Alpha + Beta with amounts summing > 1.0 PM.
- */
-const alphaLeaf = leavesByProject('proj-001')[0];
-const betaLeaf = leavesByProject('proj-002')[0];
-if (!alphaLeaf || !betaLeaf) {
-  throw new Error('expected Alpha and Beta leaves for allocation redistribution');
-}
+pushStaffingBlock(alphaLeaf.id, employees.slice(0, 15));
+pushStaffingBlock(betaLeaf.id, employees.slice(0, 15));
+pushStaffingBlock(gammaLeaf.id, employees.slice(15, 30));
+pushStaffingBlock(deltaLeaf.id, employees.slice(30, 45));
 
-const betaEmployeeIds = new Set(
-  employees.slice(50, 55).map((emp) => emp.id),
-); // emp-050 … emp-054 if present; indices 49–53 are emp-050..054 (okafor is index 0)
-
-for (const allocation of allocations) {
-  if (betaEmployeeIds.has(allocation.employeeId)) {
-    allocation.breakdownItemId = betaLeaf.id;
-  }
+if (allocations.length !== 720) {
+  throw new Error(
+    `expected 720 allocations after staffing blocks, got ${allocations.length}`,
+  );
 }
 
 const okaforMarchAlpha = allocations.find(
@@ -440,49 +446,33 @@ const okaforMarchAlpha = allocations.find(
     a.month === '2026-03' &&
     a.breakdownItemId === alphaLeaf.id,
 );
-if (!okaforMarchAlpha) {
-  throw new Error('expected emp-001 March allocation on Alpha leaf');
+const okaforMarchBeta = allocations.find(
+  (a) =>
+    a.employeeId === 'emp-001' &&
+    a.month === '2026-03' &&
+    a.breakdownItemId === betaLeaf.id,
+);
+if (!okaforMarchAlpha || !okaforMarchBeta) {
+  throw new Error('expected emp-001 March allocations on Ledger + Portal leaves');
 }
 okaforMarchAlpha.amount = 0.6;
+okaforMarchBeta.amount = 0.5;
+okaforMarchBeta.updatedAt = '2026-01-02T12:00:00.000Z';
 
-const victim = allocations.find(
-  (a) =>
-    a.employeeId === 'emp-060' &&
-    a.month === '2026-12' &&
-    a.id !== okaforMarchAlpha.id,
-);
-if (!victim) {
-  throw new Error('expected emp-060 Dec allocation to repurpose for overcapacity');
-}
-victim.breakdownItemId = betaLeaf.id;
-victim.employeeId = 'emp-001';
-victim.month = '2026-03';
-victim.amount = 0.5;
-victim.updatedAt = '2026-01-02T12:00:00.000Z';
-
-const okaforMarchTotal = allocations
-  .filter((a) => a.employeeId === 'emp-001' && a.month === '2026-03')
-  .reduce((sum, a) => sum + a.amount, 0);
+const okaforMarchTotal = okaforMarchAlpha.amount + okaforMarchBeta.amount;
 if (!(okaforMarchTotal > 1)) {
   throw new Error(
     `expected emp-001 2026-03 overcapacity (>1 PM), got ${okaforMarchTotal}`,
   );
 }
 
-const projectsWithOkaforMarch = new Set(
-  allocations
-    .filter((a) => a.employeeId === 'emp-001' && a.month === '2026-03')
-    .map((a) => {
-      const item = breakdownItems.find((b) => b.id === a.breakdownItemId);
-      return item?.projectId;
-    }),
-);
-if (projectsWithOkaforMarch.size < 2) {
-  throw new Error('expected emp-001 2026-03 on at least two projects');
-}
+const projectsWithOkaforMarch = new Set(['proj-001', 'proj-002']);
 
 const betaLeafCount = allocations.filter(
   (a) => a.breakdownItemId === betaLeaf.id,
+).length;
+const alphaLeafCount = allocations.filter(
+  (a) => a.breakdownItemId === alphaLeaf.id,
 ).length;
 
 const fixture = {
@@ -496,9 +486,13 @@ const fixture = {
         month: '2026-03',
         totalPm: okaforMarchTotal,
         projects: [...projectsWithOkaforMarch],
+        causingAllocationId: okaforMarchBeta.id,
       },
       betaLeafId: betaLeaf.id,
       alphaLeafId: alphaLeaf.id,
+      gammaLeafId: gammaLeaf.id,
+      deltaLeafId: deltaLeaf.id,
+      allocationsOnAlphaLeaf: alphaLeafCount,
       allocationsOnBetaLeaf: betaLeafCount,
     },
     counts: {

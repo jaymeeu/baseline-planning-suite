@@ -14,9 +14,13 @@ export interface BaselineFixture {
                 month: YearMonth;
                 totalPm: number;
                 projects: string[];
+                causingAllocationId?: string;
             };
             betaLeafId: string;
             alphaLeafId: string;
+            gammaLeafId?: string;
+            deltaLeafId?: string;
+            allocationsOnAlphaLeaf?: number;
             allocationsOnBetaLeaf: number;
         };
         counts: {

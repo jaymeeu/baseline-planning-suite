@@ -39,9 +39,10 @@ describe('baseline fixture seed', () => {
     const onBeta = fixture.allocations.filter(
       (a) => a.breakdownItemId === betaLeafId,
     );
-    expect(onAlpha.length).toBeGreaterThan(600);
-    expect(onBeta.length).toBeGreaterThan(0);
-    expect(onAlpha.length + onBeta.length).toBe(720);
+    // Dense staffing on each project's primary leaf (15×12 = 180).
+    expect(onAlpha.length).toBe(180);
+    expect(onBeta.length).toBe(180);
+    expect(fixture.allocations).toHaveLength(720);
 
     const okaforMarch = fixture.allocations.filter(
       (a) => a.employeeId === 'emp-001' && a.month === '2026-03',
@@ -67,7 +68,9 @@ describe('baseline fixture seed', () => {
     );
     expect(summary.isOverCapacity).toBe(true);
     expect(summary.totalPm).toBeCloseTo(1.1, 5);
-    expect(summary.causingAllocationId).toBe('alloc-0720');
+    expect(summary.causingAllocationId).toBe(
+      fixture.meta.demo?.overcapacity.causingAllocationId,
+    );
   });
 
   it('Phase 11: seeded Alpha cost, rate sensitivity, and overcapacity from seed', async () => {
