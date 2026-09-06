@@ -9,6 +9,9 @@ export interface SeedResult {
 }
 /**
  * Seed People and/or Delivery IndexedDB from the committed fixture when empty.
- * Each side is checked independently. Does not overwrite existing data.
+ *
+ * Each side is checked independently so standalone Delivery still seeds projects
+ * if People was already populated on this origin (and vice versa).
+ * Does not overwrite existing data and never regenerates entity IDs.
  */
 export declare function seedBaselineIfEmpty(fixture?: BaselineFixture): Promise<SeedResult>;
