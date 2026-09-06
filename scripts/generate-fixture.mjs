@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const outPath = join(root, 'fixtures', 'baseline.json');
+const outPath = join(root, 'packages', 'data', 'seeder', 'baseline.json');
 
 const ROLES = ['Engineer', 'Designer', 'PM', 'QA', 'Architect'];
 const WEEKLY = [40, 32, 20];

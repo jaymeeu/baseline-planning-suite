@@ -1,4 +1,6 @@
 import { StrictMode } from 'react';
+// Ensure react-dom binds to the same shared React before createRoot runs.
+import 'react-dom';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 

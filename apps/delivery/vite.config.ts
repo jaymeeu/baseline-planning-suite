@@ -18,8 +18,16 @@ export default defineConfig({
         './App': './src/App.tsx',
       },
       shared: {
-        react: { singleton: true, requiredVersion: '^18.3.1' },
-        'react-dom': { singleton: true, requiredVersion: '^18.3.1' },
+        react: {
+          singleton: true,
+          requiredVersion: '^18.3.1',
+          eager: true,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: '^18.3.1',
+          eager: true,
+        },
       },
     }),
   ],
@@ -31,6 +39,9 @@ export default defineConfig({
       '@bps/contracts': path.join(rootDir, 'packages/contracts/src/index.ts'),
       '@bps/ui': path.join(rootDir, 'packages/ui'),
     },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-dom/client'],
   },
   server: {
     port: 8082,
