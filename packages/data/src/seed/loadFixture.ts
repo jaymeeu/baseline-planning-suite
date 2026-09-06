@@ -4,27 +4,27 @@ type JsonModule<T> = { default: T };
 
 /**
  * Load the committed baseline fixture from split seeder files.
- * IDs are fixed in packages/data/seeder/*.json — never regenerated at runtime.
+ * IDs are fixed in /seeder/*.json — never regenerated at runtime.
  */
 export async function loadBaselineFixture(): Promise<BaselineFixture> {
   const [metaMod, employeesMod, ratesMod, projectsMod, itemsMod, allocMod] =
     await Promise.all([
-      import('../../seeder/meta.json') as Promise<
+      import('../../../../seeder/meta.json') as Promise<
         JsonModule<BaselineFixture['meta']>
       >,
-      import('../../seeder/employees.json') as Promise<
+      import('../../../../seeder/employees.json') as Promise<
         JsonModule<BaselineFixture['employees']>
       >,
-      import('../../seeder/rates.json') as Promise<
+      import('../../../../seeder/rates.json') as Promise<
         JsonModule<BaselineFixture['rates']>
       >,
-      import('../../seeder/projects.json') as Promise<
+      import('../../../../seeder/projects.json') as Promise<
         JsonModule<BaselineFixture['projects']>
       >,
-      import('../../seeder/breakdownItems.json') as Promise<
+      import('../../../../seeder/breakdownItems.json') as Promise<
         JsonModule<BaselineFixture['breakdownItems']>
       >,
-      import('../../seeder/allocations.json') as Promise<
+      import('../../../../seeder/allocations.json') as Promise<
         JsonModule<BaselineFixture['allocations']>
       >,
     ]);

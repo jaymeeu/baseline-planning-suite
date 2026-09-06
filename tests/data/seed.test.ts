@@ -23,11 +23,12 @@ describe('baseline fixture seed', () => {
     expect(fixture.breakdownItems).toHaveLength(90);
     expect(fixture.allocations).toHaveLength(720);
     expect(fixture.meta.counts.midMonthRateChanges).toBeGreaterThanOrEqual(10);
-    expect(fixture.employees.some((e) => e.id === 'emp-okafor')).toBe(true);
+    expect(fixture.employees[0]?.id).toBe('emp-001');
+    expect(fixture.employees[0]?.name).toBe('A. Okafor');
     expect(fixture.employees.some((e) => e.id === 'emp-002')).toBe(true);
     expect(
       fixture.rates.some(
-        (r) => r.employeeId === 'emp-okafor' && r.validFrom === '2026-03-12',
+        (r) => r.employeeId === 'emp-001' && r.validFrom === '2026-03-12',
       ),
     ).toBe(true);
 
@@ -39,38 +40,40 @@ describe('baseline fixture seed', () => {
     const onBeta = fixture.allocations.filter(
       (a) => a.breakdownItemId === betaLeafId,
     );
-    expect(onAlpha.length).toBeGreaterThan(600);
-    expect(onBeta.length).toBeGreaterThan(0);
-    expect(onAlpha.length + onBeta.length).toBe(720);
+    expect(onAlpha.length).toBe(180);
+    expect(onBeta.length).toBe(180);
+    expect(fixture.allocations).toHaveLength(720);
 
     const okaforMarch = fixture.allocations.filter(
-      (a) => a.employeeId === 'emp-okafor' && a.month === '2026-03',
+      (a) => a.employeeId === 'emp-001' && a.month === '2026-03',
     );
     expect(okaforMarch).toHaveLength(2);
     expect(new Set(okaforMarch.map((a) => a.breakdownItemId))).toEqual(
       new Set([alphaLeafId, betaLeafId]),
     );
     const okaforMarchPm = okaforMarch.reduce((sum, a) => sum + a.amount, 0);
-    expect(okaforMarchPm).toBeGreaterThan(1);
+    expect(okaforMarchPm).toBeCloseTo(1.1, 5);
     expect(fixture.meta.demo?.overcapacity.totalPm).toBe(okaforMarchPm);
   });
 
-  it('seeded allocations produce cross-project overcapacity for emp-okafor / 2026-03', async () => {
+  it('seeded allocations produce cross-project overcapacity for emp-001 / 2026-03', async () => {
     const { summarizeEmployeeMonthCapacity } = await import(
       '../../packages/domain/src/capacity'
     );
     const fixture = await loadBaselineFixture();
     const summary = summarizeEmployeeMonthCapacity(
       fixture.allocations,
-      'emp-okafor',
+      'emp-001',
       '2026-03',
     );
     expect(summary.isOverCapacity).toBe(true);
     expect(summary.totalPm).toBeCloseTo(1.1, 5);
-    expect(summary.causingAllocationId).toBe('alloc-0720');
+    expect(summary.causingAllocationId).toBe(
+      fixture.meta.demo?.overcapacity.causingAllocationId,
+    );
   });
 
-  it('Phase 11: seeded Alpha cost, rate sensitivity, and overcapacity from seed', async () => {
+  it('Phase 11: seeded Ledger cost, rate sensitivity, and overcapacity from seed', async () => {
     const {
       calculateAllocationCost,
       summarizeEmployeeMonthCapacity,
@@ -80,17 +83,22 @@ describe('baseline fixture seed', () => {
       '../../apps/people/src/peopleHelpers'
     );
 
-    await seedBaselineIfEmpty();
+    const fixture = await loadBaselineFixture();
+    await seedBaselineIfEmpty(fixture);
     const people = await createPeopleRepositories();
     const delivery = await createDeliveryRepositories();
-    const okafor = await people.employees.get('emp-okafor');
+    const okafor = await people.employees.get('emp-001');
     expect(okafor?.weeklyHours).toBe(40);
-    const rates = await people.rates.listByEmployee('emp-okafor');
+    const rates = await people.rates.listByEmployee('emp-001');
+    const alphaLeafId = fixture.meta.demo?.alphaLeafId;
+    const betaLeafId = fixture.meta.demo?.betaLeafId;
+    expect(alphaLeafId).toBeTruthy();
+    expect(betaLeafId).toBeTruthy();
     const alphaAlloc = (await delivery.allocations.list()).find(
       (a) =>
-        a.employeeId === 'emp-okafor' &&
+        a.employeeId === 'emp-001' &&
         a.month === '2026-03' &&
-        a.breakdownItemId === 'wbs-006',
+        a.breakdownItemId === alphaLeafId,
     );
     expect(alphaAlloc?.amount).toBeCloseTo(0.6, 5);
 
@@ -118,21 +126,23 @@ describe('baseline fixture seed', () => {
     const summaries = summarizeAllCapacities(allAllocations);
     const march = summarizeEmployeeMonthCapacity(
       allAllocations,
-      'emp-okafor',
+      'emp-001',
       '2026-03',
     );
     expect(march.isOverCapacity).toBe(true);
-    expect(oversubscribedEmployeeIds(summaries).has('emp-okafor')).toBe(true);
+    expect(oversubscribedEmployeeIds(summaries).has('emp-001')).toBe(true);
 
     const betaCells = allAllocations.filter(
-      (a) => a.breakdownItemId === 'wbs-028',
+      (a) => a.breakdownItemId === betaLeafId,
     );
-    expect(betaCells.length).toBeGreaterThan(50);
+    expect(betaCells.length).toBe(180);
   });
 
   it('seeds empty databases once and preserves data on reload', async () => {
     const first = await seedBaselineIfEmpty();
     expect(first.seeded).toBe(true);
+    expect(first.seededPeople).toBe(true);
+    expect(first.seededDelivery).toBe(true);
 
     const people = await createPeopleRepositories();
     const delivery = await createDeliveryRepositories();
@@ -141,21 +151,42 @@ describe('baseline fixture seed', () => {
     expect(await delivery.projects.count()).toBe(4);
     expect(await delivery.breakdownItems.count()).toBe(90);
     expect(await delivery.allocations.count()).toBe(720);
-    expect((await people.employees.get('emp-okafor'))?.name).toBe('A. Okafor');
+    expect((await people.employees.get('emp-001'))?.name).toBe('A. Okafor');
     expect((await people.employees.get('emp-002'))?.id).toBe('emp-002');
 
     const second = await seedBaselineIfEmpty();
     expect(second.seeded).toBe(false);
+    expect(second.seededPeople).toBe(false);
+    expect(second.seededDelivery).toBe(false);
     expect(await people.employees.count()).toBe(60);
     expect(await delivery.allocations.count()).toBe(720);
 
-    // Simulate reload with new repository handles against the same IndexedDB.
     const peopleReloaded = await createPeopleRepositories();
     const deliveryReloaded = await createDeliveryRepositories();
     expect(await peopleReloaded.employees.count()).toBe(60);
     expect(await deliveryReloaded.allocations.count()).toBe(720);
-    expect((await peopleReloaded.employees.get('emp-okafor'))?.id).toBe(
-      'emp-okafor',
-    );
+    expect((await peopleReloaded.employees.get('emp-001'))?.id).toBe('emp-001');
+  });
+
+  it('seeds Delivery when People is already populated (standalone Delivery case)', async () => {
+    const first = await seedBaselineIfEmpty();
+    expect(first.seededPeople).toBe(true);
+    expect(first.seededDelivery).toBe(true);
+
+    await clearDeliveryDatabase();
+    const deliveryEmpty = await createDeliveryRepositories();
+    expect(await deliveryEmpty.projects.count()).toBe(0);
+
+    const peopleStillThere = await createPeopleRepositories();
+    expect(await peopleStillThere.employees.count()).toBe(60);
+
+    const second = await seedBaselineIfEmpty();
+    expect(second.seeded).toBe(true);
+    expect(second.seededPeople).toBe(false);
+    expect(second.seededDelivery).toBe(true);
+
+    const delivery = await createDeliveryRepositories();
+    expect(await delivery.projects.count()).toBe(4);
+    expect(await delivery.allocations.count()).toBe(720);
   });
 });

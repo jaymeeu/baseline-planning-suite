@@ -1,8 +1,8 @@
 /**
  * Deterministic baseline fixture generator.
  *
- * Approved strategy (AGENTS.md): no supplied fixture existed in the repo;
- * generate stable data matching case-study counts with fixed IDs.
+ * Approved strategy (AGENTS.md): generate stable data matching case-study
+ * counts with fixed IDs. Writes split files under seeder/.
  *
  * Run: node scripts/generate-fixture.mjs
  */
@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const seederDir = join(root, 'packages', 'data', 'seeder');
+const seederDir = join(root, 'seeder');
 
 const ROLES = ['Engineer', 'Designer', 'PM', 'QA', 'Architect'];
 const WEEKLY = [40, 32, 20];
@@ -32,21 +32,89 @@ const MONTHS = [
   '2026-12',
 ];
 
+/** Fixed display names for emp-002 … emp-060 (emp-001 is A. Okafor). */
+const EMPLOYEE_NAMES = [
+  'M. Brandt',
+  'S. Haddad',
+  'L. Nguyen',
+  'J. Okonkwo',
+  'R. Patel',
+  'K. Silva',
+  'E. Kowalski',
+  'T. Bergström',
+  'N. Rossi',
+  'C. Mwangi',
+  'H. Tanaka',
+  'D. Álvarez',
+  'P. Dubois',
+  'A. Ibrahim',
+  'Y. Chen',
+  'F. Müller',
+  'I. Santos',
+  'B. Okafor',
+  'G. Andersson',
+  'V. Petrov',
+  'O. Jensen',
+  'W. Kim',
+  'Z. Nowak',
+  'Q. Adeyemi',
+  'U. Sharma',
+  'X. Costa',
+  'M. Lindqvist',
+  'S. Moreau',
+  'L. Bakker',
+  'J. Papadopoulos',
+  'R. Fernandes',
+  'K. Horváth',
+  'E. Novák',
+  'T. Yamamoto',
+  'N. García',
+  'C. Osei',
+  'H. Berg',
+  'D. Kowalski',
+  'P. Ndiaye',
+  'A. Volkov',
+  'Y. Park',
+  'F. Ricci',
+  'I. Hassan',
+  'B. Lefèvre',
+  'G. Singh',
+  'V. Costa',
+  'O. Madsen',
+  'W. Zhao',
+  'Z. Kowalska',
+  'Q. Diallo',
+  'U. Romero',
+  'X. Nielsen',
+  'M. Duarte',
+  'S. Benedetti',
+  'L. Okafor',
+  'J. Svoboda',
+  'R. Johansson',
+  'K. Mensah',
+  'E. Fontaine',
+];
+
 function pad(n, width = 3) {
   return String(n).padStart(width, '0');
 }
 
 const employees = [];
 employees.push({
-  id: 'emp-okafor',
+  id: 'emp-001',
   name: 'A. Okafor',
   role: 'Engineer',
   weeklyHours: 40,
 });
+if (EMPLOYEE_NAMES.length !== 59) {
+  throw new Error(
+    `EMPLOYEE_NAMES: expected 59 names for emp-002…060, got ${EMPLOYEE_NAMES.length}`,
+  );
+}
 for (let i = 2; i <= 60; i += 1) {
   employees.push({
     id: `emp-${pad(i)}`,
-    name: `Employee ${pad(i)}`,
+    name: EMPLOYEE_NAMES[i - 2],
     role: ROLES[(i - 1) % ROLES.length],
     weeklyHours: WEEKLY[(i - 1) % WEEKLY.length],
   });
@@ -54,14 +122,14 @@ for (let i = 2; i <= 60; i += 1) {
 
 const rates = [];
 rates.push({
-  id: 'rate-okafor-80',
-  employeeId: 'emp-okafor',
+  id: 'rate-001-80',
+  employeeId: 'emp-001',
   validFrom: '2025-01-01',
   hourlyCost: 80,
 });
 rates.push({
-  id: 'rate-okafor-95',
-  employeeId: 'emp-okafor',
+  id: 'rate-001-95',
+  employeeId: 'emp-001',
   validFrom: '2026-03-12',
   hourlyCost: 95,
 });
@@ -81,7 +149,7 @@ const midMonthSpecs = [
 
 let rateSeq = 1;
 for (const emp of employees) {
-  if (emp.id === 'emp-okafor') continue;
+  if (emp.id === 'emp-001') continue;
   rates.push({
     id: `rate-${pad(rateSeq++)}`,
     employeeId: emp.id,
@@ -107,9 +175,7 @@ while (rates.length < 150) {
     throw new Error('rate generation failed to reach 150');
   }
   const emp = employees[(rates.length + guard) % employees.length];
-  if (emp.id === 'emp-okafor') {
-    continue;
-  }
+  if (emp.id === 'emp-001') continue;
   const monthIndex = (rates.length % 12) + 1;
   const mm = String(monthIndex).padStart(2, '0');
   rates.push({
@@ -126,50 +192,157 @@ const midMonthCount = rates.filter((r) => Number(r.validFrom.slice(8, 10)) > 1)
 const projects = [
   {
     id: 'proj-001',
-    name: 'Project Alpha',
+    name: 'Ledger Migration',
     startDate: '2026-01-01',
     endDate: '2026-09-30',
   },
   {
     id: 'proj-002',
-    name: 'Project Beta',
+    name: 'Customer Portal',
     startDate: '2026-02-01',
     endDate: '2026-10-31',
   },
   {
     id: 'proj-003',
-    name: 'Project Gamma',
+    name: 'Risk Analytics',
     startDate: '2026-03-01',
     endDate: '2026-11-30',
   },
   {
     id: 'proj-004',
-    name: 'Project Delta',
+    name: 'Payments Hub',
     startDate: '2026-01-15',
     endDate: '2026-12-31',
   },
 ];
 
-// Exactly 90 WBS nodes: per project budget [22, 22, 22, 24]
+const PROJECT_WBS = [
+  {
+    streams: ['Data mapping', 'Core cut-over', 'Reconciliation', 'Reporting'],
+    tasks: [
+      'Chart of accounts map',
+      'Opening balance extract',
+      'Historical journal load',
+      'Trial balance check',
+      'Subledger bridge',
+      'Cut-over weekend plan',
+      'Parallel run support',
+      'Go-live hypercare',
+      'Exception queue triage',
+      'Intercompany matching',
+      'Bank reconcile pack',
+      'Suspense clear-down',
+      'Management pack rebuild',
+      'Statutory report templates',
+      'Audit trail export',
+      'Close calendar update',
+      'Board dashboard refresh',
+    ],
+  },
+  {
+    streams: [
+      'Identity & access',
+      'Account self-service',
+      'Onboarding journeys',
+      'Support tooling',
+    ],
+    tasks: [
+      'SSO federation',
+      'MFA enrolment flow',
+      'Password reset UX',
+      'Profile preferences',
+      'Statement download',
+      'Card controls UI',
+      'KYC document upload',
+      'Address change flow',
+      'Product switch wizard',
+      'Welcome email pack',
+      'Agent assist console',
+      'Case routing rules',
+      'Knowledge base sync',
+      'Chat escalation path',
+      'Accessibility pass',
+      'Mobile web polish',
+      'Release notes hub',
+    ],
+  },
+  {
+    streams: ['Data platform', 'Model pipeline', 'Scorecards', 'Governance'],
+    tasks: [
+      'Feature store feed',
+      'Credit bureau ingest',
+      'Transaction signals',
+      'Fraud label backfill',
+      'Model training jobs',
+      'Shadow scoring',
+      'Champion challenger',
+      'Latency budget check',
+      'Retail scorecard UI',
+      'SME risk tiles',
+      'Limit recommendation',
+      'Early warning alerts',
+      'Model risk review',
+      'Fairness monitoring',
+      'Decision log archive',
+      'Policy rule sync',
+      'Regulator pack draft',
+    ],
+  },
+  {
+    streams: [
+      'Rails & schemes',
+      'Merchant onboarding',
+      'Settlement',
+      'Ops console',
+      'Compliance',
+    ],
+    tasks: [
+      'SEPA connector',
+      'Card scheme cert',
+      'Instant payment path',
+      'FX quote service',
+      'Merchant KYB form',
+      'Terminal provisioning',
+      'Fee schedule engine',
+      'Chargeback workflow',
+      'Daily settlement file',
+      'Nostro reconcile',
+      'Fail-over drill',
+      'Ops alert rules',
+      'Manual repair desk',
+      'SLA dashboard',
+      'AML screening hook',
+      'Sanctions list sync',
+      'PCI evidence pack',
+      'Incident runbooks',
+    ],
+  },
+];
+
 const projectBudgets = [22, 22, 22, 24];
 const breakdownItems = [];
 let wbsSeq = 1;
 
 for (let p = 0; p < projects.length; p += 1) {
   const project = projects[p];
+  const catalog = PROJECT_WBS[p];
   const budget = projectBudgets[p];
   const rootId = `wbs-${pad(wbsSeq++)}`;
   breakdownItems.push({
     id: rootId,
     projectId: project.id,
     parentId: null,
-    name: `${project.name} Root`,
+    name: project.name,
   });
 
   const remainingAfterRoot = budget - 1;
-  // Use 4 or 5 L2 nodes; rest are L3 leaves
-  const streamCount = p === 3 ? 5 : 4;
+  const streamCount = catalog.streams.length;
   const leafBudget = remainingAfterRoot - streamCount;
+  if (leafBudget !== catalog.tasks.length) {
+    throw new Error(
+      `${project.name}: expected ${leafBudget} tasks, catalog has ${catalog.tasks.length}`,
+    );
+  }
   const streams = [];
 
   for (let s = 0; s < streamCount; s += 1) {
@@ -179,7 +352,7 @@ for (let p = 0; p < projects.length; p += 1) {
       id: streamId,
       projectId: project.id,
       parentId: rootId,
-      name: `Stream ${s + 1}`,
+      name: catalog.streams[s],
     });
   }
 
@@ -189,7 +362,7 @@ for (let p = 0; p < projects.length; p += 1) {
       id: `wbs-${pad(wbsSeq++)}`,
       projectId: project.id,
       parentId,
-      name: `Task ${leaf + 1}`,
+      name: catalog.tasks[leaf],
     });
   }
 }
@@ -201,16 +374,37 @@ const leaves = breakdownItems.filter((item) => !parentIds.has(item.id));
 const leavesByProject = (projectId) =>
   leaves.filter((item) => item.projectId === projectId);
 
+function leafByName(projectId, name) {
+  const found = leavesByProject(projectId).find((item) => item.name === name);
+  if (!found) {
+    throw new Error(`expected leaf "${name}" on ${projectId}`);
+  }
+  return found;
+}
+
+// Demo staffing leaves (named) — Cut-over holds Ledger allocations for e2e UX.
+const alphaLeaf = leafByName('proj-001', 'Cut-over weekend plan');
+const betaLeaf = leafByName('proj-002', 'SSO federation');
+const gammaLeaf = leavesByProject('proj-003')[0];
+const deltaLeaf = leavesByProject('proj-004')[0];
+if (!gammaLeaf || !deltaLeaf) {
+  throw new Error('expected a primary leaf on Risk and Payments projects');
+}
+
+/**
+ * Spread 720 cells across all four projects so every staffing grid has data.
+ * Ledger + Portal share emp-001…015 so Okafor appears on both for overcapacity.
+ */
 const allocations = [];
 let allocSeq = 1;
-outer: for (const leaf of leaves) {
-  for (const emp of employees) {
+
+function pushStaffingBlock(leafId, employeeSlice) {
+  for (const emp of employeeSlice) {
     for (const month of MONTHS) {
-      if (allocations.length >= 720) break outer;
       const amount = ((allocSeq % 5) + 1) * 0.1;
       allocations.push({
         id: `alloc-${pad(allocSeq, 4)}`,
-        breakdownItemId: leaf.id,
+        breakdownItemId: leafId,
         employeeId: emp.id,
         month,
         amount,
@@ -221,77 +415,53 @@ outer: for (const leaf of leaves) {
   }
 }
 
-/**
- * Redistribute so overlapping projects contribute to capacity (still 720 total).
- * - Keep most cells on Alpha’s first leaf (densest).
- * - Move a block of employees onto Beta’s first leaf.
- * - Seed emp-okafor / 2026-03 on Alpha + Beta with amounts summing > 1.0 PM.
- */
-const alphaLeaf = leavesByProject('proj-001')[0];
-const betaLeaf = leavesByProject('proj-002')[0];
-if (!alphaLeaf || !betaLeaf) {
-  throw new Error('expected Alpha and Beta leaves for allocation redistribution');
-}
+pushStaffingBlock(alphaLeaf.id, employees.slice(0, 15));
+pushStaffingBlock(betaLeaf.id, employees.slice(0, 15));
+pushStaffingBlock(gammaLeaf.id, employees.slice(15, 30));
+pushStaffingBlock(deltaLeaf.id, employees.slice(30, 45));
 
-const betaEmployeeIds = new Set(
-  employees.slice(50, 55).map((emp) => emp.id),
-); // emp-050 … emp-054 if present; indices 49–53 are emp-050..054 (okafor is index 0)
-
-for (const allocation of allocations) {
-  if (betaEmployeeIds.has(allocation.employeeId)) {
-    allocation.breakdownItemId = betaLeaf.id;
-  }
-}
-
-const okaforMarchAlpha = allocations.find(
-  (a) =>
-    a.employeeId === 'emp-okafor' &&
-    a.month === '2026-03' &&
-    a.breakdownItemId === alphaLeaf.id,
-);
-if (!okaforMarchAlpha) {
-  throw new Error('expected emp-okafor March allocation on Alpha leaf');
-}
-okaforMarchAlpha.amount = 0.6;
-
-const victim = allocations.find(
-  (a) =>
-    a.employeeId === 'emp-060' &&
-    a.month === '2026-12' &&
-    a.id !== okaforMarchAlpha.id,
-);
-if (!victim) {
-  throw new Error('expected emp-060 Dec allocation to repurpose for overcapacity');
-}
-victim.breakdownItemId = betaLeaf.id;
-victim.employeeId = 'emp-okafor';
-victim.month = '2026-03';
-victim.amount = 0.5;
-victim.updatedAt = '2026-01-02T12:00:00.000Z';
-
-const okaforMarchTotal = allocations
-  .filter((a) => a.employeeId === 'emp-okafor' && a.month === '2026-03')
-  .reduce((sum, a) => sum + a.amount, 0);
-if (!(okaforMarchTotal > 1)) {
+if (allocations.length !== 720) {
   throw new Error(
-    `expected emp-okafor 2026-03 overcapacity (>1 PM), got ${okaforMarchTotal}`,
+    `expected 720 allocations after staffing blocks, got ${allocations.length}`,
   );
 }
 
-const projectsWithOkaforMarch = new Set(
-  allocations
-    .filter((a) => a.employeeId === 'emp-okafor' && a.month === '2026-03')
-    .map((a) => {
-      const item = breakdownItems.find((b) => b.id === a.breakdownItemId);
-      return item?.projectId;
-    }),
+/**
+ * Overcapacity demo (e2e §2 / §5):
+ * emp-001 / 2026-03 = 0.6 PM on Ledger leaf + 0.5 PM on Portal leaf = 1.1 PM.
+ * Beta cell gets a later updatedAt so it is the causing allocation.
+ */
+const okaforMarchAlpha = allocations.find(
+  (a) =>
+    a.employeeId === 'emp-001' &&
+    a.month === '2026-03' &&
+    a.breakdownItemId === alphaLeaf.id,
 );
-if (projectsWithOkaforMarch.size < 2) {
-  throw new Error('expected emp-okafor 2026-03 on at least two projects');
+const okaforMarchBeta = allocations.find(
+  (a) =>
+    a.employeeId === 'emp-001' &&
+    a.month === '2026-03' &&
+    a.breakdownItemId === betaLeaf.id,
+);
+if (!okaforMarchAlpha || !okaforMarchBeta) {
+  throw new Error('expected emp-001 March allocations on Ledger + Portal leaves');
+}
+okaforMarchAlpha.amount = 0.6;
+okaforMarchBeta.amount = 0.5;
+okaforMarchBeta.updatedAt = '2026-01-02T12:00:00.000Z';
+
+const okaforMarchTotal = okaforMarchAlpha.amount + okaforMarchBeta.amount;
+if (!(okaforMarchTotal > 1)) {
+  throw new Error(
+    `expected emp-001 2026-03 overcapacity (>1 PM), got ${okaforMarchTotal}`,
+  );
 }
 
 const betaLeafCount = allocations.filter(
   (a) => a.breakdownItemId === betaLeaf.id,
+).length;
+const alphaLeafCount = allocations.filter(
+  (a) => a.breakdownItemId === alphaLeaf.id,
 ).length;
 
 const fixture = {
@@ -301,13 +471,31 @@ const fixture = {
     horizon: MONTHS,
     demo: {
       overcapacity: {
-        employeeId: 'emp-okafor',
+        employeeId: 'emp-001',
         month: '2026-03',
         totalPm: okaforMarchTotal,
-        projects: [...projectsWithOkaforMarch],
+        projects: ['proj-001', 'proj-002'],
+        causingAllocationId: okaforMarchBeta.id,
+        slices: [
+          {
+            projectId: 'proj-001',
+            breakdownItemId: alphaLeaf.id,
+            amountPm: okaforMarchAlpha.amount,
+            allocationId: okaforMarchAlpha.id,
+          },
+          {
+            projectId: 'proj-002',
+            breakdownItemId: betaLeaf.id,
+            amountPm: okaforMarchBeta.amount,
+            allocationId: okaforMarchBeta.id,
+          },
+        ],
       },
-      betaLeafId: betaLeaf.id,
       alphaLeafId: alphaLeaf.id,
+      betaLeafId: betaLeaf.id,
+      gammaLeafId: gammaLeaf.id,
+      deltaLeafId: deltaLeaf.id,
+      allocationsOnAlphaLeaf: alphaLeafCount,
       allocationsOnBetaLeaf: betaLeafCount,
     },
     counts: {
@@ -361,3 +549,4 @@ const written = [
 
 console.log(`Wrote ${written.length} seeder files under ${seederDir}`);
 console.log(fixture.meta.counts);
+console.log('overcapacity', fixture.meta.demo.overcapacity);

@@ -71,15 +71,13 @@ export function validateBreakdownName(name: string): string | undefined {
 }
 
 export function sortProjects(projects: readonly Project[]): Project[] {
-  return [...projects].sort(
-    (a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id),
-  );
+  // Preserve store / seed order (Ledger Migration / proj-001 first).
+  return [...projects];
 }
 
 export function sortEmployees(employees: readonly Employee[]): Employee[] {
-  return [...employees].sort(
-    (a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id),
-  );
+  // Preserve store / seed order (baseline lists emp-001 A. Okafor first).
+  return [...employees];
 }
 
 export function allocationKey(

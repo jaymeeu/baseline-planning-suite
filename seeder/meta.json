@@ -17,17 +17,35 @@
   ],
   "demo": {
     "overcapacity": {
-      "employeeId": "emp-okafor",
+      "employeeId": "emp-001",
       "month": "2026-03",
       "totalPm": 1.1,
       "projects": [
         "proj-001",
         "proj-002"
+      ],
+      "causingAllocationId": "alloc-0183",
+      "slices": [
+        {
+          "projectId": "proj-001",
+          "breakdownItemId": "wbs-011",
+          "amountPm": 0.6,
+          "allocationId": "alloc-0003"
+        },
+        {
+          "projectId": "proj-002",
+          "breakdownItemId": "wbs-028",
+          "amountPm": 0.5,
+          "allocationId": "alloc-0183"
+        }
       ]
     },
+    "alphaLeafId": "wbs-011",
     "betaLeafId": "wbs-028",
-    "alphaLeafId": "wbs-006",
-    "allocationsOnBetaLeaf": 61
+    "gammaLeafId": "wbs-050",
+    "deltaLeafId": "wbs-073",
+    "allocationsOnAlphaLeaf": 180,
+    "allocationsOnBetaLeaf": 180
   },
   "counts": {
     "employees": 60,

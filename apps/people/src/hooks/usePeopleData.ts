@@ -34,9 +34,8 @@ export function usePeopleData() {
       repos.people.rates.list(),
       repos.delivery.allocations.list(),
     ]);
-    setEmployees(
-      [...nextEmployees].sort((a, b) => a.name.localeCompare(b.name)),
-    );
+    // Preserve IndexedDB / seed order (emp-001 A. Okafor is first).
+    setEmployees(nextEmployees);
     setRates(nextRates);
     setCapacity([...summarizeAllCapacities(allocations)]);
   }, []);

@@ -197,6 +197,18 @@ export function StaffingGrid({
           Select a WBS node above to open the staffing grid.
         </p>
       ) : (
+        <>
+          {selectedIsLeaf &&
+          !matrix.rows.some((row) =>
+            row.cells.some((cell) => cell.amountPm > 0),
+          ) ? (
+            <p className="bps-meta mb-2" role="status">
+              No allocations on this leaf yet. Seeded demo data for Ledger is on{' '}
+              <strong className="text-bps-ink">Cut-over weekend plan</strong>
+              ; for Customer Portal use{' '}
+              <strong className="text-bps-ink">SSO federation</strong>.
+            </p>
+          ) : null}
         <div className="bps-grid-scroll-wrap">
           <div
             className="bps-grid-scroll"
@@ -244,7 +256,9 @@ export function StaffingGrid({
 
                       const cellClass = [
                         'bps-grid__cell',
-                        cell.isOverCapacity ? 'bps-grid__cell--over' : '',
+                        cell.isOverCapacity && cell.amountPm > 0
+                          ? 'bps-grid__cell--over'
+                          : '',
                         !selectedIsLeaf ? 'bps-grid__cell--derived' : '',
                         busy ? 'bps-grid__cell--busy' : '',
                       ]
@@ -252,7 +266,9 @@ export function StaffingGrid({
                         .join(' ');
 
                       const stateBits = [
-                        cell.isOverCapacity ? 'over capacity' : null,
+                        cell.isOverCapacity && cell.amountPm > 0
+                          ? 'over capacity'
+                          : null,
                         showMark ? 'no applicable rate' : null,
                         busy ? 'saving' : null,
                       ]
@@ -345,6 +361,7 @@ export function StaffingGrid({
             </table>
           </div>
         </div>
+        </>
       )}
     </section>
   );

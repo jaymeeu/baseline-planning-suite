@@ -179,7 +179,7 @@ Record architectural choices here as they are made (do not silently change them 
 | Dev remote URLs (Phase 1 only) | Build-time defaults via `PEOPLE_REMOTE_URL` / `DELIVERY_REMOTE_URL` in Vite config | Enough to prove federation. **Not** final: runtime injection without Shell rebuild is deferred. |
 | Ports | Shell `8080`, People `8081`, Delivery `8082` | Shell matches case-study `localhost:8080`; remotes have stable local URLs. |
 | Persistence | **IndexedDB** via thin adapter in `@bps/data` (no Dexie) | Survives reload; better fit than localStorage for the full fixture size; no backend required. |
-| Fixture | **Generate** stable data matching stated counts (fixed IDs) in `packages/data/seeder/*.json` | Split by concern under `@bps/data`; IDs never regenerated on seed/startup. |
+| Fixture | **Generate** stable data matching stated counts (fixed IDs) in `seeder/*.json` | Split by concern at repo root; IDs never regenerated on seed/startup. |
 | Canonical allocation unit | **Person-months (PM)** | One stored value; Hours / % / € convert only at display/edit edges. Unit round-trips must preserve PM. |
 | Leaf with existing allocation → add child | **Move allocation onto a new child** | Never silently drop data; parent becomes derived/read-only after children exist. |
 | Cross-remote transport | **Typed contract + `BroadcastChannel('bps')`** (payload schemas in `@bps/contracts`) | Explicit pub/sub; works for hosted remotes in the Shell window and across multiple Shell tabs; no People→Delivery imports. |

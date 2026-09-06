@@ -9,23 +9,33 @@ import type {
 
 /**
  * Approved fixture strategy: generated with fixed IDs
- * (see AGENTS.md / scripts/generate-fixture.mjs → packages/data/seeder/*.json).
+ * (see AGENTS.md / scripts/generate-fixture.mjs → seeder/*.json).
  */
 export interface BaselineFixture {
   meta: {
     strategy: 'generated-approved';
     note: string;
     horizon: YearMonth[];
-    /** Seeded demo hooks for Phase 11 capacity / overcapacity verification. */
+    /** Seeded demo hooks for capacity / overcapacity verification. */
     demo?: {
       overcapacity: {
         employeeId: string;
         month: YearMonth;
         totalPm: number;
         projects: string[];
+        causingAllocationId?: string;
+        slices?: Array<{
+          projectId: string;
+          breakdownItemId: string;
+          amountPm: number;
+          allocationId: string;
+        }>;
       };
-      betaLeafId: string;
       alphaLeafId: string;
+      betaLeafId: string;
+      gammaLeafId?: string;
+      deltaLeafId?: string;
+      allocationsOnAlphaLeaf?: number;
       allocationsOnBetaLeaf: number;
     };
     counts: {

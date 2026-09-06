@@ -16,7 +16,7 @@ COPY tsconfig.base.json ./
 RUN npm install
 
 COPY packages packages
-COPY fixtures fixtures
+COPY seeder seeder
 COPY apps/shell apps/shell
 COPY apps/people apps/people
 COPY apps/delivery apps/delivery

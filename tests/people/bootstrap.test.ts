@@ -16,6 +16,6 @@ describe('People bootstrap', () => {
     const { people } = await bootstrapPeople();
     const employees = await people.employees.list();
     expect(employees).toHaveLength(60);
-    expect(employees.some((e) => e.id === 'emp-okafor')).toBe(true);
+    expect(employees.some((e) => e.id === 'emp-001')).toBe(true);
   });
 });
