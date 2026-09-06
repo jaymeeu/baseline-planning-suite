@@ -70,7 +70,7 @@ describe('BPS contracts', () => {
   it('accepts valid rates/changed messages and rejects junk', () => {
     const valid: BpsMessage = {
       type: 'rates/changed',
-      employeeId: 'emp-okafor',
+      employeeId: 'emp-001',
       rateId: 'rate-1',
       op: 'upsert',
       at: '2026-06-01T00:00:00.000Z',
@@ -91,20 +91,20 @@ describe('BPS contracts', () => {
 
     publishBpsMessage({
       type: 'rates/changed',
-      employeeId: 'emp-okafor',
+      employeeId: 'emp-001',
       rateId: 'rate-1',
       op: 'upsert',
       at: '2026-06-01T00:00:00.000Z',
     });
 
     expect(received).toHaveLength(1);
-    expect(received[0]?.employeeId).toBe('emp-okafor');
+    expect(received[0]?.employeeId).toBe('emp-001');
     expect(received[0]?.op).toBe('upsert');
 
     unsubscribe();
     publishBpsMessage({
       type: 'rates/changed',
-      employeeId: 'emp-okafor',
+      employeeId: 'emp-001',
       op: 'delete',
       at: '2026-06-01T00:00:01.000Z',
     });

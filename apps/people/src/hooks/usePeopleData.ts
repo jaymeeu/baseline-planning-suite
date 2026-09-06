@@ -34,9 +34,8 @@ export function usePeopleData() {
       repos.people.rates.list(),
       repos.delivery.allocations.list(),
     ]);
-    setEmployees(
-      [...nextEmployees].sort((a, b) => a.name.localeCompare(b.name)),
-    );
+    // Preserve IndexedDB / seed order (fixture lists A. Okafor as emp-001 first).
+    setEmployees(nextEmployees);
     setRates(nextRates);
     setCapacity([...summarizeAllCapacities(allocations)]);
   }, []);
@@ -62,7 +61,7 @@ export function usePeopleData() {
     };
   }, [reload]);
 
-  /** Default to the first employee (name-sorted) on load. */
+  /** Default to the first employee in seed / store order on load. */
   useEffect(() => {
     if (selectedId !== null) return;
     const first = employees[0];

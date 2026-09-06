@@ -77,9 +77,8 @@ export function sortProjects(projects: readonly Project[]): Project[] {
 }
 
 export function sortEmployees(employees: readonly Employee[]): Employee[] {
-  return [...employees].sort(
-    (a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id),
-  );
+  // Keep store / seed order (baseline lists emp-001 A. Okafor first).
+  return [...employees];
 }
 
 export function allocationKey(

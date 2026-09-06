@@ -13,7 +13,7 @@ import {
 } from '../../apps/delivery/src/deliveryHelpers';
 
 const okafor: Employee = {
-  id: 'emp-okafor',
+  id: 'emp-001',
   name: 'A. Okafor',
   role: 'Engineer',
   weeklyHours: 40,
@@ -22,13 +22,13 @@ const okafor: Employee = {
 const okaforRates: RateRecord[] = [
   {
     id: 'r1',
-    employeeId: 'emp-okafor',
+    employeeId: 'emp-001',
     validFrom: '2025-01-01',
     hourlyCost: 80,
   },
   {
     id: 'r2',
-    employeeId: 'emp-okafor',
+    employeeId: 'emp-001',
     validFrom: '2026-03-12',
     hourlyCost: 95,
   },
@@ -75,7 +75,7 @@ describe('staffing unit conversion helpers', () => {
       {
         id: 'a1',
         breakdownItemId: 'leaf',
-        employeeId: 'emp-okafor',
+        employeeId: 'emp-001',
         month: '2026-03' as const,
         amount: 0.5,
         updatedAt: '2026-01-01T00:00:00.000Z',

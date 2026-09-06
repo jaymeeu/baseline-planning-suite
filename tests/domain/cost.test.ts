@@ -11,13 +11,13 @@ import {
 const okaforRates: RateRecord[] = [
   {
     id: 'rate-80',
-    employeeId: 'emp-okafor',
+    employeeId: 'emp-001',
     validFrom: '2025-01-01',
     hourlyCost: 80,
   },
   {
     id: 'rate-95',
-    employeeId: 'emp-okafor',
+    employeeId: 'emp-001',
     validFrom: '2026-03-12',
     hourlyCost: 95,
   },

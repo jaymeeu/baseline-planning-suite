@@ -104,10 +104,10 @@ describe('staffing allocation persistence', () => {
     await seedBaselineIfEmpty();
     const people = await createPeopleRepositories();
     const delivery = await createDeliveryRepositories();
-    const okafor = await people.employees.get('emp-okafor');
+    const okafor = await people.employees.get('emp-001');
     expect(okafor).toBeDefined();
     if (!okafor) return;
-    const rates = await people.rates.listByEmployee('emp-okafor');
+    const rates = await people.rates.listByEmployee('emp-001');
     const ctx = buildConversionContext(okafor, '2026-03', rates);
     const amountPm = toCanonical('Cost', 7880, ctx);
     expect(amountPm).toBeCloseTo(0.5, 5);
@@ -115,7 +115,7 @@ describe('staffing allocation persistence', () => {
     await delivery.allocations.upsert({
       id: 'alloc-okafor-test',
       breakdownItemId: 'wbs-006',
-      employeeId: 'emp-okafor',
+      employeeId: 'emp-001',
       month: '2026-03',
       amount: amountPm,
       updatedAt: new Date().toISOString(),

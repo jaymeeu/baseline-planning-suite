@@ -122,7 +122,9 @@ Shell isolates remotes with per-remote error boundaries:
 
 - Browser **IndexedDB** behind repositories in `@bps/data` (no backend).
 - On first load, empty databases are seeded from `fixtures/baseline.json` (fixed IDs; not regenerated on startup).
-- Data survives page refresh. Clear site data for `localhost` if you need to re-seed after fixture changes.
+- Data survives page refresh **on the same origin**.
+- **Origin caveat:** IndexedDB is keyed by scheme + host + **port**. Shell at `localhost:8080` stores suite data used by hosted remotes. Opening People at `:8081` or Delivery at `:8082` standalone uses **separate** databases (they seed independently). That is browser security, not a sync bug.
+- Clear site data for the origin you are testing if you need to re-seed after fixture changes.
 
 ## Cost and capacity (brief)
 
@@ -208,7 +210,7 @@ Optional static token preview: open `design-system-preview.html` in a browser (n
 ## Trade-offs and known limitations
 
 - **BroadcastChannel** delivers rate updates within the same browser origin (Shell tabs / mounted remotes). It is not a multi-device sync bus.
-- **IndexedDB** is browser-local; there is no server API or multi-user conflict resolution.
+- **IndexedDB** is browser-local and **origin-scoped** (port matters: `:8080` ≠ `:8081` ≠ `:8082`); there is no server API or multi-user conflict resolution. Hosted remotes share Shell’s origin; standalone remotes do not share Shell’s data.
 - **Fixture** is generated to match required counts (no externally supplied dump was present); prefer a real supplied fixture later if one appears, preserving its IDs.
 - **Module Federation DTS** may log type-declaration warnings during Docker builds; production assets still build and serve.
 - Auth, notifications, offline, mobile-specific UI, and third-party UI kits are **out of scope** for the case study.
