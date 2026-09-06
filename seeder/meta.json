@@ -1,0 +1,59 @@
+{
+  "strategy": "generated-approved",
+  "note": "No supplied fixture was present; generated to match case-study counts with fixed IDs (AGENTS.md).",
+  "horizon": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10",
+    "2026-11",
+    "2026-12"
+  ],
+  "demo": {
+    "overcapacity": {
+      "employeeId": "emp-001",
+      "month": "2026-03",
+      "totalPm": 1.1,
+      "projects": [
+        "proj-001",
+        "proj-002"
+      ],
+      "causingAllocationId": "alloc-0183",
+      "slices": [
+        {
+          "projectId": "proj-001",
+          "breakdownItemId": "wbs-011",
+          "amountPm": 0.6,
+          "allocationId": "alloc-0003"
+        },
+        {
+          "projectId": "proj-002",
+          "breakdownItemId": "wbs-028",
+          "amountPm": 0.5,
+          "allocationId": "alloc-0183"
+        }
+      ]
+    },
+    "alphaLeafId": "wbs-011",
+    "betaLeafId": "wbs-028",
+    "gammaLeafId": "wbs-050",
+    "deltaLeafId": "wbs-073",
+    "allocationsOnAlphaLeaf": 180,
+    "allocationsOnBetaLeaf": 180
+  },
+  "counts": {
+    "employees": 60,
+    "rates": 150,
+    "midMonthRateChanges": 11,
+    "projects": 4,
+    "breakdownItems": 90,
+    "leafBreakdownItems": 69,
+    "allocations": 720
+  }
+}

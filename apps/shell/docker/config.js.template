@@ -1,0 +1,4 @@
+window.__BPS_CONFIG__ = {
+  peopleRemoteUrl: '${PEOPLE_REMOTE_URL}',
+  deliveryRemoteUrl: '${DELIVERY_REMOTE_URL}',
+};

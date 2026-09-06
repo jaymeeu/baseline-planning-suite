@@ -1,0 +1,542 @@
+[
+  {
+    "id": "wbs-001",
+    "projectId": "proj-001",
+    "parentId": null,
+    "name": "Ledger Migration"
+  },
+  {
+    "id": "wbs-002",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Data mapping"
+  },
+  {
+    "id": "wbs-003",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Core cut-over"
+  },
+  {
+    "id": "wbs-004",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Reconciliation"
+  },
+  {
+    "id": "wbs-005",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Reporting"
+  },
+  {
+    "id": "wbs-006",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Chart of accounts map"
+  },
+  {
+    "id": "wbs-007",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Opening balance extract"
+  },
+  {
+    "id": "wbs-008",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Historical journal load"
+  },
+  {
+    "id": "wbs-009",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Trial balance check"
+  },
+  {
+    "id": "wbs-010",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Subledger bridge"
+  },
+  {
+    "id": "wbs-011",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Cut-over weekend plan"
+  },
+  {
+    "id": "wbs-012",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Parallel run support"
+  },
+  {
+    "id": "wbs-013",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Go-live hypercare"
+  },
+  {
+    "id": "wbs-014",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Exception queue triage"
+  },
+  {
+    "id": "wbs-015",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Intercompany matching"
+  },
+  {
+    "id": "wbs-016",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Bank reconcile pack"
+  },
+  {
+    "id": "wbs-017",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Suspense clear-down"
+  },
+  {
+    "id": "wbs-018",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Management pack rebuild"
+  },
+  {
+    "id": "wbs-019",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Statutory report templates"
+  },
+  {
+    "id": "wbs-020",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Audit trail export"
+  },
+  {
+    "id": "wbs-021",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Close calendar update"
+  },
+  {
+    "id": "wbs-022",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Board dashboard refresh"
+  },
+  {
+    "id": "wbs-023",
+    "projectId": "proj-002",
+    "parentId": null,
+    "name": "Customer Portal"
+  },
+  {
+    "id": "wbs-024",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Identity & access"
+  },
+  {
+    "id": "wbs-025",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Account self-service"
+  },
+  {
+    "id": "wbs-026",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Onboarding journeys"
+  },
+  {
+    "id": "wbs-027",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Support tooling"
+  },
+  {
+    "id": "wbs-028",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "SSO federation"
+  },
+  {
+    "id": "wbs-029",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "MFA enrolment flow"
+  },
+  {
+    "id": "wbs-030",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Password reset UX"
+  },
+  {
+    "id": "wbs-031",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Profile preferences"
+  },
+  {
+    "id": "wbs-032",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Statement download"
+  },
+  {
+    "id": "wbs-033",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Card controls UI"
+  },
+  {
+    "id": "wbs-034",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "KYC document upload"
+  },
+  {
+    "id": "wbs-035",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Address change flow"
+  },
+  {
+    "id": "wbs-036",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Product switch wizard"
+  },
+  {
+    "id": "wbs-037",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Welcome email pack"
+  },
+  {
+    "id": "wbs-038",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Agent assist console"
+  },
+  {
+    "id": "wbs-039",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Case routing rules"
+  },
+  {
+    "id": "wbs-040",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Knowledge base sync"
+  },
+  {
+    "id": "wbs-041",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Chat escalation path"
+  },
+  {
+    "id": "wbs-042",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Accessibility pass"
+  },
+  {
+    "id": "wbs-043",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Mobile web polish"
+  },
+  {
+    "id": "wbs-044",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Release notes hub"
+  },
+  {
+    "id": "wbs-045",
+    "projectId": "proj-003",
+    "parentId": null,
+    "name": "Risk Analytics"
+  },
+  {
+    "id": "wbs-046",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Data platform"
+  },
+  {
+    "id": "wbs-047",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Model pipeline"
+  },
+  {
+    "id": "wbs-048",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Scorecards"
+  },
+  {
+    "id": "wbs-049",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Governance"
+  },
+  {
+    "id": "wbs-050",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Feature store feed"
+  },
+  {
+    "id": "wbs-051",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Credit bureau ingest"
+  },
+  {
+    "id": "wbs-052",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Transaction signals"
+  },
+  {
+    "id": "wbs-053",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Fraud label backfill"
+  },
+  {
+    "id": "wbs-054",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Model training jobs"
+  },
+  {
+    "id": "wbs-055",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Shadow scoring"
+  },
+  {
+    "id": "wbs-056",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Champion challenger"
+  },
+  {
+    "id": "wbs-057",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Latency budget check"
+  },
+  {
+    "id": "wbs-058",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Retail scorecard UI"
+  },
+  {
+    "id": "wbs-059",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "SME risk tiles"
+  },
+  {
+    "id": "wbs-060",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Limit recommendation"
+  },
+  {
+    "id": "wbs-061",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Early warning alerts"
+  },
+  {
+    "id": "wbs-062",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Model risk review"
+  },
+  {
+    "id": "wbs-063",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Fairness monitoring"
+  },
+  {
+    "id": "wbs-064",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Decision log archive"
+  },
+  {
+    "id": "wbs-065",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Policy rule sync"
+  },
+  {
+    "id": "wbs-066",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Regulator pack draft"
+  },
+  {
+    "id": "wbs-067",
+    "projectId": "proj-004",
+    "parentId": null,
+    "name": "Payments Hub"
+  },
+  {
+    "id": "wbs-068",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Rails & schemes"
+  },
+  {
+    "id": "wbs-069",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Merchant onboarding"
+  },
+  {
+    "id": "wbs-070",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Settlement"
+  },
+  {
+    "id": "wbs-071",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Ops console"
+  },
+  {
+    "id": "wbs-072",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Compliance"
+  },
+  {
+    "id": "wbs-073",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "SEPA connector"
+  },
+  {
+    "id": "wbs-074",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Card scheme cert"
+  },
+  {
+    "id": "wbs-075",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Instant payment path"
+  },
+  {
+    "id": "wbs-076",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "FX quote service"
+  },
+  {
+    "id": "wbs-077",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "Merchant KYB form"
+  },
+  {
+    "id": "wbs-078",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Terminal provisioning"
+  },
+  {
+    "id": "wbs-079",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Fee schedule engine"
+  },
+  {
+    "id": "wbs-080",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Chargeback workflow"
+  },
+  {
+    "id": "wbs-081",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "Daily settlement file"
+  },
+  {
+    "id": "wbs-082",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "Nostro reconcile"
+  },
+  {
+    "id": "wbs-083",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Fail-over drill"
+  },
+  {
+    "id": "wbs-084",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Ops alert rules"
+  },
+  {
+    "id": "wbs-085",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Manual repair desk"
+  },
+  {
+    "id": "wbs-086",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "SLA dashboard"
+  },
+  {
+    "id": "wbs-087",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "AML screening hook"
+  },
+  {
+    "id": "wbs-088",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Sanctions list sync"
+  },
+  {
+    "id": "wbs-089",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "PCI evidence pack"
+  },
+  {
+    "id": "wbs-090",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Incident runbooks"
+  }
+]

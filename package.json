@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "Baseline Planning Suite — Shell + People + Delivery micro-frontends",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
@@ -18,11 +19,14 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "vitest run",
     "test:watch": "vitest",
+    "generate:fixture": "node scripts/generate-fixture.mjs",
+    "verify:docker": "bash scripts/verify-docker.sh",
     "preview:shell": "npm run preview -w @bps/shell",
     "preview:people": "npm run preview -w @bps/people",
     "preview:delivery": "npm run preview -w @bps/delivery"
   },
   "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
     "typescript": "^5.8.2",
     "vitest": "^3.0.9"
   },

@@ -1,0 +1,9 @@
+{
+  "name": "@bps/ui",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Shared design tokens and UI primitives (CSS only — no component kit)",
+  "exports": {
+    "./bps.css": "./bps.css"
+  }
+}

@@ -1,0 +1,5762 @@
+[
+  {
+    "id": "alloc-0001",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0002",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0003",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-03",
+    "amount": 0.6,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0004",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0005",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0006",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0007",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0008",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0009",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0010",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0011",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0012",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-001",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0013",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0014",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0015",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0016",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0017",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0018",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0019",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0020",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0021",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0022",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0023",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0024",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-002",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0025",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0026",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0027",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0028",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0029",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0030",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0031",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0032",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0033",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0034",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0035",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0036",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-003",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0037",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0038",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0039",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0040",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0041",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0042",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0043",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0044",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0045",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0046",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0047",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0048",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-004",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0049",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0050",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0051",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0052",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0053",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0054",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0055",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0056",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0057",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0058",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0059",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0060",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-005",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0061",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0062",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0063",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0064",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0065",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0066",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0067",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0068",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0069",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0070",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0071",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0072",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-006",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0073",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0074",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0075",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0076",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0077",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0078",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0079",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0080",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0081",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0082",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0083",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0084",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-007",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0085",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0086",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0087",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0088",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0089",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0090",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0091",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0092",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0093",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0094",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0095",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0096",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-008",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0097",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0098",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0099",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0100",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0101",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0102",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0103",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0104",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0105",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0106",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0107",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0108",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-009",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0109",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0110",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0111",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0112",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0113",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0114",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0115",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0116",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0117",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0118",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0119",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0120",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-010",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0121",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0122",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0123",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0124",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0125",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0126",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0127",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0128",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0129",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0130",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0131",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0132",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-011",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0133",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0134",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0135",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0136",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0137",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0138",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0139",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0140",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0141",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0142",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0143",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0144",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-012",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0145",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0146",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0147",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0148",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0149",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0150",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0151",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0152",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0153",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0154",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0155",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0156",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-013",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0157",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0158",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0159",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0160",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0161",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0162",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0163",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0164",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0165",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0166",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0167",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0168",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-014",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0169",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0170",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0171",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0172",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0173",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0174",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0175",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0176",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0177",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0178",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0179",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0180",
+    "breakdownItemId": "wbs-011",
+    "employeeId": "emp-015",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0181",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0182",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0183",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-02T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0184",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0185",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0186",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0187",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0188",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0189",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0190",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0191",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0192",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-001",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0193",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0194",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0195",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0196",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0197",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0198",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0199",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0200",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0201",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0202",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0203",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0204",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-002",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0205",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0206",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0207",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0208",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0209",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0210",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0211",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0212",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0213",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0214",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0215",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0216",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-003",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0217",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0218",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0219",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0220",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0221",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0222",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0223",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0224",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0225",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0226",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0227",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0228",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-004",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0229",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0230",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0231",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0232",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0233",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0234",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0235",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0236",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0237",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0238",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0239",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0240",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-005",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0241",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0242",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0243",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0244",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0245",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0246",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0247",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0248",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0249",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0250",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0251",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0252",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-006",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0253",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0254",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0255",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0256",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0257",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0258",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0259",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0260",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0261",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0262",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0263",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0264",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-007",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0265",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0266",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0267",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0268",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0269",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0270",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0271",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0272",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0273",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0274",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0275",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0276",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-008",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0277",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0278",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0279",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0280",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0281",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0282",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0283",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0284",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0285",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0286",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0287",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0288",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-009",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0289",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0290",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0291",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0292",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0293",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0294",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0295",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0296",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0297",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0298",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0299",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0300",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-010",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0301",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0302",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0303",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0304",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0305",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0306",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0307",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0308",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0309",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0310",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0311",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0312",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-011",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0313",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0314",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0315",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0316",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0317",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0318",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0319",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0320",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0321",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0322",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0323",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0324",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-012",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0325",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0326",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0327",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0328",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0329",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0330",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0331",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0332",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0333",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0334",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0335",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0336",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-013",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0337",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0338",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0339",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0340",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0341",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0342",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0343",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0344",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0345",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0346",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0347",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0348",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-014",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0349",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0350",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0351",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0352",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0353",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0354",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0355",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0356",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0357",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0358",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0359",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0360",
+    "breakdownItemId": "wbs-028",
+    "employeeId": "emp-015",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0361",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0362",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0363",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0364",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0365",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0366",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0367",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0368",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0369",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0370",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0371",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0372",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-016",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0373",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0374",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0375",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0376",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0377",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0378",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0379",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0380",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0381",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0382",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0383",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0384",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-017",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0385",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0386",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0387",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0388",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0389",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0390",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0391",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0392",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0393",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0394",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0395",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0396",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-018",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0397",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0398",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0399",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0400",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0401",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0402",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0403",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0404",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0405",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0406",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0407",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0408",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-019",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0409",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0410",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0411",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0412",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0413",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0414",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0415",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0416",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0417",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0418",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0419",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0420",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-020",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0421",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0422",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0423",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0424",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0425",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0426",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0427",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0428",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0429",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0430",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0431",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0432",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-021",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0433",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0434",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0435",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0436",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0437",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0438",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0439",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0440",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0441",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0442",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0443",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0444",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-022",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0445",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0446",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0447",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0448",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0449",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0450",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0451",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0452",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0453",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0454",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0455",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0456",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-023",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0457",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0458",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0459",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0460",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0461",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0462",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0463",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0464",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0465",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0466",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0467",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0468",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-024",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0469",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0470",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0471",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0472",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0473",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0474",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0475",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0476",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0477",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0478",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0479",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0480",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-025",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0481",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0482",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0483",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0484",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0485",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0486",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0487",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0488",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0489",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0490",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0491",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0492",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-026",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0493",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0494",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0495",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0496",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0497",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0498",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0499",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0500",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0501",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0502",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0503",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0504",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-027",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0505",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0506",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0507",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0508",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0509",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0510",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0511",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0512",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0513",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0514",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0515",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0516",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-028",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0517",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0518",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0519",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0520",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0521",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0522",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0523",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0524",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0525",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0526",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0527",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0528",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-029",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0529",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0530",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0531",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0532",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0533",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0534",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0535",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0536",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0537",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0538",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0539",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0540",
+    "breakdownItemId": "wbs-050",
+    "employeeId": "emp-030",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0541",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0542",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0543",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0544",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0545",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0546",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0547",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0548",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0549",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0550",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0551",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0552",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-031",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0553",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0554",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0555",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0556",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0557",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0558",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0559",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0560",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0561",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0562",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0563",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0564",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-032",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0565",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0566",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0567",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0568",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0569",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0570",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0571",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0572",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0573",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0574",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0575",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0576",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-033",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0577",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0578",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0579",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0580",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0581",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0582",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0583",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0584",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0585",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0586",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0587",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0588",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-034",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0589",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0590",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0591",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0592",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0593",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0594",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0595",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0596",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0597",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0598",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0599",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0600",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-035",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0601",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0602",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0603",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0604",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0605",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0606",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0607",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0608",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0609",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0610",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0611",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0612",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-036",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0613",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0614",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0615",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0616",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0617",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0618",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0619",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0620",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0621",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0622",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0623",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0624",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-037",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0625",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0626",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0627",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0628",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0629",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0630",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0631",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0632",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0633",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0634",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0635",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0636",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-038",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0637",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0638",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0639",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0640",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0641",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0642",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0643",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0644",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0645",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0646",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0647",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0648",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-039",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0649",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0650",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0651",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0652",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0653",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0654",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0655",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0656",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0657",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0658",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0659",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0660",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-040",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  },
+  {
+    "id": "alloc-0661",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-01",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:01:00.000Z"
+  },
+  {
+    "id": "alloc-0662",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-02",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:02:00.000Z"
+  },
+  {
+    "id": "alloc-0663",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-03",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:03:00.000Z"
+  },
+  {
+    "id": "alloc-0664",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-04",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:04:00.000Z"
+  },
+  {
+    "id": "alloc-0665",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-05",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:05:00.000Z"
+  },
+  {
+    "id": "alloc-0666",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-06",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:06:00.000Z"
+  },
+  {
+    "id": "alloc-0667",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-07",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:07:00.000Z"
+  },
+  {
+    "id": "alloc-0668",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-08",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:08:00.000Z"
+  },
+  {
+    "id": "alloc-0669",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-09",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:09:00.000Z"
+  },
+  {
+    "id": "alloc-0670",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-10",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:10:00.000Z"
+  },
+  {
+    "id": "alloc-0671",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-11",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:11:00.000Z"
+  },
+  {
+    "id": "alloc-0672",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-041",
+    "month": "2026-12",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:12:00.000Z"
+  },
+  {
+    "id": "alloc-0673",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-01",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:13:00.000Z"
+  },
+  {
+    "id": "alloc-0674",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-02",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:14:00.000Z"
+  },
+  {
+    "id": "alloc-0675",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-03",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:15:00.000Z"
+  },
+  {
+    "id": "alloc-0676",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-04",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:16:00.000Z"
+  },
+  {
+    "id": "alloc-0677",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-05",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:17:00.000Z"
+  },
+  {
+    "id": "alloc-0678",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-06",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:18:00.000Z"
+  },
+  {
+    "id": "alloc-0679",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-07",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:19:00.000Z"
+  },
+  {
+    "id": "alloc-0680",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-08",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:20:00.000Z"
+  },
+  {
+    "id": "alloc-0681",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-09",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:21:00.000Z"
+  },
+  {
+    "id": "alloc-0682",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-10",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:22:00.000Z"
+  },
+  {
+    "id": "alloc-0683",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-11",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:23:00.000Z"
+  },
+  {
+    "id": "alloc-0684",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-042",
+    "month": "2026-12",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:24:00.000Z"
+  },
+  {
+    "id": "alloc-0685",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-01",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:25:00.000Z"
+  },
+  {
+    "id": "alloc-0686",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-02",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:26:00.000Z"
+  },
+  {
+    "id": "alloc-0687",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-03",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:27:00.000Z"
+  },
+  {
+    "id": "alloc-0688",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-04",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:28:00.000Z"
+  },
+  {
+    "id": "alloc-0689",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-05",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:29:00.000Z"
+  },
+  {
+    "id": "alloc-0690",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-06",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:30:00.000Z"
+  },
+  {
+    "id": "alloc-0691",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-07",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:31:00.000Z"
+  },
+  {
+    "id": "alloc-0692",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-08",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:32:00.000Z"
+  },
+  {
+    "id": "alloc-0693",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-09",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:33:00.000Z"
+  },
+  {
+    "id": "alloc-0694",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-10",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:34:00.000Z"
+  },
+  {
+    "id": "alloc-0695",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-11",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:35:00.000Z"
+  },
+  {
+    "id": "alloc-0696",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-043",
+    "month": "2026-12",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:36:00.000Z"
+  },
+  {
+    "id": "alloc-0697",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-01",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:37:00.000Z"
+  },
+  {
+    "id": "alloc-0698",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-02",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:38:00.000Z"
+  },
+  {
+    "id": "alloc-0699",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-03",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:39:00.000Z"
+  },
+  {
+    "id": "alloc-0700",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-04",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:40:00.000Z"
+  },
+  {
+    "id": "alloc-0701",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-05",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:41:00.000Z"
+  },
+  {
+    "id": "alloc-0702",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-06",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:42:00.000Z"
+  },
+  {
+    "id": "alloc-0703",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-07",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:43:00.000Z"
+  },
+  {
+    "id": "alloc-0704",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-08",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:44:00.000Z"
+  },
+  {
+    "id": "alloc-0705",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-09",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:45:00.000Z"
+  },
+  {
+    "id": "alloc-0706",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-10",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:46:00.000Z"
+  },
+  {
+    "id": "alloc-0707",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-11",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:47:00.000Z"
+  },
+  {
+    "id": "alloc-0708",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-044",
+    "month": "2026-12",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:48:00.000Z"
+  },
+  {
+    "id": "alloc-0709",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-01",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:49:00.000Z"
+  },
+  {
+    "id": "alloc-0710",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-02",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:50:00.000Z"
+  },
+  {
+    "id": "alloc-0711",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-03",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:51:00.000Z"
+  },
+  {
+    "id": "alloc-0712",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-04",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:52:00.000Z"
+  },
+  {
+    "id": "alloc-0713",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-05",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:53:00.000Z"
+  },
+  {
+    "id": "alloc-0714",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-06",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:54:00.000Z"
+  },
+  {
+    "id": "alloc-0715",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-07",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:55:00.000Z"
+  },
+  {
+    "id": "alloc-0716",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-08",
+    "amount": 0.2,
+    "updatedAt": "2026-01-01T12:56:00.000Z"
+  },
+  {
+    "id": "alloc-0717",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-09",
+    "amount": 0.30000000000000004,
+    "updatedAt": "2026-01-01T12:57:00.000Z"
+  },
+  {
+    "id": "alloc-0718",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-10",
+    "amount": 0.4,
+    "updatedAt": "2026-01-01T12:58:00.000Z"
+  },
+  {
+    "id": "alloc-0719",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-11",
+    "amount": 0.5,
+    "updatedAt": "2026-01-01T12:59:00.000Z"
+  },
+  {
+    "id": "alloc-0720",
+    "breakdownItemId": "wbs-073",
+    "employeeId": "emp-045",
+    "month": "2026-12",
+    "amount": 0.1,
+    "updatedAt": "2026-01-01T12:00:00.000Z"
+  }
+]

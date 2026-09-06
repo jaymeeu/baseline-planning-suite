@@ -17,11 +17,12 @@ services:
     build:
       context: .
       dockerfile: apps/shell/Dockerfile
-      args:
-        # Browser loads remotes from the host-mapped ports (Phase 1).
-        # True runtime injection (no rebuild) comes in a later phase.
-        PEOPLE_REMOTE_URL: http://localhost:8081/remoteEntry.js
-        DELIVERY_REMOTE_URL: http://localhost:8082/remoteEntry.js
+    environment:
+      # Browser loads remotes from host-mapped ports. Override on recreate
+      # without rebuilding the Shell image, e.g.:
+      # DELIVERY_REMOTE_URL=http://127.0.0.1:8082/remoteEntry.js docker compose up -d --force-recreate --no-build shell
+      PEOPLE_REMOTE_URL: ${PEOPLE_REMOTE_URL:-http://localhost:8081/remoteEntry.js}
+      DELIVERY_REMOTE_URL: ${DELIVERY_REMOTE_URL:-http://localhost:8082/remoteEntry.js}
     ports:
       - "8080:80"
     depends_on:
