@@ -21,6 +21,9 @@ export {
 } from './db/openDatabase';
 
 export type { BaselineFixture } from './seed/fixtureTypes';
-export { loadBaselineFixture } from './seed/loadFixture';
+export {
+  assertFixtureIntegrity,
+  loadBaselineFixture,
+} from './seed/loadFixture';
 export { seedBaselineIfEmpty } from './seed/seedIfEmpty';
 export type { SeedResult } from './seed/seedIfEmpty';

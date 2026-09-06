@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const outPath = join(root, 'packages', 'data', 'seeder', 'baseline.json');
+const seederDir = join(root, 'packages', 'data', 'seeder');
 
 const ROLES = ['Engineer', 'Designer', 'PM', 'QA', 'Architect'];
 const WEEKLY = [40, 32, 20];
@@ -342,7 +342,22 @@ if (midMonthCount < 10) {
   throw new Error(`mid-month rates: expected >= 10, got ${midMonthCount}`);
 }
 
-mkdirSync(dirname(outPath), { recursive: true });
-writeFileSync(outPath, `${JSON.stringify(fixture, null, 2)}\n`, 'utf8');
-console.log(`Wrote ${outPath}`);
+mkdirSync(seederDir, { recursive: true });
+
+function writeJson(fileName, value) {
+  const path = join(seederDir, fileName);
+  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+  return path;
+}
+
+const written = [
+  writeJson('meta.json', fixture.meta),
+  writeJson('employees.json', fixture.employees),
+  writeJson('rates.json', fixture.rates),
+  writeJson('projects.json', fixture.projects),
+  writeJson('breakdownItems.json', fixture.breakdownItems),
+  writeJson('allocations.json', fixture.allocations),
+];
+
+console.log(`Wrote ${written.length} seeder files under ${seederDir}`);
 console.log(fixture.meta.counts);

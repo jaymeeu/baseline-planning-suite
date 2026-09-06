@@ -18,7 +18,7 @@ apps/people/         People remote
 apps/delivery/       Delivery remote
 packages/domain/     Pure domain types + calculation engine (no React)
 packages/contracts/  Shared HostContext + BroadcastChannel message types
-packages/data/       IndexedDB repositories + `seeder/baseline.json`
+packages/data/       IndexedDB repositories + `seeder/*.json` (employees, rates, projects, WBS, allocations, meta)
 scripts/             Fixture generator, Docker verify script
 ```
 
@@ -120,7 +120,7 @@ Shell isolates remotes with per-remote error boundaries:
 ## Persistence
 
 - Browser **IndexedDB** behind repositories in `@bps/data` (no backend).
-- On first load, empty databases are seeded from `packages/data/seeder/baseline.json` (fixed IDs; not regenerated on startup).
+- On first load, empty databases are seeded from `packages/data/seeder/*.json` (fixed IDs; not regenerated on startup).
 - Data survives page refresh. Clear site data for `localhost` if you need to re-seed after fixture changes.
 
 ## Cost and capacity (brief)
@@ -152,7 +152,7 @@ Domain tests do not mount React. Fixture scale: 60 employees, 150 rates, 4 proje
 | Module Federation | `@module-federation/vite` | Shared React singletons across host/remotes |
 | Canonical allocation unit | Person-months (PM) | One stored value; convert at edges only |
 | Persistence | IndexedDB via `@bps/data` | Survives reload; no backend |
-| Fixture | Generated `packages/data/seeder/baseline.json` with fixed IDs | Matches case-study counts; IDs never regenerated on seed |
+| Fixture | Generated `packages/data/seeder/*.json` with fixed IDs | Split by concern; IDs never regenerated on seed |
 | Leaf + allocation → add child | Move allocations onto the new child | Never silently drop data; parent becomes derived |
 | Cross-remote rates | `BroadcastChannel('bps')` + `@bps/contracts` | Explicit typed pub/sub; no People→Delivery imports |
 | Shell shared context | `HostContext` props | Shell owns currency / active user |

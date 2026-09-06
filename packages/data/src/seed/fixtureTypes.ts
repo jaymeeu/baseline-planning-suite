@@ -8,7 +8,8 @@ import type {
 } from '@bps/domain';
 
 /**
- * Approved fixture strategy: generated with fixed IDs (see AGENTS.md / scripts/generate-fixture.mjs).
+ * Approved fixture strategy: generated with fixed IDs
+ * (see AGENTS.md / scripts/generate-fixture.mjs → packages/data/seeder/*.json).
  */
 export interface BaselineFixture {
   meta: {

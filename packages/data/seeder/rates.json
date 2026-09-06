@@ -1,0 +1,902 @@
+[
+  {
+    "id": "rate-okafor-80",
+    "employeeId": "emp-okafor",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 80
+  },
+  {
+    "id": "rate-okafor-95",
+    "employeeId": "emp-okafor",
+    "validFrom": "2026-03-12",
+    "hourlyCost": 95
+  },
+  {
+    "id": "rate-001",
+    "employeeId": "emp-002",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 46
+  },
+  {
+    "id": "rate-002",
+    "employeeId": "emp-003",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 49
+  },
+  {
+    "id": "rate-003",
+    "employeeId": "emp-004",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 52
+  },
+  {
+    "id": "rate-004",
+    "employeeId": "emp-005",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 55
+  },
+  {
+    "id": "rate-005",
+    "employeeId": "emp-006",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 58
+  },
+  {
+    "id": "rate-006",
+    "employeeId": "emp-007",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 61
+  },
+  {
+    "id": "rate-007",
+    "employeeId": "emp-008",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 64
+  },
+  {
+    "id": "rate-008",
+    "employeeId": "emp-009",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 67
+  },
+  {
+    "id": "rate-009",
+    "employeeId": "emp-010",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 70
+  },
+  {
+    "id": "rate-010",
+    "employeeId": "emp-011",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 73
+  },
+  {
+    "id": "rate-011",
+    "employeeId": "emp-012",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 76
+  },
+  {
+    "id": "rate-012",
+    "employeeId": "emp-013",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 79
+  },
+  {
+    "id": "rate-013",
+    "employeeId": "emp-014",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 82
+  },
+  {
+    "id": "rate-014",
+    "employeeId": "emp-015",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 85
+  },
+  {
+    "id": "rate-015",
+    "employeeId": "emp-016",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 88
+  },
+  {
+    "id": "rate-016",
+    "employeeId": "emp-017",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 41
+  },
+  {
+    "id": "rate-017",
+    "employeeId": "emp-018",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 44
+  },
+  {
+    "id": "rate-018",
+    "employeeId": "emp-019",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 47
+  },
+  {
+    "id": "rate-019",
+    "employeeId": "emp-020",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 50
+  },
+  {
+    "id": "rate-020",
+    "employeeId": "emp-021",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 53
+  },
+  {
+    "id": "rate-021",
+    "employeeId": "emp-022",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 56
+  },
+  {
+    "id": "rate-022",
+    "employeeId": "emp-023",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 59
+  },
+  {
+    "id": "rate-023",
+    "employeeId": "emp-024",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 62
+  },
+  {
+    "id": "rate-024",
+    "employeeId": "emp-025",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 65
+  },
+  {
+    "id": "rate-025",
+    "employeeId": "emp-026",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 68
+  },
+  {
+    "id": "rate-026",
+    "employeeId": "emp-027",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 71
+  },
+  {
+    "id": "rate-027",
+    "employeeId": "emp-028",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 74
+  },
+  {
+    "id": "rate-028",
+    "employeeId": "emp-029",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 77
+  },
+  {
+    "id": "rate-029",
+    "employeeId": "emp-030",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 80
+  },
+  {
+    "id": "rate-030",
+    "employeeId": "emp-031",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 83
+  },
+  {
+    "id": "rate-031",
+    "employeeId": "emp-032",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 86
+  },
+  {
+    "id": "rate-032",
+    "employeeId": "emp-033",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 89
+  },
+  {
+    "id": "rate-033",
+    "employeeId": "emp-034",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 42
+  },
+  {
+    "id": "rate-034",
+    "employeeId": "emp-035",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 45
+  },
+  {
+    "id": "rate-035",
+    "employeeId": "emp-036",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 48
+  },
+  {
+    "id": "rate-036",
+    "employeeId": "emp-037",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 51
+  },
+  {
+    "id": "rate-037",
+    "employeeId": "emp-038",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 54
+  },
+  {
+    "id": "rate-038",
+    "employeeId": "emp-039",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 57
+  },
+  {
+    "id": "rate-039",
+    "employeeId": "emp-040",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 60
+  },
+  {
+    "id": "rate-040",
+    "employeeId": "emp-041",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 63
+  },
+  {
+    "id": "rate-041",
+    "employeeId": "emp-042",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 66
+  },
+  {
+    "id": "rate-042",
+    "employeeId": "emp-043",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 69
+  },
+  {
+    "id": "rate-043",
+    "employeeId": "emp-044",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 72
+  },
+  {
+    "id": "rate-044",
+    "employeeId": "emp-045",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 75
+  },
+  {
+    "id": "rate-045",
+    "employeeId": "emp-046",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 78
+  },
+  {
+    "id": "rate-046",
+    "employeeId": "emp-047",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 81
+  },
+  {
+    "id": "rate-047",
+    "employeeId": "emp-048",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 84
+  },
+  {
+    "id": "rate-048",
+    "employeeId": "emp-049",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 87
+  },
+  {
+    "id": "rate-049",
+    "employeeId": "emp-050",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 40
+  },
+  {
+    "id": "rate-050",
+    "employeeId": "emp-051",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 43
+  },
+  {
+    "id": "rate-051",
+    "employeeId": "emp-052",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 46
+  },
+  {
+    "id": "rate-052",
+    "employeeId": "emp-053",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 49
+  },
+  {
+    "id": "rate-053",
+    "employeeId": "emp-054",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 52
+  },
+  {
+    "id": "rate-054",
+    "employeeId": "emp-055",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 55
+  },
+  {
+    "id": "rate-055",
+    "employeeId": "emp-056",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 58
+  },
+  {
+    "id": "rate-056",
+    "employeeId": "emp-057",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 61
+  },
+  {
+    "id": "rate-057",
+    "employeeId": "emp-058",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 64
+  },
+  {
+    "id": "rate-058",
+    "employeeId": "emp-059",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 67
+  },
+  {
+    "id": "rate-059",
+    "employeeId": "emp-060",
+    "validFrom": "2025-01-01",
+    "hourlyCost": 70
+  },
+  {
+    "id": "rate-mid-001",
+    "employeeId": "emp-002",
+    "validFrom": "2026-01-15",
+    "hourlyCost": 55
+  },
+  {
+    "id": "rate-mid-002",
+    "employeeId": "emp-003",
+    "validFrom": "2026-02-10",
+    "hourlyCost": 62
+  },
+  {
+    "id": "rate-mid-003",
+    "employeeId": "emp-004",
+    "validFrom": "2026-03-12",
+    "hourlyCost": 70
+  },
+  {
+    "id": "rate-mid-004",
+    "employeeId": "emp-005",
+    "validFrom": "2026-04-18",
+    "hourlyCost": 48
+  },
+  {
+    "id": "rate-mid-005",
+    "employeeId": "emp-006",
+    "validFrom": "2026-05-14",
+    "hourlyCost": 75
+  },
+  {
+    "id": "rate-mid-006",
+    "employeeId": "emp-007",
+    "validFrom": "2026-06-11",
+    "hourlyCost": 66
+  },
+  {
+    "id": "rate-mid-007",
+    "employeeId": "emp-008",
+    "validFrom": "2026-07-16",
+    "hourlyCost": 58
+  },
+  {
+    "id": "rate-mid-008",
+    "employeeId": "emp-009",
+    "validFrom": "2026-08-13",
+    "hourlyCost": 81
+  },
+  {
+    "id": "rate-mid-009",
+    "employeeId": "emp-010",
+    "validFrom": "2026-09-17",
+    "hourlyCost": 53
+  },
+  {
+    "id": "rate-mid-010",
+    "employeeId": "emp-011",
+    "validFrom": "2026-10-15",
+    "hourlyCost": 69
+  },
+  {
+    "id": "rate-extra-060",
+    "employeeId": "emp-013",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 76
+  },
+  {
+    "id": "rate-extra-061",
+    "employeeId": "emp-015",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 77
+  },
+  {
+    "id": "rate-extra-062",
+    "employeeId": "emp-017",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 78
+  },
+  {
+    "id": "rate-extra-063",
+    "employeeId": "emp-019",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 79
+  },
+  {
+    "id": "rate-extra-064",
+    "employeeId": "emp-021",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 80
+  },
+  {
+    "id": "rate-extra-065",
+    "employeeId": "emp-023",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 81
+  },
+  {
+    "id": "rate-extra-066",
+    "employeeId": "emp-025",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 82
+  },
+  {
+    "id": "rate-extra-067",
+    "employeeId": "emp-027",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 83
+  },
+  {
+    "id": "rate-extra-068",
+    "employeeId": "emp-029",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 84
+  },
+  {
+    "id": "rate-extra-069",
+    "employeeId": "emp-031",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 45
+  },
+  {
+    "id": "rate-extra-070",
+    "employeeId": "emp-033",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 46
+  },
+  {
+    "id": "rate-extra-071",
+    "employeeId": "emp-035",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 47
+  },
+  {
+    "id": "rate-extra-072",
+    "employeeId": "emp-037",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 48
+  },
+  {
+    "id": "rate-extra-073",
+    "employeeId": "emp-039",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 49
+  },
+  {
+    "id": "rate-extra-074",
+    "employeeId": "emp-041",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 50
+  },
+  {
+    "id": "rate-extra-075",
+    "employeeId": "emp-043",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 51
+  },
+  {
+    "id": "rate-extra-076",
+    "employeeId": "emp-045",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 52
+  },
+  {
+    "id": "rate-extra-077",
+    "employeeId": "emp-047",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 53
+  },
+  {
+    "id": "rate-extra-078",
+    "employeeId": "emp-049",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 54
+  },
+  {
+    "id": "rate-extra-079",
+    "employeeId": "emp-051",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 55
+  },
+  {
+    "id": "rate-extra-080",
+    "employeeId": "emp-053",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 56
+  },
+  {
+    "id": "rate-extra-081",
+    "employeeId": "emp-055",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 57
+  },
+  {
+    "id": "rate-extra-082",
+    "employeeId": "emp-057",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 58
+  },
+  {
+    "id": "rate-extra-083",
+    "employeeId": "emp-059",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 59
+  },
+  {
+    "id": "rate-extra-084",
+    "employeeId": "emp-002",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 60
+  },
+  {
+    "id": "rate-extra-085",
+    "employeeId": "emp-004",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 61
+  },
+  {
+    "id": "rate-extra-086",
+    "employeeId": "emp-006",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 62
+  },
+  {
+    "id": "rate-extra-087",
+    "employeeId": "emp-008",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 63
+  },
+  {
+    "id": "rate-extra-088",
+    "employeeId": "emp-010",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 64
+  },
+  {
+    "id": "rate-extra-089",
+    "employeeId": "emp-012",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 65
+  },
+  {
+    "id": "rate-extra-090",
+    "employeeId": "emp-014",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 66
+  },
+  {
+    "id": "rate-extra-091",
+    "employeeId": "emp-016",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 67
+  },
+  {
+    "id": "rate-extra-092",
+    "employeeId": "emp-018",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 68
+  },
+  {
+    "id": "rate-extra-093",
+    "employeeId": "emp-020",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 69
+  },
+  {
+    "id": "rate-extra-094",
+    "employeeId": "emp-022",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 70
+  },
+  {
+    "id": "rate-extra-095",
+    "employeeId": "emp-024",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 71
+  },
+  {
+    "id": "rate-extra-096",
+    "employeeId": "emp-026",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 72
+  },
+  {
+    "id": "rate-extra-097",
+    "employeeId": "emp-028",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 73
+  },
+  {
+    "id": "rate-extra-098",
+    "employeeId": "emp-030",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 74
+  },
+  {
+    "id": "rate-extra-099",
+    "employeeId": "emp-032",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 75
+  },
+  {
+    "id": "rate-extra-100",
+    "employeeId": "emp-034",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 76
+  },
+  {
+    "id": "rate-extra-101",
+    "employeeId": "emp-036",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 77
+  },
+  {
+    "id": "rate-extra-102",
+    "employeeId": "emp-038",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 78
+  },
+  {
+    "id": "rate-extra-103",
+    "employeeId": "emp-040",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 79
+  },
+  {
+    "id": "rate-extra-104",
+    "employeeId": "emp-042",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 80
+  },
+  {
+    "id": "rate-extra-105",
+    "employeeId": "emp-044",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 81
+  },
+  {
+    "id": "rate-extra-106",
+    "employeeId": "emp-046",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 82
+  },
+  {
+    "id": "rate-extra-107",
+    "employeeId": "emp-048",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 83
+  },
+  {
+    "id": "rate-extra-108",
+    "employeeId": "emp-050",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 84
+  },
+  {
+    "id": "rate-extra-109",
+    "employeeId": "emp-052",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 45
+  },
+  {
+    "id": "rate-extra-110",
+    "employeeId": "emp-054",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 46
+  },
+  {
+    "id": "rate-extra-111",
+    "employeeId": "emp-056",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 47
+  },
+  {
+    "id": "rate-extra-112",
+    "employeeId": "emp-058",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 48
+  },
+  {
+    "id": "rate-extra-113",
+    "employeeId": "emp-060",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 49
+  },
+  {
+    "id": "rate-extra-114",
+    "employeeId": "emp-002",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 50
+  },
+  {
+    "id": "rate-extra-115",
+    "employeeId": "emp-004",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 51
+  },
+  {
+    "id": "rate-extra-116",
+    "employeeId": "emp-006",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 52
+  },
+  {
+    "id": "rate-extra-117",
+    "employeeId": "emp-008",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 53
+  },
+  {
+    "id": "rate-extra-118",
+    "employeeId": "emp-010",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 54
+  },
+  {
+    "id": "rate-extra-119",
+    "employeeId": "emp-012",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 55
+  },
+  {
+    "id": "rate-extra-120",
+    "employeeId": "emp-014",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 56
+  },
+  {
+    "id": "rate-extra-121",
+    "employeeId": "emp-016",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 57
+  },
+  {
+    "id": "rate-extra-122",
+    "employeeId": "emp-018",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 58
+  },
+  {
+    "id": "rate-extra-123",
+    "employeeId": "emp-020",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 59
+  },
+  {
+    "id": "rate-extra-124",
+    "employeeId": "emp-022",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 60
+  },
+  {
+    "id": "rate-extra-125",
+    "employeeId": "emp-024",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 61
+  },
+  {
+    "id": "rate-extra-126",
+    "employeeId": "emp-026",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 62
+  },
+  {
+    "id": "rate-extra-127",
+    "employeeId": "emp-028",
+    "validFrom": "2024-07-01",
+    "hourlyCost": 63
+  },
+  {
+    "id": "rate-extra-128",
+    "employeeId": "emp-030",
+    "validFrom": "2024-08-01",
+    "hourlyCost": 64
+  },
+  {
+    "id": "rate-extra-129",
+    "employeeId": "emp-032",
+    "validFrom": "2024-09-01",
+    "hourlyCost": 65
+  },
+  {
+    "id": "rate-extra-130",
+    "employeeId": "emp-034",
+    "validFrom": "2024-10-01",
+    "hourlyCost": 66
+  },
+  {
+    "id": "rate-extra-131",
+    "employeeId": "emp-036",
+    "validFrom": "2024-11-01",
+    "hourlyCost": 67
+  },
+  {
+    "id": "rate-extra-132",
+    "employeeId": "emp-038",
+    "validFrom": "2024-12-01",
+    "hourlyCost": 68
+  },
+  {
+    "id": "rate-extra-133",
+    "employeeId": "emp-040",
+    "validFrom": "2024-01-01",
+    "hourlyCost": 69
+  },
+  {
+    "id": "rate-extra-134",
+    "employeeId": "emp-042",
+    "validFrom": "2024-02-01",
+    "hourlyCost": 70
+  },
+  {
+    "id": "rate-extra-135",
+    "employeeId": "emp-044",
+    "validFrom": "2024-03-01",
+    "hourlyCost": 71
+  },
+  {
+    "id": "rate-extra-136",
+    "employeeId": "emp-046",
+    "validFrom": "2024-04-01",
+    "hourlyCost": 72
+  },
+  {
+    "id": "rate-extra-137",
+    "employeeId": "emp-048",
+    "validFrom": "2024-05-01",
+    "hourlyCost": 73
+  },
+  {
+    "id": "rate-extra-138",
+    "employeeId": "emp-050",
+    "validFrom": "2024-06-01",
+    "hourlyCost": 74
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "proj-001",
+    "name": "Project Alpha",
+    "startDate": "2026-01-01",
+    "endDate": "2026-09-30"
+  },
+  {
+    "id": "proj-002",
+    "name": "Project Beta",
+    "startDate": "2026-02-01",
+    "endDate": "2026-10-31"
+  },
+  {
+    "id": "proj-003",
+    "name": "Project Gamma",
+    "startDate": "2026-03-01",
+    "endDate": "2026-11-30"
+  },
+  {
+    "id": "proj-004",
+    "name": "Project Delta",
+    "startDate": "2026-01-15",
+    "endDate": "2026-12-31"
+  }
+]

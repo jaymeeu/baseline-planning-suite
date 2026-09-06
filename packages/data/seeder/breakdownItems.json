@@ -1,0 +1,542 @@
+[
+  {
+    "id": "wbs-001",
+    "projectId": "proj-001",
+    "parentId": null,
+    "name": "Project Alpha Root"
+  },
+  {
+    "id": "wbs-002",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Stream 1"
+  },
+  {
+    "id": "wbs-003",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Stream 2"
+  },
+  {
+    "id": "wbs-004",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Stream 3"
+  },
+  {
+    "id": "wbs-005",
+    "projectId": "proj-001",
+    "parentId": "wbs-001",
+    "name": "Stream 4"
+  },
+  {
+    "id": "wbs-006",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Task 1"
+  },
+  {
+    "id": "wbs-007",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Task 2"
+  },
+  {
+    "id": "wbs-008",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Task 3"
+  },
+  {
+    "id": "wbs-009",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Task 4"
+  },
+  {
+    "id": "wbs-010",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Task 5"
+  },
+  {
+    "id": "wbs-011",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Task 6"
+  },
+  {
+    "id": "wbs-012",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Task 7"
+  },
+  {
+    "id": "wbs-013",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Task 8"
+  },
+  {
+    "id": "wbs-014",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Task 9"
+  },
+  {
+    "id": "wbs-015",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Task 10"
+  },
+  {
+    "id": "wbs-016",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Task 11"
+  },
+  {
+    "id": "wbs-017",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Task 12"
+  },
+  {
+    "id": "wbs-018",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Task 13"
+  },
+  {
+    "id": "wbs-019",
+    "projectId": "proj-001",
+    "parentId": "wbs-003",
+    "name": "Task 14"
+  },
+  {
+    "id": "wbs-020",
+    "projectId": "proj-001",
+    "parentId": "wbs-004",
+    "name": "Task 15"
+  },
+  {
+    "id": "wbs-021",
+    "projectId": "proj-001",
+    "parentId": "wbs-005",
+    "name": "Task 16"
+  },
+  {
+    "id": "wbs-022",
+    "projectId": "proj-001",
+    "parentId": "wbs-002",
+    "name": "Task 17"
+  },
+  {
+    "id": "wbs-023",
+    "projectId": "proj-002",
+    "parentId": null,
+    "name": "Project Beta Root"
+  },
+  {
+    "id": "wbs-024",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Stream 1"
+  },
+  {
+    "id": "wbs-025",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Stream 2"
+  },
+  {
+    "id": "wbs-026",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Stream 3"
+  },
+  {
+    "id": "wbs-027",
+    "projectId": "proj-002",
+    "parentId": "wbs-023",
+    "name": "Stream 4"
+  },
+  {
+    "id": "wbs-028",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Task 1"
+  },
+  {
+    "id": "wbs-029",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Task 2"
+  },
+  {
+    "id": "wbs-030",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Task 3"
+  },
+  {
+    "id": "wbs-031",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Task 4"
+  },
+  {
+    "id": "wbs-032",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Task 5"
+  },
+  {
+    "id": "wbs-033",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Task 6"
+  },
+  {
+    "id": "wbs-034",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Task 7"
+  },
+  {
+    "id": "wbs-035",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Task 8"
+  },
+  {
+    "id": "wbs-036",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Task 9"
+  },
+  {
+    "id": "wbs-037",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Task 10"
+  },
+  {
+    "id": "wbs-038",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Task 11"
+  },
+  {
+    "id": "wbs-039",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Task 12"
+  },
+  {
+    "id": "wbs-040",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Task 13"
+  },
+  {
+    "id": "wbs-041",
+    "projectId": "proj-002",
+    "parentId": "wbs-025",
+    "name": "Task 14"
+  },
+  {
+    "id": "wbs-042",
+    "projectId": "proj-002",
+    "parentId": "wbs-026",
+    "name": "Task 15"
+  },
+  {
+    "id": "wbs-043",
+    "projectId": "proj-002",
+    "parentId": "wbs-027",
+    "name": "Task 16"
+  },
+  {
+    "id": "wbs-044",
+    "projectId": "proj-002",
+    "parentId": "wbs-024",
+    "name": "Task 17"
+  },
+  {
+    "id": "wbs-045",
+    "projectId": "proj-003",
+    "parentId": null,
+    "name": "Project Gamma Root"
+  },
+  {
+    "id": "wbs-046",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Stream 1"
+  },
+  {
+    "id": "wbs-047",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Stream 2"
+  },
+  {
+    "id": "wbs-048",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Stream 3"
+  },
+  {
+    "id": "wbs-049",
+    "projectId": "proj-003",
+    "parentId": "wbs-045",
+    "name": "Stream 4"
+  },
+  {
+    "id": "wbs-050",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Task 1"
+  },
+  {
+    "id": "wbs-051",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Task 2"
+  },
+  {
+    "id": "wbs-052",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Task 3"
+  },
+  {
+    "id": "wbs-053",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Task 4"
+  },
+  {
+    "id": "wbs-054",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Task 5"
+  },
+  {
+    "id": "wbs-055",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Task 6"
+  },
+  {
+    "id": "wbs-056",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Task 7"
+  },
+  {
+    "id": "wbs-057",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Task 8"
+  },
+  {
+    "id": "wbs-058",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Task 9"
+  },
+  {
+    "id": "wbs-059",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Task 10"
+  },
+  {
+    "id": "wbs-060",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Task 11"
+  },
+  {
+    "id": "wbs-061",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Task 12"
+  },
+  {
+    "id": "wbs-062",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Task 13"
+  },
+  {
+    "id": "wbs-063",
+    "projectId": "proj-003",
+    "parentId": "wbs-047",
+    "name": "Task 14"
+  },
+  {
+    "id": "wbs-064",
+    "projectId": "proj-003",
+    "parentId": "wbs-048",
+    "name": "Task 15"
+  },
+  {
+    "id": "wbs-065",
+    "projectId": "proj-003",
+    "parentId": "wbs-049",
+    "name": "Task 16"
+  },
+  {
+    "id": "wbs-066",
+    "projectId": "proj-003",
+    "parentId": "wbs-046",
+    "name": "Task 17"
+  },
+  {
+    "id": "wbs-067",
+    "projectId": "proj-004",
+    "parentId": null,
+    "name": "Project Delta Root"
+  },
+  {
+    "id": "wbs-068",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Stream 1"
+  },
+  {
+    "id": "wbs-069",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Stream 2"
+  },
+  {
+    "id": "wbs-070",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Stream 3"
+  },
+  {
+    "id": "wbs-071",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Stream 4"
+  },
+  {
+    "id": "wbs-072",
+    "projectId": "proj-004",
+    "parentId": "wbs-067",
+    "name": "Stream 5"
+  },
+  {
+    "id": "wbs-073",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Task 1"
+  },
+  {
+    "id": "wbs-074",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Task 2"
+  },
+  {
+    "id": "wbs-075",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Task 3"
+  },
+  {
+    "id": "wbs-076",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "Task 4"
+  },
+  {
+    "id": "wbs-077",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "Task 5"
+  },
+  {
+    "id": "wbs-078",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Task 6"
+  },
+  {
+    "id": "wbs-079",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Task 7"
+  },
+  {
+    "id": "wbs-080",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Task 8"
+  },
+  {
+    "id": "wbs-081",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "Task 9"
+  },
+  {
+    "id": "wbs-082",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "Task 10"
+  },
+  {
+    "id": "wbs-083",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Task 11"
+  },
+  {
+    "id": "wbs-084",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Task 12"
+  },
+  {
+    "id": "wbs-085",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Task 13"
+  },
+  {
+    "id": "wbs-086",
+    "projectId": "proj-004",
+    "parentId": "wbs-071",
+    "name": "Task 14"
+  },
+  {
+    "id": "wbs-087",
+    "projectId": "proj-004",
+    "parentId": "wbs-072",
+    "name": "Task 15"
+  },
+  {
+    "id": "wbs-088",
+    "projectId": "proj-004",
+    "parentId": "wbs-068",
+    "name": "Task 16"
+  },
+  {
+    "id": "wbs-089",
+    "projectId": "proj-004",
+    "parentId": "wbs-069",
+    "name": "Task 17"
+  },
+  {
+    "id": "wbs-090",
+    "projectId": "proj-004",
+    "parentId": "wbs-070",
+    "name": "Task 18"
+  }
+]
