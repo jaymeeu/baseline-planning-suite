@@ -1,6 +1,8 @@
-import type { DisplayUnit } from './types';
+import type { DisplayUnit, YearMonth } from './types';
 /** Display decimal places by unit. */
 export declare function displayDecimals(unit: DisplayUnit): number;
+/** Display label for a canonical `YYYY-MM` month, e.g. `Jan 2026`. */
+export declare function formatYearMonthLabel(month: YearMonth): string;
 /**
  * Round a single value for display (does not reconcile totals).
  */

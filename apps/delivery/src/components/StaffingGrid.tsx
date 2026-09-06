@@ -14,6 +14,7 @@ import {
   PLANNING_HORIZON,
   displayAmountForCell,
   formatDisplayValue,
+  formatYearMonthLabel,
   reconcileColumnTotals,
 } from '../deliveryHelpers';
 import { UnitSwitcher } from './UnitSwitcher';
@@ -228,8 +229,10 @@ export function StaffingGrid({
                     Employee
                   </th>
                   {months.map((month) => (
-                    <th key={month} scope="col">
-                      <span className="bps-grid__month">{month}</span>
+                    <th key={month} scope="col" title={month}>
+                      <span className="bps-grid__month">
+                        {formatYearMonthLabel(month)}
+                      </span>
                     </th>
                   ))}
                   <th scope="col">Row total</th>

@@ -1,4 +1,4 @@
-import type { EmployeeMonthCapacity } from '@bps/domain';
+import { formatYearMonthLabel, type EmployeeMonthCapacity } from '@bps/domain';
 
 interface CapacityPanelProps {
   rows: readonly EmployeeMonthCapacity[];
@@ -35,12 +35,13 @@ export function CapacityPanel({ rows }: CapacityPanelProps) {
         <div className="bps-cap-rows">
           {rows.map((row) => {
             const width = barWidthPercent(row.capacityPercent);
+            const monthLabel = formatYearMonthLabel(row.month);
             return (
               <div
                 key={`${row.employeeId}-${row.month}`}
                 className="bps-cap-row"
                 role="group"
-                aria-label={`${row.month}: ${row.capacityPercent.toFixed(1)} percent${
+                aria-label={`${monthLabel}: ${row.capacityPercent.toFixed(1)} percent${
                   row.isOverCapacity ? ', over capacity' : ''
                 }`}
                 title={
@@ -49,7 +50,9 @@ export function CapacityPanel({ rows }: CapacityPanelProps) {
                     : `${row.totalPm.toFixed(2)} PM`
                 }
               >
-                <span className="bps-data">{row.month}</span>
+                <span className="bps-data" title={row.month}>
+                  {monthLabel}
+                </span>
                 <div className="bps-cap-track" aria-hidden="true">
                   <div
                     className={`bps-cap-fill${row.isOverCapacity ? ' bps-cap-fill--over' : ''}`}

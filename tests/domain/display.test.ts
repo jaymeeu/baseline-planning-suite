@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   displayDecimals,
   distributeLargestRemainder,
+  formatYearMonthLabel,
   roundForDisplay,
 } from '../../packages/domain/src/index';
 
@@ -17,6 +18,12 @@ describe('display precision', () => {
     expect(roundForDisplay('PM', 0.456)).toBe(0.46);
     expect(roundForDisplay('Percent', 33.36)).toBe(33.4);
     expect(roundForDisplay('Cost', 7880.004)).toBe(7880);
+  });
+
+  it('formats year-month labels as MMM YYYY', () => {
+    expect(formatYearMonthLabel('2026-01')).toBe('Jan 2026');
+    expect(formatYearMonthLabel('2026-03')).toBe('Mar 2026');
+    expect(formatYearMonthLabel('2026-12')).toBe('Dec 2026');
   });
 });
 

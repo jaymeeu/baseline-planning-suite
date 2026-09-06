@@ -77,6 +77,7 @@ export {
 export {
   displayDecimals,
   distributeLargestRemainder,
+  formatYearMonthLabel,
   roundForDisplay,
 } from './display';
 

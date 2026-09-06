@@ -1,4 +1,4 @@
-import type { DisplayUnit } from './types';
+import type { DisplayUnit, YearMonth } from './types';
 
 /** Display decimal places by unit. */
 export function displayDecimals(unit: DisplayUnit): number {
@@ -14,6 +14,32 @@ export function displayDecimals(unit: DisplayUnit): number {
       throw new Error(`Unsupported display unit: ${String(_exhaustive)}`);
     }
   }
+}
+
+const MONTH_SHORT = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+] as const;
+
+/** Display label for a canonical `YYYY-MM` month, e.g. `Jan 2026`. */
+export function formatYearMonthLabel(month: YearMonth): string {
+  const match = /^(\d{4})-(\d{2})$/.exec(month);
+  if (!match) return month;
+  const year = match[1]!;
+  const monthIndex = Number(match[2]) - 1;
+  const short = MONTH_SHORT[monthIndex];
+  if (!short) return month;
+  return `${short} ${year}`;
 }
 
 /**

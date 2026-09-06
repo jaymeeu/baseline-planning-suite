@@ -34,6 +34,8 @@ export const PLANNING_HORIZON: readonly YearMonth[] = [
   '2026-12',
 ] as const;
 
+export { formatYearMonthLabel } from '@bps/domain';
+
 export function newProjectId(): string {
   return `proj-user-${crypto.randomUUID()}`;
 }

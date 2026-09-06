@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  formatYearMonthLabel,
   newBreakdownItemId,
   newProjectId,
   validateBreakdownName,
@@ -10,6 +11,12 @@ describe('deliveryHelpers', () => {
   it('generates project and wbs ids with stable prefixes', () => {
     expect(newProjectId().startsWith('proj-user-')).toBe(true);
     expect(newBreakdownItemId().startsWith('wbs-user-')).toBe(true);
+  });
+
+  it('formats year-month headers as MMM YYYY', () => {
+    expect(formatYearMonthLabel('2026-01')).toBe('Jan 2026');
+    expect(formatYearMonthLabel('2026-03')).toBe('Mar 2026');
+    expect(formatYearMonthLabel('2026-12')).toBe('Dec 2026');
   });
 
   it('validates project input', () => {

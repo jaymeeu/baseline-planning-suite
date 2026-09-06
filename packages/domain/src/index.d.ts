@@ -12,5 +12,5 @@ export type { AllocationCostInput, AllocationCostResult, CostSlice, } from './co
 export { calculateAllocationCost } from './cost';
 export type { CapacityAllocation, EmployeeMonthCapacity } from './capacity';
 export { canEditAllocationWhenOverCapacity, summarizeAllCapacities, summarizeEmployeeMonthCapacity, } from './capacity';
-export { displayDecimals, distributeLargestRemainder, roundForDisplay, } from './display';
+export { displayDecimals, distributeLargestRemainder, formatYearMonthLabel, roundForDisplay, } from './display';
 export { leafIdsUnder, sumLeafAllocationsPm } from './staffing';
