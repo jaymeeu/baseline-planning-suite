@@ -1,2 +1,5 @@
 @import "tailwindcss";
+/* Remotes render inside Shell; scan their sources so host CSS includes their utilities. */
+@source "../../people/src";
+@source "../../delivery/src";
 @import "@bps/ui/bps.css";

@@ -128,7 +128,7 @@ export function StaffingGrid({
       aria-label="Staffing grid"
       data-testid="staffing-grid"
     >
-      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+      <div className="bps-toolbar">
         <div>
           <h2 className="bps-section-title mb-1">Staffing — {projectName}</h2>
           <p className="bps-meta m-0">

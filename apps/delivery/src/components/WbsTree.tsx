@@ -121,7 +121,7 @@ export function WbsTree({
 
   return (
     <section className="bps-panel" aria-label="Work breakdown structure">
-      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
+      <div className="bps-toolbar">
         <div>
           <h2 className="bps-section-title mb-1">{projectName}</h2>
           <p className="bps-meta m-0">
@@ -129,7 +129,7 @@ export function WbsTree({
             allocations). Expand a parent to see its children.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="bps-toolbar__actions">
           <button
             type="button"
             className="bps-btn bps-btn--primary bps-btn--sm"

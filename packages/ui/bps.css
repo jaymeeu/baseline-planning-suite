@@ -116,6 +116,23 @@
     box-shadow: var(--shadow-bps);
   }
 
+  /* Panel header row — lives in shared CSS so it works when remotes are hosted
+     in Shell (host Tailwind may not include remote-only utility classes). */
+  .bps-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .bps-toolbar__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   .bps-btn {
     display: inline-flex;
     align-items: center;
