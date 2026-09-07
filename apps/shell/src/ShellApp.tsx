@@ -92,18 +92,12 @@ function RemoteFailure({
   const copy = formatRemoteFailureMessage(remoteName, message);
   return (
     <div role="alert" className="bps-alert bps-alert--error">
-      <strong>{copy.title}</strong>
+      <strong className="capitalize">{copy.title}</strong>
       <p className="m-0">{copy.detail}</p>
       <p className="bps-meta m-0 mt-2" style={{ color: 'inherit', opacity: 0.9 }}>
         {copy.isolationNote}
       </p>
-      <button
-        type="button"
-        className="bps-btn bps-btn--danger mt-3"
-        onClick={onRetry}
-      >
-        Restore {remoteName}
-      </button>
+    
     </div>
   );
 }

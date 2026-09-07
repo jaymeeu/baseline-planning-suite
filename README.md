@@ -90,7 +90,7 @@ Optional: `npm test` · `npm run typecheck` · `npm run build`
 
 ## 3. How to break a remote on purpose
 
-Shell keeps working when one remote fails. Prefer a **real** outage:
+Shell keeps working when one remote fails. Run these from the **repo root** (where `docker-compose.yml` lives):
 
 ```bash
 docker compose stop people
@@ -98,7 +98,7 @@ docker compose stop people
 
 1. Hard-reload http://localhost:8080 → **People** panel fails; Shell + **Delivery** stay usable.
 2. http://localhost:8081 is down too (service stopped).
-3. Restore:
+3. Restore (again from the repo root):
 
 ```bash
 docker compose start people
@@ -106,16 +106,13 @@ docker compose start people
 
 4. **Retry** in Shell (or reload) → People recovers.
 
-Same for Delivery: `docker compose stop delivery` / `start delivery`.
+Same for Delivery: `docker compose stop delivery` / `start delivery` (also from the repo root).
+
+> **⏱️ Expect a noticeable delay (often several seconds, sometimes ~5–15s) after refresh before the failure panel appears.**
+>
+> That is normal. Shell still tries to load the remote’s `remoteEntry.js`. While the request is pending you see the loading skeleton; the error only shows once the browser gives up connecting to the stopped port (`:8081` / `:8082`). There is no short custom timeout in Shell — how long it takes depends on the browser’s connection timeout (and can feel slow on `localhost`).
 
 **Alternatives**
-
-- Bad URL (service stays up; Shell alone fails to load it):
-
-```bash
-PEOPLE_REMOTE_URL=http://127.0.0.1:9/remoteEntry.js \
-  docker compose up -d --force-recreate --no-build shell
-```
 
 - Shell **Resilience demo** only simulates an error panel — it does **not** stop `:8081` / `:8082`.
 
