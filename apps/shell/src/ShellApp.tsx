@@ -22,7 +22,6 @@ import './index.css';
 interface RemoteErrorBoundaryProps {
   remoteName: RemoteName;
   children: ReactNode;
-  forceFail: boolean;
   onRetry: () => void;
 }
 
@@ -44,28 +43,12 @@ class RemoteErrorBoundary extends Component<
     console.error(`[shell] remote "${this.props.remoteName}" failed`, error, info);
   }
 
-  public componentDidUpdate(prevProps: RemoteErrorBoundaryProps): void {
-    if (prevProps.forceFail !== this.props.forceFail && !this.props.forceFail) {
-      this.setState({ error: null });
-    }
-  }
-
   private handleRetry = (): void => {
     this.setState({ error: null });
     this.props.onRetry();
   };
 
   public render(): ReactNode {
-    if (this.props.forceFail) {
-      return (
-        <RemoteFailure
-          remoteName={this.props.remoteName}
-          message="Remote failure deliberately triggered for demonstration."
-          onRetry={this.handleRetry}
-        />
-      );
-    }
-
     if (this.state.error) {
       return (
         <RemoteFailure
@@ -97,7 +80,13 @@ function RemoteFailure({
       <p className="bps-meta m-0 mt-2" style={{ color: 'inherit', opacity: 0.9 }}>
         {copy.isolationNote}
       </p>
-    
+      <button
+        type="button"
+        className="bps-btn bps-btn--secondary mt-3"
+        onClick={onRetry}
+      >
+        Retry
+      </button>
     </div>
   );
 }
@@ -145,19 +134,15 @@ const CURRENCIES = ['EUR', 'USD', 'GBP'] as const;
 
 export function ShellApp() {
   const [view, setView] = useState<RemoteName>('people');
-  const [forceFailPeople, setForceFailPeople] = useState(false);
-  const [forceFailDelivery, setForceFailDelivery] = useState(false);
   const [peopleMountKey, setPeopleMountKey] = useState(0);
   const [deliveryMountKey, setDeliveryMountKey] = useState(0);
   const [host, setHost] = useState<HostContext>(DEFAULT_HOST_CONTEXT);
 
   const retryPeople = (): void => {
-    setForceFailPeople(false);
     setPeopleMountKey((key) => key + 1);
   };
 
   const retryDelivery = (): void => {
-    setForceFailDelivery(false);
     setDeliveryMountKey((key) => key + 1);
   };
 
@@ -226,56 +211,24 @@ export function ShellApp() {
         </div>
       </header>
 
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-        <nav className="bps-nav-tabs" aria-label="Primary">
-          <button
-            type="button"
-            className="bps-nav-tab"
-            aria-current={view === 'people' ? 'page' : undefined}
-            onClick={() => switchView('people')}
-          >
-            People
-          </button>
-          <button
-            type="button"
-            className="bps-nav-tab"
-            aria-current={view === 'delivery' ? 'page' : undefined}
-            onClick={() => switchView('delivery')}
-          >
-            Delivery
-          </button>
-        </nav>
-
-        <details className="bps-resilience">
-          <summary>Resilience demo</summary>
-          <div className="bps-resilience__body">
-            <p className="bps-meta m-0 mb-3">
-              Simulated panel failure only (error boundary). Does not stop the
-              People/Delivery services — <code>:8081</code> / <code>:8082</code>{' '}
-              stay up. For a real outage use{' '}
-              <code>docker compose stop people</code> (see README).
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                className="bps-btn bps-btn--secondary"
-                onClick={() => setForceFailPeople((value) => !value)}
-              >
-                {forceFailPeople ? 'Restore People' : 'Simulate People failure'}
-              </button>
-              <button
-                type="button"
-                className="bps-btn bps-btn--secondary"
-                onClick={() => setForceFailDelivery((value) => !value)}
-              >
-                {forceFailDelivery
-                  ? 'Restore Delivery'
-                  : 'Simulate Delivery failure'}
-              </button>
-            </div>
-          </div>
-        </details>
-      </div>
+      <nav className="bps-nav-tabs mb-4" aria-label="Primary">
+        <button
+          type="button"
+          className="bps-nav-tab"
+          aria-current={view === 'people' ? 'page' : undefined}
+          onClick={() => switchView('people')}
+        >
+          People
+        </button>
+        <button
+          type="button"
+          className="bps-nav-tab"
+          aria-current={view === 'delivery' ? 'page' : undefined}
+          onClick={() => switchView('delivery')}
+        >
+          Delivery
+        </button>
+      </nav>
 
       {/* Keep both remotes mounted so BroadcastChannel updates reach the hidden remote. */}
       <div id="shell-remote-main" tabIndex={-1}>
@@ -284,11 +237,7 @@ export function ShellApp() {
           aria-hidden={view !== 'people'}
           data-testid="shell-people-panel"
         >
-          <RemoteErrorBoundary
-            remoteName="people"
-            forceFail={forceFailPeople}
-            onRetry={retryPeople}
-          >
+          <RemoteErrorBoundary remoteName="people" onRetry={retryPeople}>
             <RemotePanel remote="people" host={host} mountKey={peopleMountKey} />
           </RemoteErrorBoundary>
         </div>
@@ -298,11 +247,7 @@ export function ShellApp() {
           aria-hidden={view !== 'delivery'}
           data-testid="shell-delivery-panel"
         >
-          <RemoteErrorBoundary
-            remoteName="delivery"
-            forceFail={forceFailDelivery}
-            onRetry={retryDelivery}
-          >
+          <RemoteErrorBoundary remoteName="delivery" onRetry={retryDelivery}>
             <RemotePanel
               remote="delivery"
               host={host}

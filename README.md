@@ -112,10 +112,6 @@ Same for Delivery: `docker compose stop delivery` / `start delivery` (also from 
 >
 > That is normal. Shell still tries to load the remote’s `remoteEntry.js`. The error only shows once the browser gives up connecting to the stopped port (`:8081` / `:8082`).
 
-**Alternatives**
-
-- Shell **Resilience demo** only simulates an error panel — it does **not** stop `:8081` / `:8082`.
-
 ---
 
 ## Brief notes
