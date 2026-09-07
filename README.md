@@ -42,6 +42,7 @@ scripts/             Fixture generator, Docker verify script
 - **Shared singletons:** React 18.3 and ReactDOM (`requiredVersion: ^18.3.1`)
 - **Shell → remotes:** `HostContext` props (`currency`, `activeUser`); standalone remotes supply local defaults
 - **People → Delivery rates:** typed `rates/changed` messages on `BroadcastChannel('bps')`
+- **Delivery → People allocations:** typed `allocations/changed` messages on the same channel (capacity chart updates without reload)
 - **Remote URLs:** runtime `/config.js` → `window.__BPS_CONFIG__` (not baked into the Shell JS bundle)
 
 ## Installation

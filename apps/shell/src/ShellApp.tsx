@@ -279,7 +279,7 @@ export function ShellApp() {
         </details>
       </div>
 
-      {/* Keep both remotes mounted so BroadcastChannel rate updates reach Delivery while People is visible. */}
+      {/* Keep both remotes mounted so BroadcastChannel updates reach the hidden remote. */}
       <div id="shell-remote-main" tabIndex={-1}>
         <div
           className={view === 'people' ? undefined : 'hidden'}

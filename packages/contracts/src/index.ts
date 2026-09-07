@@ -1,6 +1,7 @@
 /**
  * Published cross-app contracts — no remote internals.
- * Transport: BroadcastChannel(BPS_CHANNEL). People publishes; Delivery consumes.
+ * Transport: BroadcastChannel(BPS_CHANNEL).
+ * People publishes rates/changed; Delivery publishes allocations/changed.
  */
 
 export const BPS_CHANNEL = 'bps' as const;
@@ -33,24 +34,46 @@ export interface RatesChangedMessage {
   at: string;
 }
 
-export type BpsMessage = RatesChangedMessage;
+/**
+ * Notification that Delivery allocation data changed.
+ * People reloads cross-project capacity when this arrives.
+ */
+export interface AllocationsChangedMessage {
+  type: 'allocations/changed';
+  /** Employees whose capacity may have changed (empty = full refresh). */
+  employeeIds: string[];
+  /** ISO-8601 timestamp when the change was published. */
+  at: string;
+}
+
+export type BpsMessage = RatesChangedMessage | AllocationsChangedMessage;
+
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === 'string' && value.length > 0;
+}
 
 export function isBpsMessage(data: unknown): data is BpsMessage {
   if (typeof data !== 'object' || data === null) return false;
   const record = data as Record<string, unknown>;
-  if (record.type !== 'rates/changed') return false;
-  if (typeof record.employeeId !== 'string' || record.employeeId.length === 0) {
-    return false;
+
+  if (record.type === 'rates/changed') {
+    if (!isNonEmptyString(record.employeeId)) return false;
+    if (record.op !== 'upsert' && record.op !== 'delete') return false;
+    if (!isNonEmptyString(record.at)) return false;
+    if (record.rateId !== undefined && !isNonEmptyString(record.rateId)) {
+      return false;
+    }
+    return true;
   }
-  if (record.op !== 'upsert' && record.op !== 'delete') return false;
-  if (typeof record.at !== 'string' || record.at.length === 0) return false;
-  if (
-    record.rateId !== undefined &&
-    (typeof record.rateId !== 'string' || record.rateId.length === 0)
-  ) {
-    return false;
+
+  if (record.type === 'allocations/changed') {
+    if (!isNonEmptyString(record.at)) return false;
+    if (!Array.isArray(record.employeeIds)) return false;
+    if (!record.employeeIds.every(isNonEmptyString)) return false;
+    return true;
   }
-  return true;
+
+  return false;
 }
 
 function requireBroadcastChannel(): typeof BroadcastChannel {
