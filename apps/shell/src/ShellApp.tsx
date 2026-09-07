@@ -102,7 +102,7 @@ function RemoteFailure({
         className="bps-btn bps-btn--danger mt-3"
         onClick={onRetry}
       >
-        Retry {remoteName}
+        Restore {remoteName}
       </button>
     </div>
   );
