@@ -256,8 +256,10 @@ export function ShellApp() {
           <summary>Resilience demo</summary>
           <div className="bps-resilience__body">
             <p className="bps-meta m-0 mb-3">
-              Deliberately fail a remote panel. Shell chrome and the other remote
-              stay available.
+              Simulated panel failure only (error boundary). Does not stop the
+              People/Delivery services — <code>:8081</code> / <code>:8082</code>{' '}
+              stay up. For a real outage use{' '}
+              <code>docker compose stop people</code> (see README).
             </p>
             <div className="flex flex-wrap gap-2">
               <button
@@ -265,14 +267,16 @@ export function ShellApp() {
                 className="bps-btn bps-btn--secondary"
                 onClick={() => setForceFailPeople((value) => !value)}
               >
-                {forceFailPeople ? 'Restore People' : 'Break People'}
+                {forceFailPeople ? 'Restore People' : 'Simulate People failure'}
               </button>
               <button
                 type="button"
                 className="bps-btn bps-btn--secondary"
                 onClick={() => setForceFailDelivery((value) => !value)}
               >
-                {forceFailDelivery ? 'Restore Delivery' : 'Break Delivery'}
+                {forceFailDelivery
+                  ? 'Restore Delivery'
+                  : 'Simulate Delivery failure'}
               </button>
             </div>
           </div>
