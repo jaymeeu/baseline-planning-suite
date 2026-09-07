@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { publishBpsMessage } from '@bps/contracts';
+import { publishBpsMessage, subscribeBpsMessages } from '@bps/contracts';
 import {
   assertWeeklyHours,
   sortRatesByValidFrom,
@@ -60,6 +60,20 @@ export function usePeopleData() {
       cancelled = true;
     };
   }, [reload]);
+
+  /** Delivery owns allocations; refresh capacity when staffing changes. */
+  useEffect(() => {
+    if (!boot) return;
+    return subscribeBpsMessages((message) => {
+      if (message.type !== 'allocations/changed') return;
+      void reload(boot).catch((err: unknown) => {
+        console.error(
+          '[people] failed to refresh capacity after Delivery event',
+          err,
+        );
+      });
+    });
+  }, [boot, reload]);
 
   /** Default to the first employee (name-sorted) on load. */
   useEffect(() => {

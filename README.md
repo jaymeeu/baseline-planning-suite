@@ -19,7 +19,7 @@ apps/delivery/       Delivery remote
 packages/domain/     Pure domain types + calculation engine (no React)
 packages/contracts/  Shared HostContext + BroadcastChannel message types
 packages/data/       IndexedDB repositories + seed loader
-seeder/              Baseline JSON by concern (employees, rates, projects, WBS, allocations, meta)
+fixtures/            Baseline seed data (`seed-data.json`)
 scripts/             Fixture generator, Docker verify script
 ```
 
@@ -42,6 +42,7 @@ scripts/             Fixture generator, Docker verify script
 - **Shared singletons:** React 18.3 and ReactDOM (`requiredVersion: ^18.3.1`)
 - **Shell → remotes:** `HostContext` props (`currency`, `activeUser`); standalone remotes supply local defaults
 - **People → Delivery rates:** typed `rates/changed` messages on `BroadcastChannel('bps')`
+- **Delivery → People allocations:** typed `allocations/changed` messages on the same channel (capacity chart updates without reload)
 - **Remote URLs:** runtime `/config.js` → `window.__BPS_CONFIG__` (not baked into the Shell JS bundle)
 
 ## Installation
@@ -121,7 +122,7 @@ Shell isolates remotes with per-remote error boundaries:
 ## Persistence
 
 - Browser **IndexedDB** behind repositories in `@bps/data` (no backend).
-- On first load, empty databases are seeded from `seeder/*.json` (fixed IDs; not regenerated on startup).
+- On first load, empty databases are seeded from `fixtures/seed-data.json` (fixed IDs; not regenerated on startup).
 - Data survives page refresh. Clear site data for `localhost` if you need to re-seed after fixture changes.
 
 ## Cost and capacity (brief)
@@ -153,7 +154,7 @@ Domain tests do not mount React. Fixture scale: 60 employees, 150 rates, 4 proje
 | Module Federation | `@module-federation/vite` | Shared React singletons across host/remotes |
 | Canonical allocation unit | Person-months (PM) | One stored value; convert at edges only |
 | Persistence | IndexedDB via `@bps/data` | Survives reload; no backend |
-| Fixture | Generated `seeder/*.json` with fixed IDs | Split by concern; IDs never regenerated on seed |
+| Fixture | Generated `fixtures/seed-data.json` with fixed IDs | Single seed file; IDs never regenerated on seed |
 | Leaf + allocation → add child | Move allocations onto the new child | Never silently drop data; parent becomes derived |
 | Cross-remote rates | `BroadcastChannel('bps')` + `@bps/contracts` | Explicit typed pub/sub; no People→Delivery imports |
 | Shell shared context | `HostContext` props | Shell owns currency / active user |

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { subscribeBpsMessages } from '@bps/contracts';
+import { publishBpsMessage, subscribeBpsMessages } from '@bps/contracts';
 import {
   assertAllocationTargetIsLeaf,
   assertCanMoveItem,
@@ -256,6 +256,13 @@ export function useDeliveryData() {
       await reload(boot);
 
       if (plan.movedAllocationCount > 0) {
+        publishBpsMessage({
+          type: 'allocations/changed',
+          employeeIds: [
+            ...new Set(plan.reassignedAllocations.map((a) => a.employeeId)),
+          ],
+          at: new Date().toISOString(),
+        });
         setMessage(
           `Moved ${plan.movedAllocationCount} allocation(s) from parent onto new child “${plan.newChild.name}”.`,
         );
@@ -293,6 +300,7 @@ export function useDeliveryData() {
       if (!existing) throw new Error(`Breakdown item not found: ${itemId}`);
 
       let movedFromParent = 0;
+      let movedEmployeeIds: string[] = [];
       if (newParentId !== null) {
         const parentAllocations =
           await boot.delivery.allocations.listByBreakdownItemId(newParentId);
@@ -314,6 +322,9 @@ export function useDeliveryData() {
             });
           }
           movedFromParent = parentAllocations.length;
+          movedEmployeeIds = [
+            ...new Set(parentAllocations.map((a) => a.employeeId)),
+          ];
         }
       }
 
@@ -323,6 +334,11 @@ export function useDeliveryData() {
       });
       await reload(boot);
       if (movedFromParent > 0) {
+        publishBpsMessage({
+          type: 'allocations/changed',
+          employeeIds: movedEmployeeIds,
+          at: new Date().toISOString(),
+        });
         setMessage(
           `Moved ${movedFromParent} allocation(s) from former leaf parent onto “${existing.name}”.`,
         );
@@ -338,15 +354,24 @@ export function useDeliveryData() {
     async (itemId: string) => {
       if (!boot) throw new Error('Delivery is not ready');
       const subtreeIds = collectSubtreeIds(breakdownItems, itemId);
+      const affectedEmployeeIds = new Set<string>();
       for (const id of subtreeIds) {
         const attached =
           await boot.delivery.allocations.listByBreakdownItemId(id);
         for (const allocation of attached) {
+          affectedEmployeeIds.add(allocation.employeeId);
           await boot.delivery.allocations.remove(allocation.id);
         }
         await boot.delivery.breakdownItems.remove(id);
       }
       await reload(boot);
+      if (affectedEmployeeIds.size > 0) {
+        publishBpsMessage({
+          type: 'allocations/changed',
+          employeeIds: [...affectedEmployeeIds],
+          at: new Date().toISOString(),
+        });
+      }
       setMessage(null);
       setError(null);
     },
@@ -382,6 +407,9 @@ export function useDeliveryData() {
         `${input.breakdownItemId}|${input.employeeId}|${input.month}`,
       );
 
+      const changed =
+        Math.abs(amountPm) >= ZERO_PM_EPSILON || existing !== undefined;
+
       if (Math.abs(amountPm) < ZERO_PM_EPSILON) {
         if (existing) {
           await boot.delivery.allocations.remove(existing.id);
@@ -398,6 +426,13 @@ export function useDeliveryData() {
       }
 
       await reload(boot);
+      if (changed) {
+        publishBpsMessage({
+          type: 'allocations/changed',
+          employeeIds: [input.employeeId],
+          at: new Date().toISOString(),
+        });
+      }
       setError(null);
     },
     [

@@ -83,6 +83,30 @@ describe('BPS contracts', () => {
     );
   });
 
+  it('accepts valid allocations/changed messages and rejects junk', () => {
+    const valid: BpsMessage = {
+      type: 'allocations/changed',
+      employeeIds: ['emp-001'],
+      at: '2026-06-01T00:00:00.000Z',
+    };
+    expect(isBpsMessage(valid)).toBe(true);
+    expect(
+      isBpsMessage({
+        type: 'allocations/changed',
+        employeeIds: [],
+        at: '2026-06-01T00:00:00.000Z',
+      }),
+    ).toBe(true);
+    expect(isBpsMessage({ type: 'allocations/changed', at: 't' })).toBe(false);
+    expect(
+      isBpsMessage({
+        type: 'allocations/changed',
+        employeeIds: [''],
+        at: '2026-06-01T00:00:00.000Z',
+      }),
+    ).toBe(false);
+  });
+
   it('delivers publish to subscribers on the same channel', () => {
     const received: BpsMessage[] = [];
     const unsubscribe = subscribeBpsMessages((message) => {
@@ -98,17 +122,28 @@ describe('BPS contracts', () => {
     });
 
     expect(received).toHaveLength(1);
-    expect(received[0]?.employeeId).toBe('emp-001');
-    expect(received[0]?.op).toBe('upsert');
+    expect(received[0]?.type).toBe('rates/changed');
+    if (received[0]?.type === 'rates/changed') {
+      expect(received[0].employeeId).toBe('emp-001');
+      expect(received[0].op).toBe('upsert');
+    }
+
+    publishBpsMessage({
+      type: 'allocations/changed',
+      employeeIds: ['emp-001'],
+      at: '2026-06-01T00:00:01.000Z',
+    });
+    expect(received).toHaveLength(2);
+    expect(received[1]?.type).toBe('allocations/changed');
 
     unsubscribe();
     publishBpsMessage({
       type: 'rates/changed',
       employeeId: 'emp-001',
       op: 'delete',
-      at: '2026-06-01T00:00:01.000Z',
+      at: '2026-06-01T00:00:02.000Z',
     });
-    expect(received).toHaveLength(1);
+    expect(received).toHaveLength(2);
   });
 
   it('ignores malformed channel payloads', () => {
