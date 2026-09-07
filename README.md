@@ -46,7 +46,7 @@ docker-compose.yml   Shell :8080 · People :8081 · Delivery :8082
 ### Docker (recommended — no Node on the host)
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jaymeeu/baseline-planning-suite.git
 cd baseline-planning-suite
 docker compose up
 ```
@@ -71,7 +71,7 @@ Confirm: `curl http://localhost:8080/config.js`
 ### Local development (Node.js 20+)
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jaymeeu/baseline-planning-suite.git
 cd baseline-planning-suite
 npm install
 ```
