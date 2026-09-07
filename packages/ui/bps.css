@@ -344,40 +344,6 @@
     color: var(--color-bps-ink);
   }
 
-  .bps-resilience {
-    margin-top: 12px;
-  }
-
-  .bps-resilience > summary {
-    list-style: none;
-    cursor: pointer;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-bps-slate);
-    user-select: none;
-  }
-
-  .bps-resilience > summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .bps-resilience > summary::before {
-    content: "▸ ";
-    color: var(--color-bps-signal);
-  }
-
-  .bps-resilience[open] > summary::before {
-    content: "▾ ";
-  }
-
-  .bps-resilience__body {
-    margin-top: 10px;
-    padding: 12px;
-    border: 1px dashed var(--color-bps-line);
-    border-radius: var(--radius-bps);
-    background: var(--color-bps-surface);
-  }
-
   .bps-list {
     list-style: none;
     margin: 0;
