@@ -108,9 +108,9 @@ docker compose start people
 
 Same for Delivery: `docker compose stop delivery` / `start delivery` (also from the repo root).
 
-> **⏱️ Expect a noticeable delay (often several seconds, sometimes ~5–15s) after refresh before the failure panel appears.**
+> **⏱️ Expect a noticeable delay (often several seconds, sometimes ~5–15s) after stop before the failure panel appears.**
 >
-> That is normal. Shell still tries to load the remote’s `remoteEntry.js`. While the request is pending you see the loading skeleton; the error only shows once the browser gives up connecting to the stopped port (`:8081` / `:8082`). There is no short custom timeout in Shell — how long it takes depends on the browser’s connection timeout (and can feel slow on `localhost`).
+> That is normal. Shell still tries to load the remote’s `remoteEntry.js`. The error only shows once the browser gives up connecting to the stopped port (`:8081` / `:8082`).
 
 **Alternatives**
 
