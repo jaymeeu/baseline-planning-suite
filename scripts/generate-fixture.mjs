@@ -2,7 +2,7 @@
  * Deterministic baseline fixture generator.
  *
  * Approved strategy (AGENTS.md): generate stable data matching case-study
- * counts with fixed IDs. Writes split files under seeder/.
+ * counts with fixed IDs. Writes fixtures/seed-data.json.
  *
  * Run: node scripts/generate-fixture.mjs
  */
@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const seederDir = join(root, 'seeder');
+const fixturesDir = join(root, 'fixtures');
 
 const ROLES = ['Engineer', 'Designer', 'PM', 'QA', 'Architect'];
 const WEEKLY = [40, 32, 20];
@@ -530,23 +530,11 @@ if (midMonthCount < 10) {
   throw new Error(`mid-month rates: expected >= 10, got ${midMonthCount}`);
 }
 
-mkdirSync(seederDir, { recursive: true });
+mkdirSync(fixturesDir, { recursive: true });
 
-function writeJson(fileName, value) {
-  const path = join(seederDir, fileName);
-  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
-  return path;
-}
+const outPath = join(fixturesDir, 'seed-data.json');
+writeFileSync(outPath, `${JSON.stringify(fixture, null, 2)}\n`, 'utf8');
 
-const written = [
-  writeJson('meta.json', fixture.meta),
-  writeJson('employees.json', fixture.employees),
-  writeJson('rates.json', fixture.rates),
-  writeJson('projects.json', fixture.projects),
-  writeJson('breakdownItems.json', fixture.breakdownItems),
-  writeJson('allocations.json', fixture.allocations),
-];
-
-console.log(`Wrote ${written.length} seeder files under ${seederDir}`);
+console.log(`Wrote ${outPath}`);
 console.log(fixture.meta.counts);
 console.log('overcapacity', fixture.meta.demo.overcapacity);

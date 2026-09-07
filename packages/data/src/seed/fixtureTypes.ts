@@ -9,7 +9,7 @@ import type {
 
 /**
  * Approved fixture strategy: generated with fixed IDs
- * (see AGENTS.md / scripts/generate-fixture.mjs → seeder/*.json).
+ * (see AGENTS.md / scripts/generate-fixture.mjs → fixtures/seed-data.json).
  */
 export interface BaselineFixture {
   meta: {
